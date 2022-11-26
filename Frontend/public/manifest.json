@@ -1,0 +1,21 @@
+{
+  "short_name": "부대 운영관리 유틸리티",
+  "name": "부대 운영관리 유틸리티",
+  "icons": [
+    {
+      "src": "/img/icons/android-CMOT-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/img/icons/android-CMOT-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#E5D9B6",
+  "display": "standalone",
+  "theme_color": "#A4BE7B",
+  "scope": "/"
+}
