@@ -1,7 +1,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
-const cors = require("cors")
+const cors = require("cors");
+const expressSession  = require('express-session')
 require('dotenv').config();
 const app = express();
 
@@ -16,6 +17,15 @@ app.use(express.json());
 const apiRouter = require('./router/api');
 app.use('/api', apiRouter); 
 
+// session
+app.use(
+    expressSession({
+      secret: "my key",
+      resave: true,
+      saveUninitialized: true,
+    })
+  );
+
 //setting cors 
 app.all('/*', (req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
@@ -23,6 +33,6 @@ app.all('/*', (req, res, next) => {
     next(); 
 }); 
 
-app.listen(3000, ()=>{
-    console.log(`server port: 3000`)
+app.listen(3001, ()=>{
+    console.log(`server port: 3001`)
 });

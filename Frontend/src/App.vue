@@ -47,6 +47,7 @@
               <h3>많이 보는 페이지</h3>
             </v-col>
             <v-divider></v-divider>
+
             <!--유동적으로 전환-->
           </v-container>
         </v-navigation-drawer>
@@ -89,6 +90,7 @@
 <script>
 export default {
   data: () => ({
+    //return {}
     login: 1, //-> 이값은 어떻게 정할지 진지하게 고민해보자
     drawer: false,
     group: null,
