@@ -82,7 +82,7 @@
       </v-app>
     </div>
     <div v-else>
-
+        <router-view></router-view>
     </div>
   </div>
 </template>
@@ -91,7 +91,7 @@
 export default {
   data: () => ({
     //return {}
-    login: 1, //-> 이값은 어떻게 정할지 진지하게 고민해보자
+    login: 0, //-> 이값은 어떻게 정할지 진지하게 고민해보자
     drawer: false,
     group: null,
   }),
