@@ -2,7 +2,7 @@
   <div id="app">
     <!--로그인이 돼지 안을 경우 로그인 페이지를 전체를 뛰운다.-->
     <!--단 사용자가 임의로 로그인 페이지로 갈경우 리다이렉트 생각도 해야한다.-->
-    <div v-if="this.login == 1">
+    <div v-if="this.$store.state.login_P == 1">
       <v-app id="inspire">
         <!--싱단바-->
         <v-app-bar app :color="'#FFFBFE'">
@@ -91,12 +91,11 @@
 export default {
   data: () => ({
     //return {}
-    login: 0, //-> 이값은 어떻게 정할지 진지하게 고민해보자
     drawer: false,
     group: null,
   }),
   mounted() {
-    if(this.login != 1){
+    if(this.$store.state.login_P != 1){
       this.$router.push({ path: 'login' })
     }
   },

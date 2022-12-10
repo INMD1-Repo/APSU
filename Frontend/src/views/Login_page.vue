@@ -35,7 +35,7 @@
                             </v-form>
                         </v-list-item>
                         <div class="text-center">
-                            <v-btn class="botten login-text" rounded dark color="#6750A4">로그인</v-btn>
+                            <v-btn class="botten login-text" @click="login" rounded dark color="#6750A4">로그인</v-btn>
                         </div>
                     </v-card>
                     <!--회원가입 dialog-->
@@ -114,11 +114,11 @@ export default {
             dialog: false,
         }
     },
-    mounted() {
-
+    methods: {
+        login () {
+             this.$store.commit('login_set', 1)
+             this.$router.push({ path: '/' })
+        }
     },
-    watch: {
-
-    }
 }
 </script>
