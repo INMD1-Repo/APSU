@@ -2,6 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import login_page from '../views/Login_page.vue'
+import main_page  from '../views/common/mainView.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -22,6 +24,11 @@ const routes = [
     path: '/login',
     name: 'login',
     component: login_page
+  },
+  {
+    path: '/user/main',
+    name: 'main',
+    component: main_page
   }
 ]
 

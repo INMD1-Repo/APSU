@@ -116,8 +116,9 @@ export default {
     },
     methods: {
         login () {
-             this.$store.commit('login_set', 1)
-             this.$router.push({ path: '/' })
+             this.$store.commit('login_set', 1);
+             window.localStorage.setItem("login", "1");
+             this.$router.push({ path: '/user/main' });
         }
     },
 }

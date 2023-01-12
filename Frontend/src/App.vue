@@ -133,10 +133,15 @@ export default {
     setup_data: setup
   }),
   mounted() {
+    if(window.localStorage.getItem("login") == null){
+      window.localStorage.setItem("login", "0");
+    }
+
     if (this.$store.state.login_P != 1) {
       this.$router.push({ path: 'login' })
+    }else{
+      this.$router.push({ path: '/user/main' });
     }
-    console.log(this.setup_data.executive.navebar.most[0].name)
   },
   watch: {
     group() {

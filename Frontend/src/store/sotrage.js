@@ -5,7 +5,7 @@ Vue.use(vuex);
 
 export default new vuex.Store({
   state :{
-    login_P : 0,
+    login_P : window.localStorage.getItem("login"),
     //로그인 정보 데이터
     id: '',
     name: '',
