@@ -16,7 +16,7 @@
               <v-btn icon v-bind="attrs" v-on="on">
                 <v-icon>mdi-dots-vertical</v-icon>
               </v-btn>
-              </template>
+            </template>
             <v-list>
               <v-list-item>
                 <v-list-item-titile>로그아웃</v-list-item-titile>
@@ -46,8 +46,44 @@
             <v-col class="font-left">
               <h3>많이 보는 페이지</h3>
             </v-col>
+            <v-list-item v-for="item in setup_data[this.$store.state.showcode].navebar.most" :key="item.name" link>
+              <v-list-item-icon>
+                <v-icon>{{ item.icon }}</v-icon>
+              </v-list-item-icon>
+              <v-list-item-content>
+                <v-list-item-title>{{ item.name }}</v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
             <v-divider></v-divider>
+            <v-list dense nav></v-list>
+            <v-col class="font-left">
+              <h3>유동병력</h3>
+            </v-col>
+            <v-list-item v-for="item in setup_data[this.$store.state.showcode].navebar.history" :key="item.name" link>
+              <v-list-item-icon>
+                <v-icon>{{ item.icon }}</v-icon>
+              </v-list-item-icon>
 
+              <v-list-item-content>
+                <v-list-item-title>{{ item.name }}</v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+
+            <v-divider></v-divider>
+            <v-col class="font-left">
+              <h3>식단관리</h3>
+            </v-col>
+            <v-list-item v-for="item in setup_data[this.$store.state.showcode].navebar.food" :key="item.name" link>
+              <v-list-item-icon>
+                <v-icon>{{ item.icon }}</v-icon>
+              </v-list-item-icon>
+
+              <v-list-item-content>
+                <v-list-item-title>{{ item.name }}</v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+
+            <v-divider></v-divider>
             <!--유동적으로 전환-->
           </v-container>
         </v-navigation-drawer>
@@ -82,22 +118,25 @@
       </v-app>
     </div>
     <div v-else>
-        <router-view></router-view>
+      <router-view></router-view>
     </div>
   </div>
 </template>
 
 <script>
+import setup from '@/assets/setup.json'
 export default {
   data: () => ({
     //return {}
     drawer: false,
     group: null,
+    setup_data: setup
   }),
   mounted() {
-    if(this.$store.state.login_P != 1){
+    if (this.$store.state.login_P != 1) {
       this.$router.push({ path: 'login' })
     }
+    console.log(this.setup_data.executive.navebar.most[0].name)
   },
   watch: {
     group() {
