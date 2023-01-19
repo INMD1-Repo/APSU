@@ -71,7 +71,9 @@
                         <v-list-item-content>
                             <div class="text-overline mb-1">{{this.data_t}}</div>
                             <v-list-item-title class="text-h5 mb-1">아침</v-list-item-title>
-                            <v-list-item-subtitle v-for=" item in this.food.brst" v-bind:key="item"> {{ item }}</v-list-item-subtitle>
+                            <v-list-item-subtitle v-for=" item in this.food.meal[0].menu" v-bind:key="item"> {{ item }}</v-list-item-subtitle>
+                            <v-list-item-subtitle>ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</v-list-item-subtitle>
+                            <v-list-item-subtitle> {{ this.food.meal[0].cal }}</v-list-item-subtitle>
                         </v-list-item-content>
                     </v-list-item>
                 </v-card>
@@ -80,7 +82,9 @@
                         <v-list-item-content>
                             <div class="text-overline mb-1">{{this.data_t}}</div>
                             <v-list-item-title class="text-h5 mb-1">점심</v-list-item-title>
-                            <v-list-item-subtitle v-for=" item in this.food.lunc" v-bind:key="item"> {{ item }}</v-list-item-subtitle>
+                            <v-list-item-subtitle v-for=" item in this.food.meal[1].menu" v-bind:key="item"> {{ item }}</v-list-item-subtitle>
+                            <v-list-item-subtitle>ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</v-list-item-subtitle>
+                            <v-list-item-subtitle> {{ this.food.meal[1].cal }}</v-list-item-subtitle>
                         </v-list-item-content>
                     </v-list-item>
                 </v-card>
@@ -89,7 +93,9 @@
                         <v-list-item-content>
                             <div class="text-overline mb-1">{{this.data_t}}</div>
                             <v-list-item-title class="text-h5 mb-1">저녁</v-list-item-title>
-                            <v-list-item-subtitle v-for=" item in this.food.dinr" v-bind:key="item"> {{ item }}</v-list-item-subtitle>
+                            <v-list-item-subtitle v-for=" item in this.food.meal[2].menu" v-bind:key="item"> {{ item }}</v-list-item-subtitle>
+                            <v-list-item-subtitle>ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</v-list-item-subtitle>
+                            <v-list-item-subtitle> {{ this.food.meal[2].cal }}</v-list-item-subtitle>
                         </v-list-item-content>
                     </v-list-item>
                 </v-card>
@@ -158,25 +164,17 @@ export default {
     data: () => {
         return {
             data_t : 0,
-            food :{
-                brst : [],
-                lunc : [],
-                dinr : []
-            }
+            food :{  }
         }
     },
     mounted() {
         let newDate = new Date();
         this.data_t = newDate.toFormat('YYYY-MM-DD')
-        for (let index = 0; index < data.DATA.length; index++) {
-            if(data.DATA[index].dates.indexOf(newDate.toFormat('YYYY-MM-DD')) == 0){
-                this.food.brst.push(data.DATA[index].brst); 
-                this.food.lunc.push(data.DATA[index].lunc); 
-                this.food.dinr.push(data.DATA[index].dinr); 
-
-            }
+        for (let index = 0; index < data.length; index++) {
+            if(data[index].dates.indexOf(newDate.toFormat('YYYY-MM-DD')) == 0){
+             this.food = data[index]
+            }        
         }
-        console.log(this.food);
     }
 }
 </script>

@@ -1,2368 +1,1277 @@
-{
-  "DESCRIPTION": {
-    "dates": "날짜",
-    "brst": "조식",
-    "brst_cal": "조식열량",
-    "lunc": "중식",
-    "lunc_cal": "중식열량",
-    "dinr": "석식",
-    "dinr_cal": "석식열량",
-    "adspcfd": "증특식",
-    "adspcfd_cal": "증특식열량",
-    "sum_cal": "열량합계"
+[
+  {
+    "dates": "2023-01-13(금)",
+    "sumcal": "3122.43kcal",
+    "meal": [
+      {
+        "info": "조식",
+        "menu": [
+          "배추김치",
+          "사과(후지)",
+          "밥",
+          "쇠고기무국(16)",
+          "마파두부(05)(10)",
+          "버섯야채볶음"
+        ],
+        "cal": 773.5
+      },
+      {
+        "info": "중식",
+        "menu": [
+          "풋고추된장무침",
+          "배추김치",
+          "우유(백색우유(200ML,연간))(02)",
+          "밥",
+          "순댓국(완)(10)",
+          "오징어볶음(05)(06)(17)(18)",
+          "초코츄러스(01)(02)(05)(06)"
+        ],
+        "cal": 1245.29
+      },
+      {
+        "info": "석식",
+        "menu": [
+          "",
+          "김치볶음밥(완)",
+          "맛초킹치킨&치즈볼(02)(05)(06)",
+          "양배추샐러드(12)",
+          "열무김치"
+        ],
+        "cal": null
+      }
+    ]
   },
-  "DATA": [
-    {
-      "dates": "2023-01-13(금)",
-      "brst": "배추김치",
-      "brst_cal": "9.5kcal",
-      "lunc": "풋고추된장무침",
-      "lunc_cal": "17.29kcal",
-      "dinr": "",
-      "dinr_cal": "",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3122.43kcal"
-    },
-    {
-      "dates": "2023-01-13(금)",
-      "brst": "사과(후지)",
-      "brst_cal": "63.945kcal",
-      "lunc": "배추김치",
-      "lunc_cal": "9.5kcal",
-      "dinr": "",
-      "dinr_cal": "",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3122.43kcal"
-    },
-    {
-      "dates": "2023-01-13(금)",
-      "brst": "",
-      "brst_cal": "",
-      "lunc": "우유(백색우유(200ML,연간))(02)",
-      "lunc_cal": "122kcal",
-      "dinr": "",
-      "dinr_cal": "",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3122.43kcal"
-    },
-    {
-      "dates": "2023-01-29(일)",
-      "brst": "시금치무침",
-      "brst_cal": "16.21kcal",
-      "lunc": "베이컨감자채볶음(10)",
-      "lunc_cal": "98.36kcal",
-      "dinr": "배추김치",
-      "dinr_cal": "9.5kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2390.58kcal"
-    },
-    {
-      "dates": "2023-01-29(일)",
-      "brst": "배추김치",
-      "brst_cal": "9.5kcal",
-      "lunc": "가공우유(초코맛)(02)",
-      "lunc_cal": "126kcal",
-      "dinr": "",
-      "dinr_cal": "",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2390.58kcal"
-    },
-    {
-      "dates": "2023-01-29(일)",
-      "brst": "",
-      "brst_cal": "",
-      "lunc": "배추김치",
-      "lunc_cal": "9.5kcal",
-      "dinr": "",
-      "dinr_cal": "",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2390.58kcal"
-    },
-    {
-      "dates": "2023-01-30(월)",
-      "brst": "찹쌀밥",
-      "brst_cal": "434.8kcal",
-      "lunc": "찰보리비빔밥(01)(05)",
-      "lunc_cal": "572.35kcal",
-      "dinr": "밥",
-      "dinr_cal": "381.15kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3083.32kcal"
-    },
-    {
-      "dates": "2023-01-30(월)",
-      "brst": "꼬리곰탕",
-      "brst_cal": "1.95kcal",
-      "lunc": "강된장찌개(05)(09)(18)",
-      "lunc_cal": "76.24kcal",
-      "dinr": "청양풍닭볶음(15)",
-      "dinr_cal": "185.05kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3083.32kcal"
-    },
-    {
-      "dates": "2023-01-30(월)",
-      "brst": "돼지고기청경채볶음(10)",
-      "brst_cal": "307.14kcal",
-      "lunc": "갑오징어튀김(01)(02)(05)(06)(16)",
-      "lunc_cal": "443.78kcal",
-      "dinr": "야채튀김(완제품)",
-      "dinr_cal": "201.12kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3083.32kcal"
-    },
-    {
-      "dates": "2023-01-30(월)",
-      "brst": "가지굴소스볶음(05)(06)(18)",
-      "brst_cal": "62.54kcal",
-      "lunc": "계란후라이(완제품)",
-      "lunc_cal": "88.2kcal",
-      "dinr": "배추김치",
-      "dinr_cal": "9.5kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3083.32kcal"
-    },
-    {
-      "dates": "2023-01-30(월)",
-      "brst": "깍두기(완제품)",
-      "brst_cal": "0kcal",
-      "lunc": "배추김치",
-      "lunc_cal": "9.5kcal",
-      "dinr": "에너지바",
-      "dinr_cal": "188kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3083.32kcal"
-    },
-    {
-      "dates": "2023-01-30(월)",
-      "brst": "우유(백색우유(200ML,연간))(02)",
-      "brst_cal": "122kcal",
-      "lunc": "",
-      "lunc_cal": "",
-      "dinr": "",
-      "dinr_cal": "",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3083.32kcal"
-    },
-    {
-      "dates": "2023-01-31(화)",
-      "brst": "밥",
-      "brst_cal": "381.15kcal",
-      "lunc": "잡곡밥",
-      "lunc_cal": "417.75kcal",
-      "dinr": "스팸마요덮밥(01)(05)(06)(10)(16)(18)",
-      "dinr_cal": "755.32kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3427.76kcal"
-    },
-    {
-      "dates": "2023-01-31(화)",
-      "brst": "팽이버섯계란국(01)",
-      "brst_cal": "68.24kcal",
-      "lunc": "감자탕(김치)(10)",
-      "lunc_cal": "568.75kcal",
-      "dinr": "뿌링클치킨",
-      "dinr_cal": "201.12kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3427.76kcal"
-    },
-    {
-      "dates": "2023-01-31(화)",
-      "brst": "돼지고기김치볶음(10)",
-      "brst_cal": "294.37kcal",
-      "lunc": "쇠고기버섯볶음(16)",
-      "lunc_cal": "133.76kcal",
-      "dinr": "치킨무",
-      "dinr_cal": "6kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3427.76kcal"
-    },
-    {
-      "dates": "2023-01-31(화)",
-      "brst": "사각어묵볶음(05)(06)",
-      "brst_cal": "113.65kcal",
-      "lunc": "삼치순살튀김(02)(05)(06)(16)",
-      "lunc_cal": "264.65kcal",
-      "dinr": "배추김치",
-      "dinr_cal": "9.5kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3427.76kcal"
-    },
-    {
-      "dates": "2023-01-31(화)",
-      "brst": "깍두기(완제품)",
-      "brst_cal": "0kcal",
-      "lunc": "배추김치",
-      "lunc_cal": "9.5kcal",
-      "dinr": "식혜",
-      "dinr_cal": "82kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3427.76kcal"
-    },
-    {
-      "dates": "2023-01-31(화)",
-      "brst": "",
-      "brst_cal": "",
-      "lunc": "우유(백색우유(200ML,연간))(02)",
-      "lunc_cal": "122kcal",
-      "dinr": "",
-      "dinr_cal": "",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3427.76kcal"
-    },
-    {
-      "dates": "2023-01-19(목)",
-      "brst": "콩나물닭볶음(05)(15)",
-      "brst_cal": "278.37kcal",
-      "lunc": "삼겹살구이(10)",
-      "lunc_cal": "990.77kcal",
-      "dinr": "양념치킨",
-      "dinr_cal": "272.52kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3237.85kcal"
-    },
-    {
-      "dates": "2023-01-19(목)",
-      "brst": "버섯야채볶음",
-      "brst_cal": "35.62kcal",
-      "lunc": "모듬쌈(05)(06)",
-      "lunc_cal": "43.82kcal",
-      "dinr": "멕시칸샐러드(10)",
-      "dinr_cal": "65.96kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3237.85kcal"
-    },
-    {
-      "dates": "2023-01-19(목)",
-      "brst": "배추김치",
-      "brst_cal": "9.5kcal",
-      "lunc": "무말랭이김치",
-      "lunc_cal": "46.8kcal",
-      "dinr": "배추김치",
-      "dinr_cal": "9.5kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3237.85kcal"
-    },
-    {
-      "dates": "2023-01-19(목)",
-      "brst": "우유(백색우유(200ML,연간))(02)",
-      "brst_cal": "122kcal",
-      "lunc": "보쌈김치",
-      "lunc_cal": "0kcal",
-      "dinr": "",
-      "dinr_cal": "",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3237.85kcal"
-    },
-    {
-      "dates": "2023-01-20(금)",
-      "brst": "밥",
-      "brst_cal": "381.15kcal",
-      "lunc": "잡곡밥",
-      "lunc_cal": "417.75kcal",
-      "dinr": "밥",
-      "dinr_cal": "381.15kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2471.50kcal"
-    },
-    {
-      "dates": "2023-01-20(금)",
-      "brst": "느타리버섯국(01)(16)",
-      "brst_cal": "68.54kcal",
-      "lunc": "생선묵국",
-      "lunc_cal": "15.38kcal",
-      "dinr": "쇠고기육개장(01)(05)(16)",
-      "dinr_cal": "98.48kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2471.50kcal"
-    },
-    {
-      "dates": "2023-01-20(금)",
-      "brst": "호박쇠고기볶음(16)",
-      "brst_cal": "134.77kcal",
-      "lunc": "로제떡볶이(01)(05)(06)(10)(12)(15)(16)",
-      "lunc_cal": "113.76kcal",
-      "dinr": "소시지야채볶음(10)(12)",
-      "dinr_cal": "78.09kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2471.50kcal"
-    },
-    {
-      "dates": "2023-01-20(금)",
-      "brst": "맛김",
-      "brst_cal": "0kcal",
-      "lunc": "닭다리후라이드(15)",
-      "lunc_cal": "501.79kcal",
-      "dinr": "깻잎조림",
-      "dinr_cal": "19kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2471.50kcal"
-    },
-    {
-      "dates": "2023-01-01(일)",
-      "brst": "밥",
-      "brst_cal": "381.15kcal",
-      "lunc": "밥",
-      "lunc_cal": "381.15kcal",
-      "dinr": "밥",
-      "dinr_cal": "381.15kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2082.85kcal"
-    },
-    {
-      "dates": "2023-01-01(일)",
-      "brst": "쇠고기떡국(01)(16)",
-      "brst_cal": "93.95kcal",
-      "lunc": "오징어콩나물해장국(05)(17)",
-      "lunc_cal": "27.7kcal",
-      "dinr": "시금치된장국(05)",
-      "dinr_cal": "36.45kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2082.85kcal"
-    },
-    {
-      "dates": "2023-01-01(일)",
-      "brst": "애호박나물(09)",
-      "brst_cal": "31.73kcal",
-      "lunc": "버섯야채볶음",
-      "lunc_cal": "35.62kcal",
-      "dinr": "닭간장소스찜(15)",
-      "dinr_cal": "246.64kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2082.85kcal"
-    },
-    {
-      "dates": "2023-01-01(일)",
-      "brst": "소갈비찜(완제품)",
-      "brst_cal": "0kcal",
-      "lunc": "돼지고기김치볶음(10)",
-      "lunc_cal": "294.37kcal",
-      "dinr": "무생채",
-      "dinr_cal": "27.94kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2082.85kcal"
-    },
-    {
-      "dates": "2023-01-01(일)",
-      "brst": "배추김치",
-      "brst_cal": "9.5kcal",
-      "lunc": "가공우유(초코맛)(02)",
-      "lunc_cal": "126kcal",
-      "dinr": "배추김치",
-      "dinr_cal": "9.5kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2082.85kcal"
-    },
-    {
-      "dates": "2023-01-01(일)",
-      "brst": "",
-      "brst_cal": "",
-      "lunc": "깍두기(완제품)",
-      "lunc_cal": "0kcal",
-      "dinr": "",
-      "dinr_cal": "",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2082.85kcal"
-    },
-    {
-      "dates": "2023-01-02(월)",
-      "brst": "밥",
-      "brst_cal": "381.15kcal",
-      "lunc": "밥",
-      "lunc_cal": "381.15kcal",
-      "dinr": "나가사끼짬뽕국(06)(08)(09)(10)(17)(18)",
-      "dinr_cal": "368.05kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2273.63kcal"
-    },
-    {
-      "dates": "2023-01-02(월)",
-      "brst": "쇠고기무국(16)",
-      "brst_cal": "60.82kcal",
-      "lunc": "두부된장찌개(05)",
-      "lunc_cal": "42.52kcal",
-      "dinr": "우리밀찹쌀꿔바로우(01)(05)(06)(10)",
-      "dinr_cal": "383.12kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2273.63kcal"
-    },
-    {
-      "dates": "2023-01-02(월)",
-      "brst": "소시지야채볶음(10)(12)",
-      "brst_cal": "78.09kcal",
-      "lunc": "춘천닭갈비(완)(02)(06)",
-      "lunc_cal": "43.64kcal",
-      "dinr": "단무지무침",
-      "dinr_cal": "19.81kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2273.63kcal"
-    },
-    {
-      "dates": "2023-01-02(월)",
-      "brst": "연두부양념장(05)",
-      "brst_cal": "78.21kcal",
-      "lunc": "새우살계란찜(01)(09)",
-      "lunc_cal": "104.57kcal",
-      "dinr": "배추김치",
-      "dinr_cal": "9.5kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2273.63kcal"
-    },
-    {
-      "dates": "2023-01-02(월)",
-      "brst": "배추김치",
-      "brst_cal": "9.5kcal",
-      "lunc": "배추김치",
-      "lunc_cal": "9.5kcal",
-      "dinr": "대구경북능금농협음료가공공장,싱그러운생복숭아,240ml",
-      "dinr_cal": "128kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2273.63kcal"
-    },
-    {
-      "dates": "2023-01-02(월)",
-      "brst": "우유(백색우유(200ML,연간))(02)",
-      "brst_cal": "122kcal",
-      "lunc": "딸기(1월~2월)",
-      "lunc_cal": "54kcal",
-      "dinr": "",
-      "dinr_cal": "",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2273.63kcal"
-    },
-    {
-      "dates": "2023-01-03(화)",
-      "brst": "밥",
-      "brst_cal": "381.15kcal",
-      "lunc": "김치볶음밥(01)",
-      "lunc_cal": "535.23kcal",
-      "dinr": "밥",
-      "dinr_cal": "381.15kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2464.40kcal"
-    },
-    {
-      "dates": "2023-01-03(화)",
-      "brst": "얼큰황태채국",
-      "brst_cal": "93.21kcal",
-      "lunc": "계란국(01)",
-      "lunc_cal": "51.31kcal",
-      "dinr": "된장찌개(05)",
-      "dinr_cal": "38.42kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2464.40kcal"
-    },
-    {
-      "dates": "2023-01-03(화)",
-      "brst": "애호박나물(09)",
-      "brst_cal": "31.73kcal",
-      "lunc": "뿌링클치킨",
-      "lunc_cal": "201.12kcal",
-      "dinr": "돼지불고기(10)",
-      "dinr_cal": "405.84kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2464.40kcal"
-    },
-    {
-      "dates": "2023-01-03(화)",
-      "brst": "햄감자채볶음",
-      "brst_cal": "59.52kcal",
-      "lunc": "양배추샐러드(12)",
-      "lunc_cal": "21.23kcal",
-      "dinr": "모듬야채",
-      "dinr_cal": "11.99kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2464.40kcal"
-    },
-    {
-      "dates": "2023-01-03(화)",
-      "brst": "배추김치",
-      "brst_cal": "9.5kcal",
-      "lunc": "섞박지",
-      "lunc_cal": "0kcal",
-      "dinr": "무생채",
-      "dinr_cal": "27.94kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2464.40kcal"
-    },
-    {
-      "dates": "2023-01-03(화)",
-      "brst": "우유(백색우유(200ML,연간))(02)",
-      "brst_cal": "122kcal",
-      "lunc": "레몬에이드",
-      "lunc_cal": "26kcal",
-      "dinr": "배추김치",
-      "dinr_cal": "9.5kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2464.40kcal"
-    },
-    {
-      "dates": "2023-01-03(화)",
-      "brst": "",
-      "brst_cal": "",
-      "lunc": "",
-      "lunc_cal": "",
-      "dinr": "감귤",
-      "dinr_cal": "57.564kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2464.40kcal"
-    },
-    {
-      "dates": "2023-01-04(수)",
-      "brst": "밥",
-      "brst_cal": "381.15kcal",
-      "lunc": "잡곡밥",
-      "lunc_cal": "417.75kcal",
-      "dinr": "밥",
-      "dinr_cal": "381.15kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3205.80kcal"
-    },
-    {
-      "dates": "2023-01-04(수)",
-      "brst": "베이컨구이(10)",
-      "brst_cal": "136.8kcal",
-      "lunc": "김치찌개(05)(10)",
-      "lunc_cal": "86.59kcal",
-      "dinr": "닭곰탕(완)(02)(05)(06)(15)",
-      "dinr_cal": "177.91kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3205.80kcal"
-    },
-    {
-      "dates": "2023-01-04(수)",
-      "brst": "계란후라이(완제품)",
-      "brst_cal": "88.2kcal",
-      "lunc": "쭈삼불고기(10)",
-      "lunc_cal": "360.59kcal",
-      "dinr": "크리스피돈강정(05)(06)(10)",
-      "dinr_cal": "691.12kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3205.80kcal"
-    },
-    {
-      "dates": "2023-01-04(수)",
-      "brst": "참치*양념장",
-      "brst_cal": "0kcal",
-      "lunc": "오이부추무침",
-      "lunc_cal": "16.47kcal",
-      "dinr": "감자샐러드(01)",
-      "dinr_cal": "83.07kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3205.80kcal"
-    },
-    {
-      "dates": "2023-01-04(수)",
-      "brst": "미니롤케이크",
-      "brst_cal": "244kcal",
-      "lunc": "배추김치",
-      "lunc_cal": "9.5kcal",
-      "dinr": "섞박지",
-      "dinr_cal": "0kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3205.80kcal"
-    },
-    {
-      "dates": "2023-01-04(수)",
-      "brst": "배추김치",
-      "brst_cal": "9.5kcal",
-      "lunc": "",
-      "lunc_cal": "",
-      "dinr": "커피음료",
-      "dinr_cal": "",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3205.80kcal"
-    },
-    {
-      "dates": "2023-01-04(수)",
-      "brst": "우유(백색우유(200ML,연간))(02)",
-      "brst_cal": "122kcal",
-      "lunc": "",
-      "lunc_cal": "",
-      "dinr": "",
-      "dinr_cal": "",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3205.80kcal"
-    },
-    {
-      "dates": "2023-01-05(목)",
-      "brst": "밥",
-      "brst_cal": "381.15kcal",
-      "lunc": "밥",
-      "lunc_cal": "381.15kcal",
-      "dinr": "밥",
-      "dinr_cal": "381.15kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3755.88kcal"
-    },
-    {
-      "dates": "2023-01-05(목)",
-      "brst": "쇠고기무국(16)",
-      "brst_cal": "60.82kcal",
-      "lunc": "쇠고기미역국(16)",
-      "lunc_cal": "51.73kcal",
-      "dinr": "감자양파찌개(05)",
-      "dinr_cal": "58.4kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3755.88kcal"
-    },
-    {
-      "dates": "2023-01-05(목)",
-      "brst": "고구마조림",
-      "brst_cal": "105.28kcal",
-      "lunc": "잡채(05)(10)",
-      "lunc_cal": "86.33kcal",
-      "dinr": "삼겹살채소볶음(10)",
-      "dinr_cal": "574.08kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3755.88kcal"
-    },
-    {
-      "dates": "2023-01-05(목)",
-      "brst": "비엔나소시지케찹조림(05)(10)(12)(15)(16)",
-      "brst_cal": "280.61kcal",
-      "lunc": "돼지갈비찜(완)(05)(10)",
-      "lunc_cal": "747kcal",
-      "dinr": "고구마튀김(01)(06)",
-      "dinr_cal": "324.8kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3755.88kcal"
-    },
-    {
-      "dates": "2023-01-05(목)",
-      "brst": "배추김치",
-      "brst_cal": "9.5kcal",
-      "lunc": "배추김치",
-      "lunc_cal": "9.5kcal",
-      "dinr": "깻잎조림",
-      "dinr_cal": "19kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3755.88kcal"
-    },
-    {
-      "dates": "2023-01-05(목)",
-      "brst": "우유(백색우유(200ML,연간))(02)",
-      "brst_cal": "122kcal",
-      "lunc": "곶감",
-      "lunc_cal": "153.881kcal",
-      "dinr": "배추김치",
-      "dinr_cal": "9.5kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3755.88kcal"
-    },
-    {
-      "dates": "2023-01-06(금)",
-      "brst": "밥",
-      "brst_cal": "381.15kcal",
-      "lunc": "잡곡밥",
-      "lunc_cal": "417.75kcal",
-      "dinr": "잔치국수(01)(06)",
-      "dinr_cal": "470.74kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2871.93kcal"
-    },
-    {
-      "dates": "2023-01-06(금)",
-      "brst": "생선묵국",
-      "brst_cal": "15.38kcal",
-      "lunc": "쇠고기육개장(01)(05)(16)",
-      "lunc_cal": "98.48kcal",
-      "dinr": "간장돼지불고기(완제품)",
-      "dinr_cal": "691.98kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2871.93kcal"
-    },
-    {
-      "dates": "2023-01-06(금)",
-      "brst": "호박쇠고기볶음(16)",
-      "brst_cal": "134.77kcal",
-      "lunc": "닭갈비(15)",
-      "lunc_cal": "295.82kcal",
-      "dinr": "볶음김치",
-      "dinr_cal": "40.52kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2871.93kcal"
-    },
-    {
-      "dates": "2023-01-06(금)",
-      "brst": "감자조림",
-      "brst_cal": "53.58kcal",
-      "lunc": "방울어묵조림",
-      "lunc_cal": "25.37kcal",
-      "dinr": "애호박나물(09)",
-      "dinr_cal": "31.73kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2871.93kcal"
-    },
-    {
-      "dates": "2023-01-06(금)",
-      "brst": "배추김치",
-      "brst_cal": "9.5kcal",
-      "lunc": "열무김치",
-      "lunc_cal": "12.8kcal",
-      "dinr": "열무김치",
-      "dinr_cal": "12.8kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2871.93kcal"
-    },
-    {
-      "dates": "2023-01-06(금)",
-      "brst": "감귤",
-      "brst_cal": "57.564kcal",
-      "lunc": "우유(백색우유(200ML,연간))(02)",
-      "lunc_cal": "122kcal",
-      "dinr": "떠먹는 토핑형 발효유",
-      "dinr_cal": "",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2871.93kcal"
-    },
-    {
-      "dates": "2023-01-07(토)",
-      "brst": "새우볶음밥(150g)(01)(05)(08)(09)",
-      "brst_cal": "300kcal",
-      "lunc": "밥",
-      "lunc_cal": "381.15kcal",
-      "dinr": "소불고기야채비빔밥(01)(05)(16)",
-      "dinr_cal": "659.42kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3254.15kcal"
-    },
-    {
-      "dates": "2023-01-07(토)",
-      "brst": "떡갈비버거(05)(06)(10)",
-      "brst_cal": "513.29kcal",
-      "lunc": "참치김치찌개(05)",
-      "lunc_cal": "48.08kcal",
-      "dinr": "얼갈이된장국(05)",
-      "dinr_cal": "30.81kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3254.15kcal"
-    },
-    {
-      "dates": "2023-01-07(토)",
-      "brst": "양념치킨",
-      "brst_cal": "272.52kcal",
-      "lunc": "오리훈제야채볶음",
-      "lunc_cal": "391.28kcal",
-      "dinr": "사과소스in미트볼(10)",
-      "dinr_cal": "330kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3254.15kcal"
-    },
-    {
-      "dates": "2023-01-07(토)",
-      "brst": "시리얼",
-      "brst_cal": "76.35kcal",
-      "lunc": "감자채볶음",
-      "lunc_cal": "60.55kcal",
-      "dinr": "무나물",
-      "dinr_cal": "46.4kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3254.15kcal"
-    },
-    {
-      "dates": "2023-01-07(토)",
-      "brst": "우유(백색우유(200ML,연간))(02)",
-      "brst_cal": "122kcal",
-      "lunc": "배추김치",
-      "lunc_cal": "9.5kcal",
-      "dinr": "열무김치",
-      "dinr_cal": "12.8kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3254.15kcal"
-    },
-    {
-      "dates": "2023-01-07(토)",
-      "brst": "대구경북능금농협음료가공공장,싱그러운생배,240ml",
-      "brst_cal": "",
-      "lunc": "",
-      "lunc_cal": "",
-      "dinr": "",
-      "dinr_cal": "",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3254.15kcal"
-    },
-    {
-      "dates": "2023-01-08(일)",
-      "brst": "밥",
-      "brst_cal": "381.15kcal",
-      "lunc": "밥",
-      "lunc_cal": "381.15kcal",
-      "dinr": "밥",
-      "dinr_cal": "381.15kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2881.24kcal"
-    },
-    {
-      "dates": "2023-01-08(일)",
-      "brst": "감자국",
-      "brst_cal": "29.71kcal",
-      "lunc": "조랭이떡미역국",
-      "lunc_cal": "65.67kcal",
-      "dinr": "콩나물국(05)",
-      "dinr_cal": "22.64kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2881.24kcal"
-    },
-    {
-      "dates": "2023-01-08(일)",
-      "brst": "가지굴소스볶음(05)(06)(18)",
-      "brst_cal": "62.54kcal",
-      "lunc": "돼지불고기(10)",
-      "lunc_cal": "405.84kcal",
-      "dinr": "치즈닭갈비(02)(05)(06)(15)(16)",
-      "dinr_cal": "333.18kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2881.24kcal"
-    },
-    {
-      "dates": "2023-01-08(일)",
-      "brst": "오징어볶음(05)(06)(17)(18)",
-      "brst_cal": "166.97kcal",
-      "lunc": "오이무침",
-      "lunc_cal": "22.96kcal",
-      "dinr": "계란찜(01)(09)",
-      "dinr_cal": "107.38kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2881.24kcal"
-    },
-    {
-      "dates": "2023-01-08(일)",
-      "brst": "맛김",
-      "brst_cal": "0kcal",
-      "lunc": "가공우유(딸기맛)(02)",
-      "lunc_cal": "116kcal",
-      "dinr": "배추김치",
-      "dinr_cal": "9.5kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2881.24kcal"
-    },
-    {
-      "dates": "2023-01-08(일)",
-      "brst": "배추김치",
-      "brst_cal": "9.5kcal",
-      "lunc": "배추김치",
-      "lunc_cal": "9.5kcal",
-      "dinr": "워터젤리",
-      "dinr_cal": "376.4kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2881.24kcal"
-    },
-    {
-      "dates": "2023-01-09(월)",
-      "brst": "밥",
-      "brst_cal": "381.15kcal",
-      "lunc": "밥",
-      "lunc_cal": "381.15kcal",
-      "dinr": "사과카레라이스(02)(05)(06)(10)(16)",
-      "dinr_cal": "611.16kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3066.45kcal"
-    },
-    {
-      "dates": "2023-01-09(월)",
-      "brst": "물만둣국(01)(06)(10)",
-      "brst_cal": "340.61kcal",
-      "lunc": "사골우거지국",
-      "lunc_cal": "25.43kcal",
-      "dinr": "생선묵국",
-      "dinr_cal": "15.38kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3066.45kcal"
-    },
-    {
-      "dates": "2023-01-09(월)",
-      "brst": "돼지고기김치볶음(10)",
-      "brst_cal": "294.37kcal",
-      "lunc": "오삼불고기(10)(17)",
-      "lunc_cal": "483kcal",
-      "dinr": "순살파닭",
-      "dinr_cal": "206.75kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3066.45kcal"
-    },
-    {
-      "dates": "2023-01-09(월)",
-      "brst": "오징어젓무침(17)",
-      "brst_cal": "41.76kcal",
-      "lunc": "새우살계란찜(01)(09)",
-      "lunc_cal": "104.57kcal",
-      "dinr": "무초절이",
-      "dinr_cal": "27.32kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3066.45kcal"
-    },
-    {
-      "dates": "2023-01-09(월)",
-      "brst": "배추김치",
-      "brst_cal": "9.5kcal",
-      "lunc": "열무김치",
-      "lunc_cal": "12.8kcal",
-      "dinr": "배추김치",
-      "dinr_cal": "9.5kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3066.45kcal"
-    },
-    {
-      "dates": "2023-01-09(월)",
-      "brst": "",
-      "brst_cal": "",
-      "lunc": "우유(백색우유(200ML,연간))(02)",
-      "lunc_cal": "122kcal",
-      "dinr": "산천애아삭소리사과애플즙,120ml",
-      "dinr_cal": "",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3066.45kcal"
-    },
-    {
-      "dates": "2023-01-10(화)",
-      "brst": "밥",
-      "brst_cal": "381.15kcal",
-      "lunc": "잡곡밥",
-      "lunc_cal": "417.75kcal",
-      "dinr": "밥",
-      "dinr_cal": "381.15kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "4072.81kcal"
-    },
-    {
-      "dates": "2023-01-10(화)",
-      "brst": "계란국(01)",
-      "brst_cal": "51.31kcal",
-      "lunc": "배추된장국(05)",
-      "lunc_cal": "67.01kcal",
-      "dinr": "쇠고기감자국(16)",
-      "dinr_cal": "70.52kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "4072.81kcal"
-    },
-    {
-      "dates": "2023-01-10(화)",
-      "brst": "낙지볶음",
-      "brst_cal": "420.75kcal",
-      "lunc": "돼지고기수육(09)(10)",
-      "lunc_cal": "1004.24kcal",
-      "dinr": "오징어채볶음(17)",
-      "dinr_cal": "106.98kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "4072.81kcal"
-    },
-    {
-      "dates": "2023-01-10(화)",
-      "brst": "쇠고기버섯볶음(16)",
-      "brst_cal": "133.76kcal",
-      "lunc": "모듬야채",
-      "lunc_cal": "11.99kcal",
-      "dinr": "치즈돈가스&소스(02)(05)(06)(10)",
-      "dinr_cal": "510.84kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "4072.81kcal"
-    },
-    {
-      "dates": "2023-01-10(화)",
-      "brst": "배추김치",
-      "brst_cal": "9.5kcal",
-      "lunc": "보쌈김치",
-      "lunc_cal": "0kcal",
-      "dinr": "배추김치",
-      "dinr_cal": "9.5kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "4072.81kcal"
-    },
-    {
-      "dates": "2023-01-10(화)",
-      "brst": "우유(백색우유(200ML,연간))(02)",
-      "brst_cal": "122kcal",
-      "lunc": "무말랭이김치",
-      "lunc_cal": "46.8kcal",
-      "dinr": "아이스크림 콘,완제품(02)",
-      "dinr_cal": "270kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "4072.81kcal"
-    },
-    {
-      "dates": "2023-01-10(화)",
-      "brst": "",
-      "brst_cal": "",
-      "lunc": "감귤",
-      "lunc_cal": "57.564kcal",
-      "dinr": "",
-      "dinr_cal": "",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "4072.81kcal"
-    },
-    {
-      "dates": "2023-01-11(수)",
-      "brst": "밥",
-      "brst_cal": "381.15kcal",
-      "lunc": "밥",
-      "lunc_cal": "381.15kcal",
-      "dinr": "밥",
-      "dinr_cal": "381.15kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2989.54kcal"
-    },
-    {
-      "dates": "2023-01-11(수)",
-      "brst": "쇠고기메추리알장조림(완제)",
-      "brst_cal": "1.02kcal",
-      "lunc": "짬뽕찌개(완제품)(06)",
-      "lunc_cal": "149kcal",
-      "dinr": "두부된장찌개(05)",
-      "dinr_cal": "42.52kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2989.54kcal"
-    },
-    {
-      "dates": "2023-01-11(수)",
-      "brst": "베이컨구이(10)",
-      "brst_cal": "136.8kcal",
-      "lunc": "돈육굴소스양배추볶음(05)(06)(10)(18)",
-      "lunc_cal": "299.88kcal",
-      "dinr": "돼지고기고추장볶음(10)",
-      "dinr_cal": "575.15kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2989.54kcal"
-    },
-    {
-      "dates": "2023-01-11(수)",
-      "brst": "계란후라이(완제품)",
-      "brst_cal": "88.2kcal",
-      "lunc": "만두튀김",
-      "lunc_cal": "156.76kcal",
-      "dinr": "깻잎조림",
-      "dinr_cal": "19kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2989.54kcal"
-    },
-    {
-      "dates": "2023-01-11(수)",
-      "brst": "양상추샐러드",
-      "brst_cal": "100.4kcal",
-      "lunc": "배추김치",
-      "lunc_cal": "9.5kcal",
-      "dinr": "배추김치",
-      "dinr_cal": "9.5kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2989.54kcal"
-    },
-    {
-      "dates": "2023-01-11(수)",
-      "brst": "배추김치",
-      "brst_cal": "9.5kcal",
-      "lunc": "배(신고)",
-      "lunc_cal": "68.06kcal",
-      "dinr": "이온음료",
-      "dinr_cal": "58.8kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2989.54kcal"
-    },
-    {
-      "dates": "2023-01-11(수)",
-      "brst": "우유(백색우유(200ML,연간))(02)",
-      "brst_cal": "122kcal",
-      "lunc": "",
-      "lunc_cal": "",
-      "dinr": "",
-      "dinr_cal": "",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2989.54kcal"
-    },
-    {
-      "dates": "2023-01-12(목)",
-      "brst": "햄야채볶음밥(12)",
-      "brst_cal": "523.77kcal",
-      "lunc": "전투식량 /  된장찌개(05)",
-      "lunc_cal": "38.42kcal",
-      "dinr": "잡곡밥",
-      "dinr_cal": "417.75kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3215.46kcal"
-    },
-    {
-      "dates": "2023-01-12(목)",
-      "brst": "설렁탕(완)",
-      "brst_cal": "280.26kcal",
-      "lunc": "소불고기(완제품)(16)",
-      "lunc_cal": "609.58kcal",
-      "dinr": "김치찌개(05)(10)",
-      "dinr_cal": "86.59kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3215.46kcal"
-    },
-    {
-      "dates": "2023-01-12(목)",
-      "brst": "맛김",
-      "brst_cal": "0kcal",
-      "lunc": "매콤감자조림",
-      "lunc_cal": "49.69kcal",
-      "dinr": "치킨까스(05)(06)(12)(15)",
-      "dinr_cal": "520.34kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3215.46kcal"
-    },
-    {
-      "dates": "2023-01-12(목)",
-      "brst": "스크램블에그(01)(12)",
-      "brst_cal": "145.17kcal",
-      "lunc": "배추김치",
-      "lunc_cal": "9.5kcal",
-      "dinr": "고구마샐러드",
-      "dinr_cal": "154.09kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3215.46kcal"
-    },
-    {
-      "dates": "2023-01-12(목)",
-      "brst": "배추김치",
-      "brst_cal": "9.5kcal",
-      "lunc": "유산균 발효 음료(02)",
-      "lunc_cal": "56kcal",
-      "dinr": "열무김치",
-      "dinr_cal": "12.8kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3215.46kcal"
-    },
-    {
-      "dates": "2023-01-12(목)",
-      "brst": "우유(백색우유(200ML,연간))(02)",
-      "brst_cal": "122kcal",
-      "lunc": "",
-      "lunc_cal": "",
-      "dinr": "아이스크림, 떠먹는형",
-      "dinr_cal": "180kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3215.46kcal"
-    },
-    {
-      "dates": "2023-01-13(금)",
-      "brst": "밥",
-      "brst_cal": "381.15kcal",
-      "lunc": "밥",
-      "lunc_cal": "381.15kcal",
-      "dinr": "김치볶음밥(완)",
-      "dinr_cal": "439.8kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3122.43kcal"
-    },
-    {
-      "dates": "2023-01-13(금)",
-      "brst": "쇠고기무국(16)",
-      "brst_cal": "60.82kcal",
-      "lunc": "순댓국(완)(10)",
-      "lunc_cal": "300.44kcal",
-      "dinr": "맛초킹치킨&치즈볼(02)(05)(06)",
-      "dinr_cal": "624.12kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3122.43kcal"
-    },
-    {
-      "dates": "2023-01-13(금)",
-      "brst": "마파두부(05)(10)",
-      "brst_cal": "225.25kcal",
-      "lunc": "오징어볶음(05)(06)(17)(18)",
-      "lunc_cal": "166.97kcal",
-      "dinr": "양배추샐러드(12)",
-      "dinr_cal": "21.23kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3122.43kcal"
-    },
-    {
-      "dates": "2023-01-13(금)",
-      "brst": "버섯야채볶음",
-      "brst_cal": "35.62kcal",
-      "lunc": "초코츄러스(01)(02)(05)(06)",
-      "lunc_cal": "250.84kcal",
-      "dinr": "열무김치",
-      "dinr_cal": "12.8kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3122.43kcal"
-    },
-    {
-      "dates": "2023-01-20(금)",
-      "brst": "배추김치",
-      "brst_cal": "9.5kcal",
-      "lunc": "",
-      "lunc_cal": "",
-      "dinr": "배추김치",
-      "dinr_cal": "9.5kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2471.50kcal"
-    },
-    {
-      "dates": "2023-01-20(금)",
-      "brst": "우유(백색우유(200ML,연간))(02)",
-      "brst_cal": "122kcal",
-      "lunc": "",
-      "lunc_cal": "",
-      "dinr": "감귤",
-      "dinr_cal": "57.564kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2471.50kcal"
-    },
-    {
-      "dates": "2023-01-21(토)",
-      "brst": "햄치즈에그버거(02)(05)(06)(10)(12)",
-      "brst_cal": "891.95kcal",
-      "lunc": "밥",
-      "lunc_cal": "381.15kcal",
-      "dinr": "현미밥",
-      "dinr_cal": "435.6kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3846.22kcal"
-    },
-    {
-      "dates": "2023-01-21(토)",
-      "brst": "소떡소떡(01)(05)(06)(10)(12)(15)(16)",
-      "brst_cal": "248.34kcal",
-      "lunc": "호박고추장찌개(05)(09)(10)",
-      "lunc_cal": "63.57kcal",
-      "dinr": "순두부찌개(01)(05)(10)(18)",
-      "dinr_cal": "101.9kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3846.22kcal"
-    },
-    {
-      "dates": "2023-01-21(토)",
-      "brst": "고구마치즈롤까스(10)(12)",
-      "brst_cal": "365.92kcal",
-      "lunc": "한입떡갈비(05)(06)(10)(15)(16)(18)",
-      "lunc_cal": "302.5kcal",
-      "dinr": "간장돼지불고기(완제품)",
-      "dinr_cal": "691.98kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3846.22kcal"
-    },
-    {
-      "dates": "2023-01-21(토)",
-      "brst": "시리얼",
-      "brst_cal": "76.35kcal",
-      "lunc": "오이부추무침",
-      "lunc_cal": "16.47kcal",
-      "dinr": "모듬야채",
-      "dinr_cal": "11.99kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3846.22kcal"
-    },
-    {
-      "dates": "2023-01-21(토)",
-      "brst": "우유(백색우유(200ML,연간))(02)",
-      "brst_cal": "122kcal",
-      "lunc": "배추김치",
-      "lunc_cal": "9.5kcal",
-      "dinr": "배추김치",
-      "dinr_cal": "9.5kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3846.22kcal"
-    },
-    {
-      "dates": "2023-01-21(토)",
-      "brst": "탄산음료",
-      "brst_cal": "117.5kcal",
-      "lunc": "",
-      "lunc_cal": "",
-      "dinr": "",
-      "dinr_cal": "",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3846.22kcal"
-    },
-    {
-      "dates": "2023-01-22(일)",
-      "brst": "밥",
-      "brst_cal": "381.15kcal",
-      "lunc": "밥",
-      "lunc_cal": "381.15kcal",
-      "dinr": "밥",
-      "dinr_cal": "381.15kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3003.47kcal"
-    },
-    {
-      "dates": "2023-01-22(일)",
-      "brst": "쇠고기떡국(01)(16)",
-      "brst_cal": "93.95kcal",
-      "lunc": "감자국",
-      "lunc_cal": "29.71kcal",
-      "dinr": "버섯쇠고기찌개(16)",
-      "dinr_cal": "54.15kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3003.47kcal"
-    },
-    {
-      "dates": "2023-01-22(일)",
-      "brst": "한우갈비찜(16)",
-      "brst_cal": "508.68kcal",
-      "lunc": "돼지고기고추장볶음(10)",
-      "lunc_cal": "575.15kcal",
-      "dinr": "닭갈비(15)",
-      "dinr_cal": "295.82kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3003.47kcal"
-    },
-    {
-      "dates": "2023-01-22(일)",
-      "brst": "시금치무침",
-      "brst_cal": "16.21kcal",
-      "lunc": "맛김",
-      "lunc_cal": "0kcal",
-      "dinr": "오이양파장아찌",
-      "dinr_cal": "14.18kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3003.47kcal"
-    },
-    {
-      "dates": "2023-01-22(일)",
-      "brst": "배추김치",
-      "brst_cal": "9.5kcal",
-      "lunc": "풋고추된장무침",
-      "lunc_cal": "17.29kcal",
-      "dinr": "깍두기(완제품)",
-      "dinr_cal": "0kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3003.47kcal"
-    },
-    {
-      "dates": "2023-01-22(일)",
-      "brst": "식혜",
-      "brst_cal": "82kcal",
-      "lunc": "배추김치",
-      "lunc_cal": "9.5kcal",
-      "dinr": "",
-      "dinr_cal": "",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3003.47kcal"
-    },
-    {
-      "dates": "2023-01-22(일)",
-      "brst": "",
-      "brst_cal": "",
-      "lunc": "곶감",
-      "lunc_cal": "153.881kcal",
-      "dinr": "",
-      "dinr_cal": "",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3003.47kcal"
-    },
-    {
-      "dates": "2023-01-23(월)",
-      "brst": "낙지불고기덮밥(10)",
-      "brst_cal": "863.25kcal",
-      "lunc": "밥",
-      "lunc_cal": "381.15kcal",
-      "dinr": "밥",
-      "dinr_cal": "381.15kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3197.44kcal"
-    },
-    {
-      "dates": "2023-01-23(월)",
-      "brst": "맑은황태채국(01)(05)(09)",
-      "brst_cal": "145.58kcal",
-      "lunc": "순댓국(완)(10)",
-      "lunc_cal": "300.44kcal",
-      "dinr": "부대찌개(완)(02)(05)(06)(09)(10)(12)(15)(16)",
-      "dinr_cal": "235.87kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3197.44kcal"
-    },
-    {
-      "dates": "2023-01-23(월)",
-      "brst": "감자채볶음",
-      "brst_cal": "60.55kcal",
-      "lunc": "오징어볶음(05)(06)(17)(18)",
-      "lunc_cal": "166.97kcal",
-      "dinr": "계란찜(01)(09)",
-      "dinr_cal": "107.38kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3197.44kcal"
-    },
-    {
-      "dates": "2023-01-23(월)",
-      "brst": "배추김치",
-      "brst_cal": "9.5kcal",
-      "lunc": "두부조림(05)",
-      "lunc_cal": "95.96kcal",
-      "dinr": "닭간장소스찜(15)",
-      "dinr_cal": "246.64kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3197.44kcal"
-    },
-    {
-      "dates": "2023-01-23(월)",
-      "brst": "우유(백색우유(200ML,연간))(02)",
-      "brst_cal": "122kcal",
-      "lunc": "섞박지",
-      "lunc_cal": "0kcal",
-      "dinr": "깍두기(완제품)",
-      "dinr_cal": "0kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3197.44kcal"
-    },
-    {
-      "dates": "2023-01-23(월)",
-      "brst": "",
-      "brst_cal": "",
-      "lunc": "",
-      "lunc_cal": "",
-      "dinr": "해태에이치티비,복숭아봉봉,340ml",
-      "dinr_cal": "81kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3197.44kcal"
-    },
-    {
-      "dates": "2023-01-24(화)",
-      "brst": "밥",
-      "brst_cal": "381.15kcal",
-      "lunc": "잡곡밥",
-      "lunc_cal": "417.75kcal",
-      "dinr": "밥",
-      "dinr_cal": "381.15kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3521.30kcal"
-    },
-    {
-      "dates": "2023-01-24(화)",
-      "brst": "배추들깨국(05)",
-      "brst_cal": "38.58kcal",
-      "lunc": "두부된장찌개(05)",
-      "lunc_cal": "42.52kcal",
-      "dinr": "쇠고기미역국(16)",
-      "dinr_cal": "51.73kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3521.30kcal"
-    },
-    {
-      "dates": "2023-01-24(화)",
-      "brst": "멸치아몬드볶음",
-      "brst_cal": "124.41kcal",
-      "lunc": "매운돼지갈비찜(완)(05)(10)",
-      "lunc_cal": "802.7kcal",
-      "dinr": "닭강정(01)(05)(06)(15)",
-      "dinr_cal": "568.44kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3521.30kcal"
-    },
-    {
-      "dates": "2023-01-24(화)",
-      "brst": "비엔나소시지케찹조림(05)(10)(12)(15)(16)",
-      "brst_cal": "280.61kcal",
-      "lunc": "배추김치",
-      "lunc_cal": "9.5kcal",
-      "dinr": "골뱅이야채무침(06)",
-      "dinr_cal": "168.51kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3521.30kcal"
-    },
-    {
-      "dates": "2023-01-24(화)",
-      "brst": "깍두기(완제품)",
-      "brst_cal": "0kcal",
-      "lunc": "우유(백색우유(200ML,연간))(02)",
-      "lunc_cal": "122kcal",
-      "dinr": "배추김치",
-      "dinr_cal": "9.5kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3521.30kcal"
-    },
-    {
-      "dates": "2023-01-24(화)",
-      "brst": "사과(후지)",
-      "brst_cal": "63.945kcal",
-      "lunc": "",
-      "lunc_cal": "",
-      "dinr": "이온음료",
-      "dinr_cal": "58.8kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3521.30kcal"
-    },
-    {
-      "dates": "2023-01-25(수)",
-      "brst": "모닝빵샌드위치(01)(02)(05)(06)",
-      "brst_cal": "199.68kcal",
-      "lunc": "새우튀김우동(05)(06)(08)",
-      "lunc_cal": "880.05kcal",
-      "dinr": "밥",
-      "dinr_cal": "381.15kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3268.45kcal"
-    },
-    {
-      "dates": "2023-01-25(수)",
-      "brst": "베이컨구이(10)",
-      "brst_cal": "136.8kcal",
-      "lunc": "찰도그롤&케찹(12)",
-      "lunc_cal": "168.26kcal",
-      "dinr": "참치김치찌개(05)",
-      "dinr_cal": "48.08kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3268.45kcal"
-    },
-    {
-      "dates": "2023-01-25(수)",
-      "brst": "소시지구이(10)(12)",
-      "brst_cal": "409.1kcal",
-      "lunc": "콩자반",
-      "lunc_cal": "85.13kcal",
-      "dinr": "오징어채볶음(17)",
-      "dinr_cal": "106.98kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3268.45kcal"
-    },
-    {
-      "dates": "2023-01-25(수)",
-      "brst": "계란후라이(완제품)",
-      "brst_cal": "88.2kcal",
-      "lunc": "배추김치",
-      "lunc_cal": "9.5kcal",
-      "dinr": "우리밀찹쌀꿔바로우(01)(05)(06)(10)",
-      "dinr_cal": "383.12kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3268.45kcal"
-    },
-    {
-      "dates": "2023-01-25(수)",
-      "brst": "양상추샐러드",
-      "brst_cal": "100.4kcal",
-      "lunc": "농후 발효유(02)",
-      "lunc_cal": "96kcal",
-      "dinr": "깍두기(완제품)",
-      "dinr_cal": "0kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3268.45kcal"
-    },
-    {
-      "dates": "2023-01-25(수)",
-      "brst": "우유(백색우유(200ML,연간))(02)",
-      "brst_cal": "122kcal",
-      "lunc": "",
-      "lunc_cal": "",
-      "dinr": "딸기(1월~2월)",
-      "dinr_cal": "54kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3268.45kcal"
-    },
-    {
-      "dates": "2023-01-26(목)",
-      "brst": "밥",
-      "brst_cal": "381.15kcal",
-      "lunc": "전투식량 / 된장찌개(05)",
-      "lunc_cal": "38.42kcal",
-      "dinr": "밥",
-      "dinr_cal": "381.15kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2942.32kcal"
-    },
-    {
-      "dates": "2023-01-26(목)",
-      "brst": "쇠고기감자국(16)",
-      "brst_cal": "70.52kcal",
-      "lunc": "고추장돼지불고기(완제품)(10)",
-      "lunc_cal": "623.98kcal",
-      "dinr": "팽이버섯계란국(01)",
-      "dinr_cal": "68.24kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2942.32kcal"
-    },
-    {
-      "dates": "2023-01-26(목)",
-      "brst": "돼지고기김치볶음(10)",
-      "brst_cal": "294.37kcal",
-      "lunc": "배추김치",
-      "lunc_cal": "9.5kcal",
-      "dinr": "피자치즈롤까스(02)(10)",
-      "dinr_cal": "413.12kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2942.32kcal"
-    },
-    {
-      "dates": "2023-01-26(목)",
-      "brst": "애호박나물(09)",
-      "brst_cal": "31.73kcal",
-      "lunc": "",
-      "lunc_cal": "",
-      "dinr": "닭간장소스찜(15)",
-      "dinr_cal": "246.64kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2942.32kcal"
-    },
-    {
-      "dates": "2023-01-26(목)",
-      "brst": "섞박지",
-      "brst_cal": "0kcal",
-      "lunc": "",
-      "lunc_cal": "",
-      "dinr": "배추김치",
-      "dinr_cal": "9.5kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2942.32kcal"
-    },
-    {
-      "dates": "2023-01-26(목)",
-      "brst": "우유(백색우유(200ML,연간))(02)",
-      "brst_cal": "122kcal",
-      "lunc": "",
-      "lunc_cal": "",
-      "dinr": "아이스샌드",
-      "dinr_cal": "252kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2942.32kcal"
-    },
-    {
-      "dates": "2023-01-27(금)",
-      "brst": "밥",
-      "brst_cal": "381.15kcal",
-      "lunc": "잡곡밥",
-      "lunc_cal": "417.75kcal",
-      "dinr": "소불고기야채비빔밥(01)(05)(16)",
-      "dinr_cal": "659.42kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2487.47kcal"
-    },
-    {
-      "dates": "2023-01-27(금)",
-      "brst": "사골우거지국",
-      "brst_cal": "25.43kcal",
-      "lunc": "맑은황태채국(01)(05)(09)",
-      "lunc_cal": "145.58kcal",
-      "dinr": "콩나물국(05)",
-      "dinr_cal": "22.64kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2487.47kcal"
-    },
-    {
-      "dates": "2023-01-27(금)",
-      "brst": "스팸구이(10)",
-      "brst_cal": "259kcal",
-      "lunc": "춘천닭갈비(완)(02)(06)",
-      "lunc_cal": "43.64kcal",
-      "dinr": "한입떡갈비(05)(06)(10)(15)(16)(18)",
-      "dinr_cal": "302.5kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2487.47kcal"
-    },
-    {
-      "dates": "2023-01-27(금)",
-      "brst": "딸기쨈도넛",
-      "brst_cal": "0kcal",
-      "lunc": "모듬야채",
-      "lunc_cal": "11.99kcal",
-      "dinr": "단무지무침",
-      "dinr_cal": "19.81kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2487.47kcal"
-    },
-    {
-      "dates": "2023-01-27(금)",
-      "brst": "배추김치",
-      "brst_cal": "9.5kcal",
-      "lunc": "배추김치",
-      "lunc_cal": "9.5kcal",
-      "dinr": "섞박지",
-      "dinr_cal": "0kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2487.47kcal"
-    },
-    {
-      "dates": "2023-01-27(금)",
-      "brst": "",
-      "brst_cal": "",
-      "lunc": "우유(백색우유(200ML,연간))(02)",
-      "lunc_cal": "122kcal",
-      "dinr": "감귤",
-      "dinr_cal": "57.564kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2487.47kcal"
-    },
-    {
-      "dates": "2023-01-28(토)",
-      "brst": "새우버거(05)(06)(09)(10)(12)",
-      "brst_cal": "530.76kcal",
-      "lunc": "밥",
-      "lunc_cal": "381.15kcal",
-      "dinr": "밥",
-      "dinr_cal": "381.15kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3804.89kcal"
-    },
-    {
-      "dates": "2023-01-28(토)",
-      "brst": "감자튀김&케첩(05)(12)",
-      "brst_cal": "392.29kcal",
-      "lunc": "시금치된장국(05)",
-      "lunc_cal": "36.45kcal",
-      "dinr": "김치찌개(05)(10)",
-      "dinr_cal": "86.59kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3804.89kcal"
-    },
-    {
-      "dates": "2023-01-28(토)",
-      "brst": "바베큐폭립(완제품)(10)(12)",
-      "brst_cal": "600kcal",
-      "lunc": "삼겹살채소볶음(10)",
-      "lunc_cal": "574.08kcal",
-      "dinr": "오리불고기",
-      "dinr_cal": "431.83kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3804.89kcal"
-    },
-    {
-      "dates": "2023-01-28(토)",
-      "brst": "시리얼",
-      "brst_cal": "76.35kcal",
-      "lunc": "애호박나물(09)",
-      "lunc_cal": "31.73kcal",
-      "dinr": "연두부양념장(05)",
-      "dinr_cal": "78.21kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3804.89kcal"
-    },
-    {
-      "dates": "2023-01-28(토)",
-      "brst": "농심,카프리썬오렌지,200ml",
-      "brst_cal": "60kcal",
-      "lunc": "배추김치",
-      "lunc_cal": "9.5kcal",
-      "dinr": "열무김치",
-      "dinr_cal": "12.8kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3804.89kcal"
-    },
-    {
-      "dates": "2023-01-28(토)",
-      "brst": "우유(백색우유(200ML,연간))(02)",
-      "brst_cal": "122kcal",
-      "lunc": "",
-      "lunc_cal": "",
-      "dinr": "",
-      "dinr_cal": "",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3804.89kcal"
-    },
-    {
-      "dates": "2023-01-29(일)",
-      "brst": "밥",
-      "brst_cal": "381.15kcal",
-      "lunc": "밥",
-      "lunc_cal": "381.15kcal",
-      "dinr": "쇠고기장조림덮밥(01)(16)",
-      "dinr_cal": "614.99kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2390.58kcal"
-    },
-    {
-      "dates": "2023-01-29(일)",
-      "brst": "쇠고기무국(16)",
-      "brst_cal": "60.82kcal",
-      "lunc": "닭볶음탕(15)",
-      "lunc_cal": "204.65kcal",
-      "dinr": "호박고추장찌개(05)(09)(10)",
-      "dinr_cal": "63.57kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2390.58kcal"
-    },
-    {
-      "dates": "2023-01-29(일)",
-      "brst": "마파두부(05)(10)",
-      "brst_cal": "225.25kcal",
-      "lunc": "오징어볶음(05)(06)(17)(18)",
-      "lunc_cal": "166.97kcal",
-      "dinr": "오이무침",
-      "dinr_cal": "22.96kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2390.58kcal"
-    },
-    {
-      "dates": "2023-01-20(금)",
-      "brst": "감자조림",
-      "brst_cal": "53.58kcal",
-      "lunc": "배추김치",
-      "lunc_cal": "9.5kcal",
-      "dinr": "아이스크림컵(바닐라)",
-      "dinr_cal": "0kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2471.50kcal"
-    },
-    {
-      "dates": "2023-01-14(토)",
-      "brst": "핫도그빵(06)(10)(12)",
-      "brst_cal": "479.15kcal",
-      "lunc": "밥",
-      "lunc_cal": "381.15kcal",
-      "dinr": "밥",
-      "dinr_cal": "381.15kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2977.93kcal"
-    },
-    {
-      "dates": "2023-01-14(토)",
-      "brst": "떡볶이(01)(05)(06)(10)(15)(16)",
-      "brst_cal": "118.66kcal",
-      "lunc": "감자양파찌개(05)",
-      "lunc_cal": "58.4kcal",
-      "dinr": "닭볶음탕(15)",
-      "dinr_cal": "204.65kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2977.93kcal"
-    },
-    {
-      "dates": "2023-01-14(토)",
-      "brst": "김말이튀김(05)(06)(13)(16)",
-      "brst_cal": "406.12kcal",
-      "lunc": "두부김치(05)(10)",
-      "lunc_cal": "378.16kcal",
-      "dinr": "베이컨감자채볶음(10)",
-      "dinr_cal": "98.36kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2977.93kcal"
-    },
-    {
-      "dates": "2023-01-14(토)",
-      "brst": "시리얼",
-      "brst_cal": "76.35kcal",
-      "lunc": "콩나물무침(05)",
-      "lunc_cal": "21.86kcal",
-      "dinr": "갑오징어야채무침(17)",
-      "dinr_cal": "89.42kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2977.93kcal"
-    },
-    {
-      "dates": "2023-01-14(토)",
-      "brst": "웅진식품,웅진자연은샤인머스켓,340ml",
-      "brst_cal": "153kcal",
-      "lunc": "섞박지",
-      "lunc_cal": "0kcal",
-      "dinr": "배추김치",
-      "dinr_cal": "9.5kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2977.93kcal"
-    },
-    {
-      "dates": "2023-01-14(토)",
-      "brst": "우유(백색우유(200ML,연간))(02)",
-      "brst_cal": "122kcal",
-      "lunc": "",
-      "lunc_cal": "",
-      "dinr": "",
-      "dinr_cal": "",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2977.93kcal"
-    },
-    {
-      "dates": "2023-01-15(일)",
-      "brst": "밥",
-      "brst_cal": "381.15kcal",
-      "lunc": "밥",
-      "lunc_cal": "381.15kcal",
-      "dinr": "소불고기덮밥(16)",
-      "dinr_cal": "594.41kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2576.23kcal"
-    },
-    {
-      "dates": "2023-01-15(일)",
-      "brst": "패주미역국(18)",
-      "brst_cal": "23.47kcal",
-      "lunc": "참치김치찌개(05)",
-      "lunc_cal": "48.08kcal",
-      "dinr": "계란국(01)",
-      "dinr_cal": "51.31kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2576.23kcal"
-    },
-    {
-      "dates": "2023-01-15(일)",
-      "brst": "돼지고기청경채볶음(10)",
-      "brst_cal": "307.14kcal",
-      "lunc": "잡채(05)(10)",
-      "lunc_cal": "86.33kcal",
-      "dinr": "미트볼케찹조림(01)(05)(06)(10)(12)(16)",
-      "dinr_cal": "359.04kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2576.23kcal"
-    },
-    {
-      "dates": "2023-01-15(일)",
-      "brst": "새우살계란찜(01)(09)",
-      "brst_cal": "104.57kcal",
-      "lunc": "맛김",
-      "lunc_cal": "0kcal",
-      "dinr": "섞박지",
-      "dinr_cal": "0kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2576.23kcal"
-    },
-    {
-      "dates": "2023-01-15(일)",
-      "brst": "배추김치",
-      "brst_cal": "9.5kcal",
-      "lunc": "감자조림",
-      "lunc_cal": "53.58kcal",
-      "dinr": "",
-      "dinr_cal": "",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2576.23kcal"
-    },
-    {
-      "dates": "2023-01-15(일)",
-      "brst": "",
-      "brst_cal": "",
-      "lunc": "가공우유(바나나맛)(02)",
-      "lunc_cal": "167kcal",
-      "dinr": "",
-      "dinr_cal": "",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2576.23kcal"
-    },
-    {
-      "dates": "2023-01-15(일)",
-      "brst": "",
-      "brst_cal": "",
-      "lunc": "배추김치",
-      "lunc_cal": "9.5kcal",
-      "dinr": "",
-      "dinr_cal": "",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2576.23kcal"
-    },
-    {
-      "dates": "2023-01-16(월)",
-      "brst": "밥",
-      "brst_cal": "381.15kcal",
-      "lunc": "찹쌀밥",
-      "lunc_cal": "434.8kcal",
-      "dinr": "밥",
-      "dinr_cal": "381.15kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2384.96kcal"
-    },
-    {
-      "dates": "2023-01-16(월)",
-      "brst": "오징어콩나물해장국(05)(17)",
-      "brst_cal": "27.7kcal",
-      "lunc": "갈비탕(완)",
-      "lunc_cal": "0kcal",
-      "dinr": "된장찌개(05)",
-      "dinr_cal": "38.42kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2384.96kcal"
-    },
-    {
-      "dates": "2023-01-16(월)",
-      "brst": "쇠고기장조림(01)",
-      "brst_cal": "250.69kcal",
-      "lunc": "풋고추된장무침",
-      "lunc_cal": "17.29kcal",
-      "dinr": "돼지불고기(10)",
-      "dinr_cal": "405.84kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2384.96kcal"
-    },
-    {
-      "dates": "2023-01-16(월)",
-      "brst": "시금치무침",
-      "brst_cal": "16.21kcal",
-      "lunc": "오징어야채무침(17)",
-      "lunc_cal": "115.5kcal",
-      "dinr": "양배추쌈(05)(06)",
-      "dinr_cal": "58.73kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2384.96kcal"
-    },
-    {
-      "dates": "2023-01-16(월)",
-      "brst": "배추김치",
-      "brst_cal": "9.5kcal",
-      "lunc": "섞박지",
-      "lunc_cal": "0kcal",
-      "dinr": "파겉절이",
-      "dinr_cal": "26.53kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2384.96kcal"
-    },
-    {
-      "dates": "2023-01-16(월)",
-      "brst": "우유(백색우유(200ML,연간))(02)",
-      "brst_cal": "122kcal",
-      "lunc": "사과(후지)",
-      "lunc_cal": "63.945kcal",
-      "dinr": "배추김치",
-      "dinr_cal": "9.5kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2384.96kcal"
-    },
-    {
-      "dates": "2023-01-16(월)",
-      "brst": "",
-      "brst_cal": "",
-      "lunc": "",
-      "lunc_cal": "",
-      "dinr": "웅진식품,자연은망고,180ml",
-      "dinr_cal": "26kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2384.96kcal"
-    },
-    {
-      "dates": "2023-01-17(화)",
-      "brst": "밥",
-      "brst_cal": "381.15kcal",
-      "lunc": "치킨마요덮밥(01)(05)(06)(15)(16)(18)",
-      "lunc_cal": "1026.58kcal",
-      "dinr": "미트볼스파게티(01)(05)(06)(10)(12)(16)",
-      "dinr_cal": "1222.76kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "4185.28kcal"
-    },
-    {
-      "dates": "2023-01-17(화)",
-      "brst": "맑은황태채국(01)(05)(09)",
-      "brst_cal": "145.58kcal",
-      "lunc": "생선묵찌개",
-      "lunc_cal": "19.64kcal",
-      "dinr": "미니돈가스",
-      "dinr_cal": "150.84kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "4185.28kcal"
-    },
-    {
-      "dates": "2023-01-17(화)",
-      "brst": "꽈리고추멸치볶음",
-      "brst_cal": "68.42kcal",
-      "lunc": "소시지구이(10)(12)",
-      "lunc_cal": "409.1kcal",
-      "dinr": "감자샐러드(01)",
-      "dinr_cal": "83.07kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "4185.28kcal"
-    },
-    {
-      "dates": "2023-01-17(화)",
-      "brst": "쇠고기버섯볶음(16)",
-      "brst_cal": "133.76kcal",
-      "lunc": "치킨무",
-      "lunc_cal": "6kcal",
-      "dinr": "배추김치",
-      "dinr_cal": "9.5kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "4185.28kcal"
-    },
-    {
-      "dates": "2023-01-17(화)",
-      "brst": "배추김치",
-      "brst_cal": "9.5kcal",
-      "lunc": "배추김치",
-      "lunc_cal": "9.5kcal",
-      "dinr": "아이스크림 팩형(02)",
-      "dinr_cal": "234kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "4185.28kcal"
-    },
-    {
-      "dates": "2023-01-17(화)",
-      "brst": "우유(백색우유(200ML,연간))(02)",
-      "brst_cal": "122kcal",
-      "lunc": "곶감",
-      "lunc_cal": "153.881kcal",
-      "dinr": "",
-      "dinr_cal": "",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "4185.28kcal"
-    },
-    {
-      "dates": "2023-01-18(수)",
-      "brst": "개별죽(16)",
-      "brst_cal": "185.5kcal",
-      "lunc": "흑미밥",
-      "lunc_cal": "393kcal",
-      "dinr": "제육덮밥(10)",
-      "dinr_cal": "716.13kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2761.96kcal"
-    },
-    {
-      "dates": "2023-01-18(수)",
-      "brst": "베이컨구이(10)",
-      "brst_cal": "136.8kcal",
-      "lunc": "부대찌개(05)(06)(10)(15)",
-      "lunc_cal": "174.9kcal",
-      "dinr": "북어채계란국(01)",
-      "dinr_cal": "115.03kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2761.96kcal"
-    },
-    {
-      "dates": "2023-01-18(수)",
-      "brst": "계란후라이(완제품)",
-      "brst_cal": "88.2kcal",
-      "lunc": "멸치아몬드볶음",
-      "lunc_cal": "124.41kcal",
-      "dinr": "소떡소떡(01)(05)(06)(10)(12)(15)(16)",
-      "dinr_cal": "248.34kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2761.96kcal"
-    },
-    {
-      "dates": "2023-01-18(수)",
-      "brst": "딸기쨈도넛",
-      "brst_cal": "0kcal",
-      "lunc": "순살파닭",
-      "lunc_cal": "206.75kcal",
-      "dinr": "배추김치",
-      "dinr_cal": "9.5kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2761.96kcal"
-    },
-    {
-      "dates": "2023-01-18(수)",
-      "brst": "양상추샐러드",
-      "brst_cal": "100.4kcal",
-      "lunc": "배추김치",
-      "lunc_cal": "9.5kcal",
-      "dinr": "레몬에이드",
-      "dinr_cal": "26kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2761.96kcal"
-    },
-    {
-      "dates": "2023-01-18(수)",
-      "brst": "배추김치",
-      "brst_cal": "9.5kcal",
-      "lunc": "농후 발효유(02)",
-      "lunc_cal": "96kcal",
-      "dinr": "",
-      "dinr_cal": "",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2761.96kcal"
-    },
-    {
-      "dates": "2023-01-18(수)",
-      "brst": "우유(백색우유(200ML,연간))(02)",
-      "brst_cal": "122kcal",
-      "lunc": "",
-      "lunc_cal": "",
-      "dinr": "",
-      "dinr_cal": "",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "2761.96kcal"
-    },
-    {
-      "dates": "2023-01-19(목)",
-      "brst": "밥",
-      "brst_cal": "381.15kcal",
-      "lunc": "잡곡밥",
-      "lunc_cal": "417.75kcal",
-      "dinr": "밥",
-      "dinr_cal": "381.15kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3237.85kcal"
-    },
-    {
-      "dates": "2023-01-19(목)",
-      "brst": "쇠고기무국(16)",
-      "brst_cal": "60.82kcal",
-      "lunc": "아욱된장국(05)",
-      "lunc_cal": "35.53kcal",
-      "dinr": "김치찌개(05)(10)",
-      "dinr_cal": "86.59kcal",
-      "adspcfd": "",
-      "adspcfd_cal": "",
-      "sum_cal": "3237.85kcal"
-    }
-  ]
-}
+  {
+    "dates": "2023-01-29(일)",
+    "sumcal": "2390.58kcal",
+    "meal": [
+      {
+        "info": "조식",
+        "menu": [
+          "시금치무침",
+          "배추김치",
+          "밥",
+          "쇠고기무국(16)",
+          "마파두부(05)(10)"
+        ],
+        "cal": 691.21
+      },
+      {
+        "info": "중식",
+        "menu": [
+          "베이컨감자채볶음(10)",
+          "가공우유(초코맛)(02)",
+          "배추김치",
+          "밥",
+          "닭볶음탕(15)",
+          "오징어볶음(05)(06)(17)(18)"
+        ],
+        "cal": 984.36
+      },
+      {
+        "info": "석식",
+        "menu": [
+          "배추김치",
+          "쇠고기장조림덮밥(01)(16)",
+          "호박고추장찌개(05)(09)(10)",
+          "오이무침"
+        ],
+        "cal": 708.5
+      }
+    ]
+  },
+  {
+    "dates": "2023-01-30(월)",
+    "sumcal": "3083.32kcal",
+    "meal": [
+      {
+        "info": "조식",
+        "menu": [
+          "찹쌀밥",
+          "꼬리곰탕",
+          "돼지고기청경채볶음(10)",
+          "가지굴소스볶음(05)(06)(18)",
+          "깍두기(완제품)",
+          "우유(백색우유(200ML,연간))(02)"
+        ],
+        "cal": 926.8
+      },
+      {
+        "info": "중식",
+        "menu": [
+          "찰보리비빔밥(01)(05)",
+          "강된장찌개(05)(09)(18)",
+          "갑오징어튀김(01)(02)(05)(06)(16)",
+          "계란후라이(완제품)",
+          "배추김치"
+        ],
+        "cal": 1188.35
+      },
+      {
+        "info": "석식",
+        "menu": [
+          "밥",
+          "청양풍닭볶음(15)",
+          "야채튀김(완제품)",
+          "배추김치",
+          "에너지바"
+        ],
+        "cal": 964.15
+      }
+    ]
+  },
+  {
+    "dates": "2023-01-31(화)",
+    "sumcal": "3427.76kcal",
+    "meal": [
+      {
+        "info": "조식",
+        "menu": [
+          "밥",
+          "팽이버섯계란국(01)",
+          "돼지고기김치볶음(10)",
+          "사각어묵볶음(05)(06)",
+          "깍두기(완제품)"
+        ],
+        "cal": 856.15
+      },
+      {
+        "info": "중식",
+        "menu": [
+          "잡곡밥",
+          "감자탕(김치)(10)",
+          "쇠고기버섯볶음(16)",
+          "삼치순살튀김(02)(05)(06)(16)",
+          "배추김치",
+          "우유(백색우유(200ML,연간))(02)"
+        ],
+        "cal": 1513.75
+      },
+      {
+        "info": "석식",
+        "menu": [
+          "스팸마요덮밥(01)(05)(06)(10)(16)(18)",
+          "뿌링클치킨",
+          "치킨무",
+          "배추김치",
+          "식혜"
+        ],
+        "cal": 1053.3200000000002
+      }
+    ]
+  },
+  {
+    "dates": "2023-01-19(목)",
+    "sumcal": "3237.85kcal",
+    "meal": [
+      {
+        "info": "조식",
+        "menu": [
+          "콩나물닭볶음(05)(15)",
+          "버섯야채볶음",
+          "배추김치",
+          "우유(백색우유(200ML,연간))(02)",
+          "밥",
+          "쇠고기무국(16)"
+        ],
+        "cal": 885.37
+      },
+      {
+        "info": "중식",
+        "menu": [
+          "삼겹살구이(10)",
+          "모듬쌈(05)(06)",
+          "무말랭이김치",
+          "보쌈김치",
+          "잡곡밥",
+          "아욱된장국(05)"
+        ],
+        "cal": 1531.77
+      },
+      {
+        "info": "석식",
+        "menu": [
+          "양념치킨",
+          "멕시칸샐러드(10)",
+          "배추김치",
+          "밥",
+          "김치찌개(05)(10)"
+        ],
+        "cal": 813.52
+      }
+    ]
+  },
+  {
+    "dates": "2023-01-20(금)",
+    "sumcal": "2471.50kcal",
+    "meal": [
+      {
+        "info": "조식",
+        "menu": [
+          "밥",
+          "느타리버섯국(01)(16)",
+          "호박쇠고기볶음(16)",
+          "맛김",
+          "배추김치",
+          "우유(백색우유(200ML,연간))(02)",
+          "감자조림"
+        ],
+        "cal": 767.15
+      },
+      {
+        "info": "중식",
+        "menu": [
+          "잡곡밥",
+          "생선묵국",
+          "로제떡볶이(01)(05)(06)(10)(12)(15)(16)",
+          "닭다리후라이드(15)",
+          "배추김치"
+        ],
+        "cal": 1055.75
+      },
+      {
+        "info": "석식",
+        "menu": [
+          "밥",
+          "쇠고기육개장(01)(05)(16)",
+          "소시지야채볶음(10)(12)",
+          "깻잎조림",
+          "배추김치",
+          "감귤",
+          "아이스크림컵(바닐라)"
+        ],
+        "cal": 642.15
+      }
+    ]
+  },
+  {
+    "dates": "2023-01-01(일)",
+    "sumcal": "2082.85kcal",
+    "meal": [
+      {
+        "info": "조식",
+        "menu": [
+          "밥",
+          "쇠고기떡국(01)(16)",
+          "애호박나물(09)",
+          "소갈비찜(완제품)",
+          "배추김치"
+        ],
+        "cal": 514.15
+      },
+      {
+        "info": "중식",
+        "menu": [
+          "밥",
+          "오징어콩나물해장국(05)(17)",
+          "버섯야채볶음",
+          "돼지고기김치볶음(10)",
+          "가공우유(초코맛)(02)",
+          "깍두기(완제품)"
+        ],
+        "cal": 863.15
+      },
+      {
+        "info": "석식",
+        "menu": [
+          "밥",
+          "시금치된장국(05)",
+          "닭간장소스찜(15)",
+          "무생채",
+          "배추김치"
+        ],
+        "cal": 699.15
+      }
+    ]
+  },
+  {
+    "dates": "2023-01-02(월)",
+    "sumcal": "2273.63kcal",
+    "meal": [
+      {
+        "info": "조식",
+        "menu": [
+          "밥",
+          "쇠고기무국(16)",
+          "소시지야채볶음(10)(12)",
+          "연두부양념장(05)",
+          "배추김치",
+          "우유(백색우유(200ML,연간))(02)"
+        ],
+        "cal": 728.15
+      },
+      {
+        "info": "중식",
+        "menu": [
+          "밥",
+          "두부된장찌개(05)",
+          "춘천닭갈비(완)(02)(06)",
+          "새우살계란찜(01)(09)",
+          "배추김치",
+          "딸기(1월~2월)"
+        ],
+        "cal": 633.15
+      },
+      {
+        "info": "석식",
+        "menu": [
+          "나가사끼짬뽕국(06)(08)(09)(10)(17)(18)",
+          "우리밀찹쌀꿔바로우(01)(05)(06)(10)",
+          "단무지무침",
+          "배추김치",
+          "대구경북능금농협음료가공공장,싱그러운생복숭아,240ml"
+        ],
+        "cal": 907.05
+      }
+    ]
+  },
+  {
+    "dates": "2023-01-03(화)",
+    "sumcal": "2464.40kcal",
+    "meal": [
+      {
+        "info": "조식",
+        "menu": [
+          "밥",
+          "얼큰황태채국",
+          "애호박나물(09)",
+          "햄감자채볶음",
+          "배추김치",
+          "우유(백색우유(200ML,연간))(02)"
+        ],
+        "cal": 695.15
+      },
+      {
+        "info": "중식",
+        "menu": [
+          "김치볶음밥(01)",
+          "계란국(01)",
+          "뿌링클치킨",
+          "양배추샐러드(12)",
+          "섞박지",
+          "레몬에이드"
+        ],
+        "cal": 834.23
+      },
+      {
+        "info": "석식",
+        "menu": [
+          "밥",
+          "된장찌개(05)",
+          "돼지불고기(10)",
+          "모듬야채",
+          "무생채",
+          "배추김치",
+          "감귤"
+        ],
+        "cal": 928.15
+      }
+    ]
+  },
+  {
+    "dates": "2023-01-04(수)",
+    "sumcal": "3205.80kcal",
+    "meal": [
+      {
+        "info": "조식",
+        "menu": [
+          "밥",
+          "베이컨구이(10)",
+          "계란후라이(완제품)",
+          "참치*양념장",
+          "미니롤케이크",
+          "배추김치",
+          "우유(백색우유(200ML,연간))(02)"
+        ],
+        "cal": 980.15
+      },
+      {
+        "info": "중식",
+        "menu": [
+          "잡곡밥",
+          "김치찌개(05)(10)",
+          "쭈삼불고기(10)",
+          "오이부추무침",
+          "배추김치"
+        ],
+        "cal": 888.75
+      },
+      {
+        "info": "석식",
+        "menu": [
+          "밥",
+          "닭곰탕(완)(02)(05)(06)(15)",
+          "크리스피돈강정(05)(06)(10)",
+          "감자샐러드(01)",
+          "섞박지",
+          "커피음료"
+        ],
+        "cal": null
+      }
+    ]
+  },
+  {
+    "dates": "2023-01-05(목)",
+    "sumcal": "3755.88kcal",
+    "meal": [
+      {
+        "info": "조식",
+        "menu": [
+          "밥",
+          "쇠고기무국(16)",
+          "고구마조림",
+          "비엔나소시지케찹조림(05)(10)(12)(15)(16)",
+          "배추김치",
+          "우유(백색우유(200ML,연간))(02)"
+        ],
+        "cal": 957.15
+      },
+      {
+        "info": "중식",
+        "menu": [
+          "밥",
+          "쇠고기미역국(16)",
+          "잡채(05)(10)",
+          "돼지갈비찜(완)(05)(10)",
+          "배추김치",
+          "곶감"
+        ],
+        "cal": 1427.15
+      },
+      {
+        "info": "석식",
+        "menu": [
+          "밥",
+          "감자양파찌개(05)",
+          "삼겹살채소볶음(10)",
+          "고구마튀김(01)(06)",
+          "깻잎조림",
+          "배추김치"
+        ],
+        "cal": 1365.15
+      }
+    ]
+  },
+  {
+    "dates": "2023-01-06(금)",
+    "sumcal": "2871.93kcal",
+    "meal": [
+      {
+        "info": "조식",
+        "menu": [
+          "밥",
+          "생선묵국",
+          "호박쇠고기볶음(16)",
+          "감자조림",
+          "배추김치",
+          "감귤"
+        ],
+        "cal": 649.15
+      },
+      {
+        "info": "중식",
+        "menu": [
+          "잡곡밥",
+          "쇠고기육개장(01)(05)(16)",
+          "닭갈비(15)",
+          "방울어묵조림",
+          "열무김치",
+          "우유(백색우유(200ML,연간))(02)"
+        ],
+        "cal": 969.75
+      },
+      {
+        "info": "석식",
+        "menu": [
+          "잔치국수(01)(06)",
+          "간장돼지불고기(완제품)",
+          "볶음김치",
+          "애호박나물(09)",
+          "열무김치",
+          "떠먹는 토핑형 발효유"
+        ],
+        "cal": null
+      }
+    ]
+  },
+  {
+    "dates": "2023-01-07(토)",
+    "sumcal": "3254.15kcal",
+    "meal": [
+      {
+        "info": "조식",
+        "menu": [
+          "새우볶음밥(150g)(01)(05)(08)(09)",
+          "떡갈비버거(05)(06)(10)",
+          "양념치킨",
+          "시리얼",
+          "우유(백색우유(200ML,연간))(02)",
+          "대구경북능금농협음료가공공장,싱그러운생배,240ml"
+        ],
+        "cal": null
+      },
+      {
+        "info": "중식",
+        "menu": [
+          "밥",
+          "참치김치찌개(05)",
+          "오리훈제야채볶음",
+          "감자채볶음",
+          "배추김치"
+        ],
+        "cal": 889.15
+      },
+      {
+        "info": "석식",
+        "menu": [
+          "소불고기야채비빔밥(01)(05)(16)",
+          "얼갈이된장국(05)",
+          "사과소스in미트볼(10)",
+          "무나물",
+          "열무김치"
+        ],
+        "cal": 1077.42
+      }
+    ]
+  },
+  {
+    "dates": "2023-01-08(일)",
+    "sumcal": "2881.24kcal",
+    "meal": [
+      {
+        "info": "조식",
+        "menu": [
+          "밥",
+          "감자국",
+          "가지굴소스볶음(05)(06)(18)",
+          "오징어볶음(05)(06)(17)(18)",
+          "맛김",
+          "배추김치"
+        ],
+        "cal": 647.15
+      },
+      {
+        "info": "중식",
+        "menu": [
+          "밥",
+          "조랭이떡미역국",
+          "돼지불고기(10)",
+          "오이무침",
+          "가공우유(딸기맛)(02)",
+          "배추김치"
+        ],
+        "cal": 998.15
+      },
+      {
+        "info": "석식",
+        "menu": [
+          "밥",
+          "콩나물국(05)",
+          "치즈닭갈비(02)(05)(06)(15)(16)",
+          "계란찜(01)(09)",
+          "배추김치",
+          "워터젤리"
+        ],
+        "cal": 1228.15
+      }
+    ]
+  },
+  {
+    "dates": "2023-01-09(월)",
+    "sumcal": "3066.45kcal",
+    "meal": [
+      {
+        "info": "조식",
+        "menu": [
+          "밥",
+          "물만둣국(01)(06)(10)",
+          "돼지고기김치볶음(10)",
+          "오징어젓무침(17)",
+          "배추김치"
+        ],
+        "cal": 1065.15
+      },
+      {
+        "info": "중식",
+        "menu": [
+          "밥",
+          "사골우거지국",
+          "오삼불고기(10)(17)",
+          "새우살계란찜(01)(09)",
+          "열무김치",
+          "우유(백색우유(200ML,연간))(02)"
+        ],
+        "cal": 1127.15
+      },
+      {
+        "info": "석식",
+        "menu": [
+          "사과카레라이스(02)(05)(06)(10)(16)",
+          "생���묵국",
+          "순살파닭",
+          "무초절이",
+          "배추김치",
+          "산천애아삭소리사과애플즙,120ml"
+        ],
+        "cal": null
+      }
+    ]
+  },
+  {
+    "dates": "2023-01-10(화)",
+    "sumcal": "4072.81kcal",
+    "meal": [
+      {
+        "info": "조식",
+        "menu": [
+          "밥",
+          "계란국(01)",
+          "낙지볶음",
+          "쇠고기버섯볶음(16)",
+          "배추김치",
+          "우유(백색우유(200ML,연간))(02)"
+        ],
+        "cal": 1116.15
+      },
+      {
+        "info": "중식",
+        "menu": [
+          "잡곡밥",
+          "배추된장국(05)",
+          "돼지고기수육(09)(10)",
+          "모듬야채",
+          "보쌈김치",
+          "무말랭이김치",
+          "감귤"
+        ],
+        "cal": 1602.75
+      },
+      {
+        "info": "석식",
+        "menu": [
+          "밥",
+          "쇠고기감자국(16)",
+          "오징어채볶음(17)",
+          "치즈돈가스&소스(02)(05)(06)(10)",
+          "배추김치",
+          "아이스크림 콘,완제품(02)"
+        ],
+        "cal": 1346.15
+      }
+    ]
+  },
+  {
+    "dates": "2023-01-11(수)",
+    "sumcal": "2989.54kcal",
+    "meal": [
+      {
+        "info": "조식",
+        "menu": [
+          "밥",
+          "쇠고기메추리알장조림(완제)",
+          "베이컨구이(10)",
+          "계란후라이(완제품)",
+          "양상추샐러드",
+          "배추김치",
+          "우유(백색우유(200ML,연간))(02)"
+        ],
+        "cal": 837.15
+      },
+      {
+        "info": "중식",
+        "menu": [
+          "밥",
+          "짬뽕찌개(완제품)(06)",
+          "돈육굴소스양배추볶음(05)(06)(10)(18)",
+          "만두튀김",
+          "배추김치",
+          "배(신고)"
+        ],
+        "cal": 1062.15
+      },
+      {
+        "info": "석식",
+        "menu": [
+          "밥",
+          "두부된장찌개(05)",
+          "돼지고기고추장볶음(10)",
+          "깻잎조림",
+          "배추김치",
+          "이온음료"
+        ],
+        "cal": 1084.15
+      }
+    ]
+  },
+  {
+    "dates": "2023-01-12(목)",
+    "sumcal": "3215.46kcal",
+    "meal": [
+      {
+        "info": "조식",
+        "menu": [
+          "햄야채볶음밥(12)",
+          "설렁탕(완)",
+          "맛김",
+          "스크램블에그(01)(12)",
+          "배추김치",
+          "우유(백색우유(200ML,연간))(02)"
+        ],
+        "cal": 1079.77
+      },
+      {
+        "info": "중식",
+        "menu": [
+          "전투식량 /  된장찌개(05)",
+          "소불고기(완제품)(16)",
+          "매콤감자조림",
+          "배추김치",
+          "유산균 발효 음료(02)"
+        ],
+        "cal": 761.42
+      },
+      {
+        "info": "석식",
+        "menu": [
+          "잡곡밥",
+          "김치찌개(05)(10)",
+          "치킨까스(05)(06)(12)(15)",
+          "고구마샐러드",
+          "열무김치",
+          "아이스크림, 떠먹는형"
+        ],
+        "cal": 1369.75
+      }
+    ]
+  },
+  {
+    "dates": "2023-01-21(토)",
+    "sumcal": "3846.22kcal",
+    "meal": [
+      {
+        "info": "조식",
+        "menu": [
+          "햄치즈에그버거(02)(05)(06)(10)(12)",
+          "소떡소떡(01)(05)(06)(10)(12)(15)(16)",
+          "고구마치즈롤까스(10)(12)",
+          "시리얼",
+          "우유(백색우유(200ML,연간))(02)",
+          "탄산음료"
+        ],
+        "cal": 1819.95
+      },
+      {
+        "info": "중식",
+        "menu": [
+          "밥",
+          "호박고추장찌개(05)(09)(10)",
+          "한입떡갈비(05)(06)(10)(15)(16)(18)",
+          "오이부추무침",
+          "배추김치"
+        ],
+        "cal": 771.15
+      },
+      {
+        "info": "석식",
+        "menu": [
+          "현미밥",
+          "순두부찌개(01)(05)(10)(18)",
+          "간장돼지불고기(완제품)",
+          "모듬야채",
+          "배추김치"
+        ],
+        "cal": 1247.6
+      }
+    ]
+  },
+  {
+    "dates": "2023-01-22(일)",
+    "sumcal": "3003.47kcal",
+    "meal": [
+      {
+        "info": "조식",
+        "menu": [
+          "밥",
+          "쇠고기떡국(01)(16)",
+          "한우갈비찜(16)",
+          "시금치무침",
+          "배추김치",
+          "식혜"
+        ],
+        "cal": 1089.15
+      },
+      {
+        "info": "중식",
+        "menu": [
+          "밥",
+          "감자국",
+          "돼지고기고추장볶음(10)",
+          "맛김",
+          "풋고추된장무침",
+          "배추김치",
+          "곶감"
+        ],
+        "cal": 1164.15
+      },
+      {
+        "info": "석식",
+        "menu": [
+          "밥",
+          "버섯쇠고기찌개(16)",
+          "닭갈비(15)",
+          "오이양파장아찌",
+          "깍두기(완제품)"
+        ],
+        "cal": 744.15
+      }
+    ]
+  },
+  {
+    "dates": "2023-01-23(월)",
+    "sumcal": "3197.44kcal",
+    "meal": [
+      {
+        "info": "조식",
+        "menu": [
+          "낙지불고기덮밥(10)",
+          "맑은황태채국(01)(05)(09)",
+          "감자채볶음",
+          "배추김치",
+          "우유(백색우유(200ML,연간))(02)"
+        ],
+        "cal": 1199.25
+      },
+      {
+        "info": "중식",
+        "menu": [
+          "밥",
+          "순댓국(완)(10)",
+          "오징어볶음(05)(06)(17)(18)",
+          "두부조림(05)",
+          "섞박지"
+        ],
+        "cal": 942.15
+      },
+      {
+        "info": "석식",
+        "menu": [
+          "밥",
+          "부대찌개(완)(02)(05)(06)(09)(10)(12)(15)(16)",
+          "계란찜(01)(09)",
+          "닭간장소스찜(15)",
+          "깍두기(완제품)",
+          "해태에이치티비,복숭아봉봉,340ml"
+        ],
+        "cal": 1050.15
+      }
+    ]
+  },
+  {
+    "dates": "2023-01-24(화)",
+    "sumcal": "3521.30kcal",
+    "meal": [
+      {
+        "info": "조식",
+        "menu": [
+          "밥",
+          "배추들깨국(05)",
+          "멸치아몬드볶음",
+          "비엔나소시지케찹조림(05)(10)(12)(15)(16)",
+          "깍두기(완제품)",
+          "사과(후지)"
+        ],
+        "cal": 886.15
+      },
+      {
+        "info": "중식",
+        "menu": [
+          "잡곡밥",
+          "두부된장찌개(05)",
+          "매운돼지갈비찜(완)(05)(10)",
+          "배추김치",
+          "우유(백색우유(200ML,연간))(02)"
+        ],
+        "cal": 1392.75
+      },
+      {
+        "info": "석식",
+        "menu": [
+          "밥",
+          "쇠고기미역국(16)",
+          "닭강정(01)(05)(06)(15)",
+          "골뱅이야채무침(06)",
+          "배추김치",
+          "이온음료"
+        ],
+        "cal": 1235.15
+      }
+    ]
+  },
+  {
+    "dates": "2023-01-25(수)",
+    "sumcal": "3268.45kcal",
+    "meal": [
+      {
+        "info": "조식",
+        "menu": [
+          "모닝빵샌드위치(01)(02)(05)(06)",
+          "베이컨구이(10)",
+          "소시지구이(10)(12)",
+          "계란후라이(완제품)",
+          "양상추샐러드",
+          "우유(백색우유(200ML,연간))(02)"
+        ],
+        "cal": 1054.68
+      },
+      {
+        "info": "중식",
+        "menu": [
+          "새우튀김우동(05)(06)(08)",
+          "찰도그롤&케찹(12)",
+          "콩자반",
+          "배추김치",
+          "농후 발효유(02)"
+        ],
+        "cal": 1238.05
+      },
+      {
+        "info": "석식",
+        "menu": [
+          "밥",
+          "참치김치찌개(05)",
+          "오징어채볶음(17)",
+          "우리밀찹쌀꿔바로우(01)(05)(06)(10)",
+          "깍두기(완제품)",
+          "딸기(1월~2월)"
+        ],
+        "cal": 972.15
+      }
+    ]
+  },
+  {
+    "dates": "2023-01-26(목)",
+    "sumcal": "2942.32kcal",
+    "meal": [
+      {
+        "info": "조식",
+        "menu": [
+          "밥",
+          "쇠고기감자국(16)",
+          "돼지고기김치볶음(10)",
+          "애호박나물(09)",
+          "섞박지",
+          "우유(백색우유(200ML,연간))(02)"
+        ],
+        "cal": 898.15
+      },
+      {
+        "info": "중식",
+        "menu": [
+          "전투식량 / 된장찌개(05)",
+          "고추장돼지불고기(완제품)(10)",
+          "배추김치"
+        ],
+        "cal": 670.42
+      },
+      {
+        "info": "석식",
+        "menu": [
+          "밥",
+          "팽이버섯계란국(01)",
+          "피자치즈롤까스(02)(10)",
+          "닭간장소스찜(15)",
+          "배추김치",
+          "아이스샌드"
+        ],
+        "cal": 1369.15
+      }
+    ]
+  },
+  {
+    "dates": "2023-01-27(금)",
+    "sumcal": "2487.47kcal",
+    "meal": [
+      {
+        "info": "조식",
+        "menu": [
+          "밥",
+          "사골우거지국",
+          "스팸구이(10)",
+          "딸기쨈도넛",
+          "배추김치"
+        ],
+        "cal": 674.15
+      },
+      {
+        "info": "중식",
+        "menu": [
+          "잡곡밥",
+          "맑은황태채국(01)(05)(09)",
+          "춘천닭갈비(완)(02)(06)",
+          "모듬야채",
+          "배추김치",
+          "우유(백색우유(200ML,연간))(02)"
+        ],
+        "cal": 747.75
+      },
+      {
+        "info": "석식",
+        "menu": [
+          "소불고기야채비빔밥(01)(05)(16)",
+          "콩나물국(05)",
+          "한입떡갈비(05)(06)(10)(15)(16)(18)",
+          "단무지무침",
+          "섞박지",
+          "감귤"
+        ],
+        "cal": 1059.42
+      }
+    ]
+  },
+  {
+    "dates": "2023-01-28(토)",
+    "sumcal": "3804.89kcal",
+    "meal": [
+      {
+        "info": "조식",
+        "menu": [
+          "새우버거(05)(06)(09)(10)(12)",
+          "감자튀김&케첩(05)(12)",
+          "바베큐폭립(완제품)(10)(12)",
+          "시리얼",
+          "농심,카프리썬오렌지,200ml",
+          "우유(백색우유(200ML,연간))(02)"
+        ],
+        "cal": 1780.76
+      },
+      {
+        "info": "중식",
+        "menu": [
+          "밥",
+          "시금치된장국(05)",
+          "삼겹살채소볶음(10)",
+          "애호박나물(09)",
+          "배추김치"
+        ],
+        "cal": 1031.15
+      },
+      {
+        "info": "석식",
+        "menu": [
+          "밥",
+          "김치찌개(05)(10)",
+          "오리불고기",
+          "연두부양념장(05)",
+          "열무김치"
+        ],
+        "cal": 988.15
+      }
+    ]
+  },
+  {
+    "dates": "2023-01-14(토)",
+    "sumcal": "2977.93kcal",
+    "meal": [
+      {
+        "info": "조식",
+        "menu": [
+          "핫도그빵(06)(10)(12)",
+          "떡볶이(01)(05)(06)(10)(15)(16)",
+          "김말이튀김(05)(06)(13)(16)",
+          "시리얼",
+          "웅진식품,웅진자연은샤인머스켓,340ml",
+          "우유(백색우유(200ML,연간))(02)"
+        ],
+        "cal": 1354.15
+      },
+      {
+        "info": "중식",
+        "menu": [
+          "밥",
+          "감자양파찌개(05)",
+          "두부김치(05)(10)",
+          "콩나물무침(05)",
+          "섞박지"
+        ],
+        "cal": 838.15
+      },
+      {
+        "info": "석식",
+        "menu": [
+          "밥",
+          "닭볶음탕(15)",
+          "베이컨감자채볶음(10)",
+          "갑오징어야채무침(17)",
+          "배추김치"
+        ],
+        "cal": 781.15
+      }
+    ]
+  },
+  {
+    "dates": "2023-01-15(일)",
+    "sumcal": "2576.23kcal",
+    "meal": [
+      {
+        "info": "조식",
+        "menu": [
+          "밥",
+          "패주미역국(18)",
+          "돼지고기청경채볶음(10)",
+          "새우살계란찜(01)(09)",
+          "배추김치"
+        ],
+        "cal": 824.15
+      },
+      {
+        "info": "중식",
+        "menu": [
+          "밥",
+          "참치김치찌개(05)",
+          "잡채(05)(10)",
+          "맛김",
+          "감자조림",
+          "가공우유(바나나맛)(02)",
+          "배추김치"
+        ],
+        "cal": 744.15
+      },
+      {
+        "info": "석식",
+        "menu": [
+          "소불고기덮밥(16)",
+          "계란국(01)",
+          "미트볼케찹조림(01)(05)(06)(10)(12)(16)",
+          "섞박지"
+        ],
+        "cal": 1004.41
+      }
+    ]
+  },
+  {
+    "dates": "2023-01-16(월)",
+    "sumcal": "2384.96kcal",
+    "meal": [
+      {
+        "info": "조식",
+        "menu": [
+          "밥",
+          "오징어콩나물해장국(05)(17)",
+          "쇠고기장조림(01)",
+          "시금치무침",
+          "배추김치",
+          "우유(백색우유(200ML,연간))(02)"
+        ],
+        "cal": 805.15
+      },
+      {
+        "info": "중식",
+        "menu": [
+          "찹쌀밥",
+          "갈비탕(완)",
+          "풋고추된장무침",
+          "오징어야채무침(17)",
+          "섞박지",
+          "사과(후지)"
+        ],
+        "cal": 629.8
+      },
+      {
+        "info": "석식",
+        "menu": [
+          "밥",
+          "된장찌개(05)",
+          "돼지불고기(10)",
+          "양배추쌈(05)(06)",
+          "파겉절이",
+          "배추김치",
+          "웅진식품,자연은망고,180ml"
+        ],
+        "cal": 943.15
+      }
+    ]
+  },
+  {
+    "dates": "2023-01-17(화)",
+    "sumcal": "4185.28kcal",
+    "meal": [
+      {
+        "info": "조식",
+        "menu": [
+          "밥",
+          "맑은황태채국(01)(05)(09)",
+          "꽈리고추멸치볶음",
+          "쇠고기버섯볶음(16)",
+          "배추김치",
+          "우유(백색우유(200ML,연간))(02)"
+        ],
+        "cal": 858.15
+      },
+      {
+        "info": "중식",
+        "menu": [
+          "치킨마요덮밥(01)(05)(06)(15)(16)(18)",
+          "생선묵찌개",
+          "소시지구이(10)(12)",
+          "치킨무",
+          "배추김치",
+          "곶감"
+        ],
+        "cal": 1622.58
+      },
+      {
+        "info": "석식",
+        "menu": [
+          "미트볼스파게티(01)(05)(06)(10)(12)(16)",
+          "미니돈가스",
+          "감자샐러드(01)",
+          "배추김치",
+          "아이스크림 팩형(02)"
+        ],
+        "cal": 1698.76
+      }
+    ]
+  },
+  {
+    "dates": "2023-01-18(수)",
+    "sumcal": "2761.96kcal",
+    "meal": [
+      {
+        "info": "조식",
+        "menu": [
+          "개별죽(16)",
+          "베이컨구이(10)",
+          "계란후라이(완제품)",
+          "딸기쨈도넛",
+          "양상추샐러드",
+          "배추김치",
+          "우유(백색우유(200ML,연간))(02)"
+        ],
+        "cal": 640.5
+      },
+      {
+        "info": "중식",
+        "menu": [
+          "흑미밥",
+          "부대찌개(05)(06)(10)(15)",
+          "멸치아몬드볶음",
+          "순살파닭",
+          "배추김치",
+          "농후 발효유(02)"
+        ],
+        "cal": 1002
+      },
+      {
+        "info": "석식",
+        "menu": [
+          "제육덮밥(10)",
+          "북어채계란국(01)",
+          "소떡소떡(01)(05)(06)(10)(12)(15)(16)",
+          "배추김치",
+          "레몬에이드"
+        ],
+        "cal": 1114.13
+      }
+    ]
+  }
+]
