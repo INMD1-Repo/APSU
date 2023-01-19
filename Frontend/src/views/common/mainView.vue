@@ -11,7 +11,7 @@
         </v-col>
         <v-col class="main_frame">
             <!--간부 전용부분-->
-            <h2>유동병력 사항</h2>
+            <h2>우리 포대 유동병력 사항</h2>
             <v-card style="margin-top: 1vh; margin-bottom: 2vh;">
                 <v-list-item two-line>
                     <v-list-item-content>
@@ -72,7 +72,7 @@
                             <div class="text-overline mb-1">{{this.data_t}}</div>
                             <v-list-item-title class="text-h5 mb-1">아침</v-list-item-title>
                             <v-list-item-subtitle v-for=" item in this.food.meal[0].menu" v-bind:key="item"> {{ item }}</v-list-item-subtitle>
-                            <v-list-item-subtitle>ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</v-list-item-subtitle>
+                            <v-list-item-subtitle>ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</v-list-item-subtitle>
                             <v-list-item-subtitle>Kcal: {{ this.food.meal[0].cal }}</v-list-item-subtitle>
                         </v-list-item-content>
                     </v-list-item>
@@ -83,7 +83,7 @@
                             <div class="text-overline mb-1">{{this.data_t}}</div>
                             <v-list-item-title class="text-h5 mb-1">점심</v-list-item-title>
                             <v-list-item-subtitle v-for=" item in this.food.meal[1].menu" v-bind:key="item"> {{ item }}</v-list-item-subtitle>
-                            <v-list-item-subtitle>ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</v-list-item-subtitle>
+                            <v-list-item-subtitle>ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</v-list-item-subtitle>
                             <v-list-item-subtitle>Kcal: {{ this.food.meal[1].cal }}</v-list-item-subtitle>
                         </v-list-item-content>
                     </v-list-item>
@@ -94,7 +94,7 @@
                             <div class="text-overline mb-1">{{this.data_t}}</div>
                             <v-list-item-title class="text-h5 mb-1">저녁</v-list-item-title>
                             <v-list-item-subtitle v-for=" item in this.food.meal[2].menu" v-bind:key="item"> {{ item }}</v-list-item-subtitle>
-                            <v-list-item-subtitle>ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</v-list-item-subtitle>
+                            <v-list-item-subtitle>ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</v-list-item-subtitle>
                             <v-list-item-subtitle>Kcal: {{ this.food.meal[2].cal }}</v-list-item-subtitle>
                         </v-list-item-content>
                     </v-list-item>

@@ -5,9 +5,15 @@
     <div v-if="this.$store.state.login_P == 1">
       <v-app id="inspire">
         <!--싱단바-->
-        <v-app-bar style="border-radius: 25px; margin: 10px; margin-top: 2vh;"
-          :height="48" app :color="'#FFFBFE'">
-          <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+        <v-app-bar
+          style="border-radius: 25px; margin: 10px; margin-top: 2vh"
+          :height="48"
+          app
+          :color="'#FFFBFE'"
+        >
+          <v-app-bar-nav-icon
+            @click.stop="drawer = !drawer"
+          ></v-app-bar-nav-icon>
 
           <v-toolbar-title></v-toolbar-title>
 
@@ -19,9 +25,11 @@
               </v-btn>
             </template>
             <v-list>
-              <v-list-item>
-                <v-list-item-titile>로그아웃</v-list-item-titile>
-              </v-list-item>
+              <router-link to="/login">
+                <v-list-item @click="logout">
+                  <v-list-item-titile>로그아웃</v-list-item-titile>
+                </v-list-item>
+              </router-link>
               <v-list-item>
                 <v-list-item-titile>개발자</v-list-item-titile>
               </v-list-item>
@@ -32,8 +40,17 @@
           </v-menu>
         </v-app-bar>
         <!--슬라이드 메뉴-->
-        <v-navigation-drawer style="border-top-right-radius: 16px; border-bottom-right-radius: 16px; " v-model="drawer" absolute temporary :color="'#FFFBFE'">
-          <v-container>
+        <v-navigation-drawer
+          style="
+            border-top-right-radius: 16px;
+            border-bottom-right-radius: 16px;
+          "
+          v-model="drawer"
+          absolute
+          temporary
+          :color="'#FFFBFE'"
+        >
+          <v-container style="overflow: auto; height: 95vh">
             <!--고정-->
             <v-col class="botten font-left">
               <!--이 부분은 유동적으로 변하게된다.-->
@@ -47,12 +64,21 @@
             <v-col class="font-left">
               <h3>많이 보는 페이지</h3>
             </v-col>
-            <v-list-item v-for="item in setup_data[this.$store.state.showcode].navebar.most" :key="item.name" link>
+            <v-list-item
+              v-for="item in setup_data[this.$store.state.showcode].navebar
+                .most"
+              :key="item.name"
+              link
+            >
               <v-list-item-icon>
                 <v-icon>{{ item.icon }}</v-icon>
               </v-list-item-icon>
               <v-list-item-content>
-                <v-list-item-title>{{ item.name }}</v-list-item-title>
+                <v-list-item-title
+                  ><a style="color: #000000" :href="item.link">{{
+                    item.name
+                  }}</a></v-list-item-title
+                >
               </v-list-item-content>
             </v-list-item>
             <v-divider></v-divider>
@@ -60,13 +86,22 @@
             <v-col class="font-left">
               <h3>유동병력</h3>
             </v-col>
-            <v-list-item v-for="item in setup_data[this.$store.state.showcode].navebar.history" :key="item.name" link>
+            <v-list-item
+              v-for="item in setup_data[this.$store.state.showcode].navebar
+                .history"
+              :key="item"
+              link
+            >
               <v-list-item-icon>
                 <v-icon>{{ item.icon }}</v-icon>
               </v-list-item-icon>
 
               <v-list-item-content>
-                <v-list-item-title>{{ item.name }}</v-list-item-title>
+                <v-list-item-title
+                  ><a style="color: #000000" :href="item.link">{{
+                    item.name
+                  }}</a></v-list-item-title
+                >
               </v-list-item-content>
             </v-list-item>
 
@@ -74,13 +109,21 @@
             <v-col class="font-left">
               <h3>식단관리</h3>
             </v-col>
-            <v-list-item v-for="item in setup_data[this.$store.state.showcode].navebar.food" :key="item.name" link>
+            <v-list-item
+              v-for="item in setup_data[this.$store.state.showcode].navebar
+                .food"
+              :key="item.name"
+              link
+            >
               <v-list-item-icon>
                 <v-icon>{{ item.icon }}</v-icon>
               </v-list-item-icon>
-
               <v-list-item-content>
-                <v-list-item-title>{{ item.name }}</v-list-item-title>
+                <v-list-item-title
+                  ><a style="color: #000000" :href="item.link">{{
+                    item.name
+                  }}</a></v-list-item-title
+                >
               </v-list-item-content>
             </v-list-item>
 
@@ -93,7 +136,12 @@
           <router-view></router-view>
         </v-main>
         <!--하단 메뉴바-->
-        <v-bottom-navigation style="position: fixed; bottom: 0;" color="primary" grow :height="66" >
+        <v-bottom-navigation
+          style="position: fixed; bottom: 0"
+          color="primary"
+          grow
+          :height="66"
+        >
           <v-btn :href="'/user/main'">
             <span>홈</span>
             <v-icon>fa-home</v-icon>
@@ -125,29 +173,34 @@
 </template>
 
 <script>
-import setup from '@/assets/setup.json'
+import setup from "@/assets/setup.json";
 export default {
   data: () => ({
     //return {}
     drawer: false,
     group: null,
-    setup_data: setup
+    setup_data: setup,
   }),
   mounted() {
-    if(window.localStorage.getItem("login") == null){
+    if (window.localStorage.getItem("login") == null) {
       window.localStorage.setItem("login", "0");
     }
     if (this.$store.state.login_P != 1) {
-      this.$router.push({ path: 'login' })
-    }
-    if(window.location.href.indexOf("/user") === -1 ){
-      this.$router.push({ path: '/user/main' })
+      this.$router.push({ path: "login" });
+    } else if (window.location.href.indexOf("/user") === -1) {
+      this.$router.push({ path: "/user/main" });
     }
   },
   watch: {
     group() {
-      this.drawer = false
+      this.drawer = false;
     },
   },
-} 
+  methods: {
+    logout() {
+      this.$store.commit("login_set", 0);
+      window.localStorage.setItem("login", "0");
+    },
+  },
+};
 </script>

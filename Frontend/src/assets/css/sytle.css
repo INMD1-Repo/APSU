@@ -1,10 +1,10 @@
 body {
     background-color: #F7F5F2;
+    
 }
 
-a {
+a:link  {
     text-decoration-line: none;
-    color: black;
 }
 
 /*main page css*/
@@ -31,7 +31,7 @@ a {
 .mian_item {
     display: flex;
     overflow: auto;
-    width: 91vw;
+    width: 90vw;
     margin-bottom: 1vh;
 }
 
@@ -49,7 +49,6 @@ a {
     width: 100vw;
     height: 83.5vh;
     overflow: auto;
-    background-color: #DFDFDE;
     padding-top: 24px;
 }
 
