@@ -31,10 +31,40 @@
                 </v-list-item>
               </router-link>
               <v-list-item>
-                <v-list-item-titile>개발자</v-list-item-titile>
-              </v-list-item>
-              <v-list-item>
-                <v-list-item-titile>오픈소스 라이센스</v-list-item-titile>
+                <v-dialog v-model="dialog" width="500">
+                  <template v-slot:activator="{ on, attrs }">
+                    <v-list-item-titile v-bind="attrs" v-on="on"
+                      >개발자 정보</v-list-item-titile
+                    >
+                  </template>
+                  <v-card>
+                    <v-card-title class="text-h5 grey lighten-2"
+                      >개발자 정보</v-card-title
+                    >
+                    <v-card-text>
+                      <br />
+                      <v-list-item>
+                        <v-list-item-content>
+                          <h2>INMD1</h2>
+                        </v-list-item-content>
+                        <v-list-item-avatar
+                          tile
+                          size="80"
+                          color="grey"
+                        ></v-list-item-avatar>
+                      </v-list-item>
+                      <p>풀스택 개발자</p>
+                      <div class="text--primary">제발 살려줘</div>
+                    </v-card-text>
+                    <v-divider></v-divider>
+                    <v-card-actions>
+                      <v-spacer></v-spacer>
+                      <v-btn color="primary" text @click="dialog = false">
+                        알겟서
+                      </v-btn>
+                    </v-card-actions>
+                  </v-card>
+                </v-dialog>
               </v-list-item>
             </v-list>
           </v-menu>
@@ -180,6 +210,7 @@ export default {
     drawer: false,
     group: null,
     setup_data: setup,
+    dialog: false,
   }),
   mounted() {
     if (window.localStorage.getItem("login") == null) {
