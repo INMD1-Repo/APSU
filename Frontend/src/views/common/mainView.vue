@@ -69,39 +69,27 @@
                 <v-card elevation="2" style="margin-right: 10px;">
                     <v-list-item>
                         <v-list-item-content>
-                            <div class="text-overline mb-1">Date</div>
-                            <v-list-item-title class="text-h5 mb-1">Headline 5</v-list-item-title>
-                            <v-list-item-subtitle>Greyhound divisely hello coldly fonwderfully</v-list-item-subtitle>
-                            <v-list-item-subtitle>Greyhound divisely hello coldly fonwderfully</v-list-item-subtitle>
-                            <v-list-item-subtitle>Greyhound divisely hello coldly fonwderfully</v-list-item-subtitle>
-                            <v-list-item-subtitle>Greyhound divisely hello coldly fonwderfully</v-list-item-subtitle>
-                            <v-list-item-subtitle>Greyhound divisely hello coldly fonwderfully</v-list-item-subtitle>
+                            <div class="text-overline mb-1">{{this.data_t}}</div>
+                            <v-list-item-title class="text-h5 mb-1">아침</v-list-item-title>
+                            <v-list-item-subtitle v-for=" item in this.food.brst" v-bind:key="item"> {{ item }}</v-list-item-subtitle>
                         </v-list-item-content>
                     </v-list-item>
                 </v-card>
                 <v-card elevation="2" style="margin-right: 10px;">
                     <v-list-item>
                         <v-list-item-content>
-                            <div class="text-overline mb-1">Date</div>
-                            <v-list-item-title class="text-h5 mb-1">Headline 5</v-list-item-title>
-                            <v-list-item-subtitle>Greyhound divisely hello coldly fonwderfully</v-list-item-subtitle>
-                            <v-list-item-subtitle>Greyhound divisely hello coldly fonwderfully</v-list-item-subtitle>
-                            <v-list-item-subtitle>Greyhound divisely hello coldly fonwderfully</v-list-item-subtitle>
-                            <v-list-item-subtitle>Greyhound divisely hello coldly fonwderfully</v-list-item-subtitle>
-                            <v-list-item-subtitle>Greyhound divisely hello coldly fonwderfully</v-list-item-subtitle>
+                            <div class="text-overline mb-1">{{this.data_t}}</div>
+                            <v-list-item-title class="text-h5 mb-1">점심</v-list-item-title>
+                            <v-list-item-subtitle v-for=" item in this.food.lunc" v-bind:key="item"> {{ item }}</v-list-item-subtitle>
                         </v-list-item-content>
                     </v-list-item>
                 </v-card>
                 <v-card elevation="2" style="margin-right: 10px;">
                     <v-list-item>
                         <v-list-item-content>
-                            <div class="text-overline mb-1">Date</div>
-                            <v-list-item-title class="text-h5 mb-1">Headline 5</v-list-item-title>
-                            <v-list-item-subtitle>Greyhound divisely hello coldly fonwderfully</v-list-item-subtitle>
-                            <v-list-item-subtitle>Greyhound divisely hello coldly fonwderfully</v-list-item-subtitle>
-                            <v-list-item-subtitle>Greyhound divisely hello coldly fonwderfully</v-list-item-subtitle>
-                            <v-list-item-subtitle>Greyhound divisely hello coldly fonwderfully</v-list-item-subtitle>
-                            <v-list-item-subtitle>Greyhound divisely hello coldly fonwderfully</v-list-item-subtitle>
+                            <div class="text-overline mb-1">{{this.data_t}}</div>
+                            <v-list-item-title class="text-h5 mb-1">저녁</v-list-item-title>
+                            <v-list-item-subtitle v-for=" item in this.food.dinr" v-bind:key="item"> {{ item }}</v-list-item-subtitle>
                         </v-list-item-content>
                     </v-list-item>
                 </v-card>
@@ -164,12 +152,31 @@
     </div>
 </template>
 <script>
+import data from '../../assets/example.json'
+import 'date-utils'
 export default {
     data: () => {
-
+        return {
+            data_t : 0,
+            food :{
+                brst : [],
+                lunc : [],
+                dinr : []
+            }
+        }
     },
     mounted() {
+        let newDate = new Date();
+        this.data_t = newDate.toFormat('YYYY-MM-DD')
+        for (let index = 0; index < data.DATA.length; index++) {
+            if(data.DATA[index].dates.indexOf(newDate.toFormat('YYYY-MM-DD')) == 0){
+                this.food.brst.push(data.DATA[index].brst); 
+                this.food.lunc.push(data.DATA[index].lunc); 
+                this.food.dinr.push(data.DATA[index].dinr); 
 
+            }
+        }
+        console.log(this.food);
     }
 }
 </script>
