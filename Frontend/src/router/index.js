@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import login_page from '../views/Login_page.vue'
 import main_page  from '../views/common/mainView.vue'
+import gps from '../views/common/mobile_force.vue'
 
 Vue.use(VueRouter)
 
@@ -21,6 +22,11 @@ const routes = [
     path: '/user/main',
     name: 'main',
     component: main_page
+  },
+  {
+    path: '/user/mobile_force',
+    name: 'gps',
+    component: gps
   }
 ]
 

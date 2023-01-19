@@ -2,6 +2,11 @@ body {
     background-color: #F7F5F2;
 }
 
+a {
+    text-decoration-line: none;
+    color: black;
+}
+
 /*main page css*/
 .botten {
     margin-top: 1vh;
@@ -16,7 +21,7 @@ body {
     display: table;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    width: 100%;
+    width: 100vw;
     height: 72.2vh;
     overflow: auto;
     background-color: #DFDFDE;
@@ -30,6 +35,23 @@ body {
     margin-bottom: 1vh;
 }
 
+.main_man {
+    height: 100%;
+}
+
+
+/**/
+
+.force_frame {
+    display: table;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    width: 100vw;
+    height: 83.5vh;
+    overflow: auto;
+    background-color: #DFDFDE;
+    padding-top: 24px;
+}
 
 /*login page css*/
 

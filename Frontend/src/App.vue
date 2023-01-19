@@ -94,12 +94,12 @@
         </v-main>
         <!--하단 메뉴바-->
         <v-bottom-navigation style="position: fixed; bottom: 0;" color="primary" grow :height="66" >
-          <v-btn>
-            <span>홈</span>
+          <v-btn :href="'/user/main'">
+            <span>유동병력</span>
             <v-icon>fa-home</v-icon>
           </v-btn>
 
-          <v-btn>
+          <v-btn :href="'/user/mobile_force'">
             <span>유동병력</span>
             <v-icon>fa-clipboard</v-icon>
             <!--알림이 없을떄는 display none을 기본적으로 설정을 해놓는다.-->
@@ -137,11 +137,12 @@ export default {
     if(window.localStorage.getItem("login") == null){
       window.localStorage.setItem("login", "0");
     }
-
     if (this.$store.state.login_P != 1) {
       this.$router.push({ path: 'login' })
-    }else{
-      this.$router.push({ path: '/user/main' });
+    }
+    
+    if(window.location.href.indexOf("/user") == -1 || window.location.href.indexOf("/admin") == -1 ){
+      this.$router.push({ path: '/user/main' })
     }
   },
   watch: {
