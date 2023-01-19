@@ -73,7 +73,7 @@
                             <v-list-item-title class="text-h5 mb-1">아침</v-list-item-title>
                             <v-list-item-subtitle v-for=" item in this.food.meal[0].menu" v-bind:key="item"> {{ item }}</v-list-item-subtitle>
                             <v-list-item-subtitle>ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</v-list-item-subtitle>
-                            <v-list-item-subtitle> {{ this.food.meal[0].cal }}</v-list-item-subtitle>
+                            <v-list-item-subtitle>Kcal: {{ this.food.meal[0].cal }}</v-list-item-subtitle>
                         </v-list-item-content>
                     </v-list-item>
                 </v-card>
@@ -84,7 +84,7 @@
                             <v-list-item-title class="text-h5 mb-1">점심</v-list-item-title>
                             <v-list-item-subtitle v-for=" item in this.food.meal[1].menu" v-bind:key="item"> {{ item }}</v-list-item-subtitle>
                             <v-list-item-subtitle>ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</v-list-item-subtitle>
-                            <v-list-item-subtitle> {{ this.food.meal[1].cal }}</v-list-item-subtitle>
+                            <v-list-item-subtitle>Kcal: {{ this.food.meal[1].cal }}</v-list-item-subtitle>
                         </v-list-item-content>
                     </v-list-item>
                 </v-card>
@@ -95,7 +95,7 @@
                             <v-list-item-title class="text-h5 mb-1">저녁</v-list-item-title>
                             <v-list-item-subtitle v-for=" item in this.food.meal[2].menu" v-bind:key="item"> {{ item }}</v-list-item-subtitle>
                             <v-list-item-subtitle>ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</v-list-item-subtitle>
-                            <v-list-item-subtitle> {{ this.food.meal[2].cal }}</v-list-item-subtitle>
+                            <v-list-item-subtitle>Kcal: {{ this.food.meal[2].cal }}</v-list-item-subtitle>
                         </v-list-item-content>
                     </v-list-item>
                 </v-card>
