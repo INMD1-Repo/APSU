@@ -5,7 +5,7 @@
             <v-list-item>
                 <v-list-item-content>
                     <h2>즐거운 식사 하세요 ! XXX님!</h2>
-                    <p>잔발줄이기 운동 모두가 참여합시다!</p>
+                    <p>잔반 줄이기 운동 모두가 참여합시다!</p>
                 </v-list-item-content>
             </v-list-item>
             <div style="display: flex; margin-top: 2vh; margin-bottom: 2vh;">
@@ -117,7 +117,7 @@
             <!--용사전용-->
             <h2>식당 태그 인식하기</h2>
             <v-card>
-                
+
             </v-card>
             <!--간부전용-->            
         </v-col>
