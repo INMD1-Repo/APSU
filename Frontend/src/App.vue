@@ -10,6 +10,7 @@
           :height="48"
           app
           :color="'#FFFBFE'"
+          v-if="this.scroll <= 50"
         >
           <v-app-bar-nav-icon
             @click.stop="drawer = !drawer"
@@ -184,7 +185,7 @@
             <v-badge content="6" offset-y="10"></v-badge>
           </v-btn>
 
-          <v-btn>
+          <v-btn :href="'/user/food_main'">
             <span>식단관리</span>
             <v-icon>fa-utensils</v-icon>
           </v-btn>
@@ -211,6 +212,7 @@ export default {
     group: null,
     setup_data: setup,
     dialog: false,
+    scroll: 0
   }),
   mounted() {
     if (window.localStorage.getItem("login") == null) {
@@ -221,6 +223,9 @@ export default {
     } else if (window.location.href.indexOf("/user") === -1) {
       this.$router.push({ path: "/user/main" });
     }
+
+   
+
   },
   watch: {
     group() {
@@ -228,6 +233,9 @@ export default {
     },
   },
   methods: {
+    handleScroll() {
+        this.scroll = window.pageYOffset;
+     },
     logout() {
       this.$store.commit("login_set", 0);
       window.localStorage.setItem("login", "0");
