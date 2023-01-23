@@ -7,7 +7,7 @@ a:link  {
     text-decoration-line: none;
 }
 
-/*main page css*/
+/*공용 page css*/
 .botten {
     margin-top: 1vh;
     margin-bottom: -2vh;
@@ -15,17 +15,6 @@ a:link  {
 
 .font-left {
     text-align: left;
-}
-
-.main_frame {
-    display: table;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    width: 100vw;
-    height: 72.2vh;
-    overflow: auto;
-    background-color: #DFDFDE;
-    padding-top: 24px;
 }
 
 .mian_item {
@@ -40,7 +29,27 @@ a:link  {
 }
 
 
-/**/
+
+/*frame only*/
+.main_frame {
+    display: table;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    width: 100vw;
+    height: 72.2vh;
+    overflow: auto;
+    background-color: #DFDFDE;
+    padding-top: 24px;
+}
+
+.food_frame {
+    display: table;
+    width: 100vw;
+    height: 83.5vh;
+    overflow: auto;
+    padding-top: 24px;
+}    
+
 
 .force_frame {
     display: table;
