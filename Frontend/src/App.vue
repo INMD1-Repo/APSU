@@ -177,7 +177,7 @@
             <span>홈</span>
             <v-icon>fa-home</v-icon>
           </v-btn>
-
+ 
           <v-btn :href="'/user/mobile_force'">
             <span>유동병력</span>
             <v-icon>fa-clipboard</v-icon>
