@@ -46,8 +46,8 @@
                             <v-list-item-subtitle>Kcal: {{ this.food[0].meal[2].cal }}</v-list-item-subtitle>
                         </v-list-item-content>
                     </v-list-item>
-                </v-card>
-                                <v-card elevation="2" style="margin-right: 10px;">
+                </v-card><!--eslint-disable-line-->
+                <v-card elevation="2" style="margin-right: 10px;">
                     <v-list-item>
                         <v-list-item-content>
                             <div class="text-overline mb-1">{{this.data_t[1]}}</div>
@@ -127,7 +127,7 @@
                         </v-list-item-content>
                     </v-list-item>
                 <v-card-actions>
-                    <v-btn outlined rounded text  @click="[overlay = !overlay, nfc_scan(), nfc_error = false, nfc_success = false = false]">태그 시작</v-btn>
+                    <v-btn outlined rounded text  @click="[overlay = !overlay, nfc_scan(), nfc_error = false, nfc_success = false ]">태그 시작</v-btn>
                 </v-card-actions>
             </v-card>
             <v-overlay :z-index="zIndex" :value="overlay">
@@ -162,7 +162,7 @@
                         </div>
                     </v-alert>
                 </v-snackbar>
-                 <v-snackbar v-model="nfc_error" :timeout="timeout" color="error" outlined right style="margin-right: 1.4vw;" >
+                 <!--<v-snackbar v-model="nfc_error" :timeout="timeout" color="error" outlined right style="margin-right: 1.4vw;" >
                     <v-alert text prominent type="error" icon="mdi-cloud-alert" >
                         <div style="font-size: 0.8em;">
                             문제가 발생했습니다. <br>
@@ -173,7 +173,7 @@
                             *간부에게 문의을 해서 해결하십시오
                         </div>
                     </v-alert>
-                </v-snackbar>
+                 </v-snackbar>-->
             <!--간부전용-->            
         </v-col>
     </div>
@@ -208,7 +208,7 @@ export default {
                     this.zIndex = 0; 
                     this.nfr_error = true;
                     clearInterval(re)
-                }else if(nfc_type == true){
+                }else if(this.nfc_type == true){
                     //만약에 성공을 한다면
                     console.log("sucess");
                 }else{

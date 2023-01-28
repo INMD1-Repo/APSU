@@ -46,7 +46,7 @@ export default {
         names: ['Meeting', 'Holiday', 'PTO', 'Travel', 'Event', 'Birthday', 'Conference', 'Party'],
     }),
     methods: {
-        getEvents({ start, end }) {
+        getEvents({ start, end }) {// eslint-disable-line no-unused-vars
 
         },
         getEventColor(event) {
