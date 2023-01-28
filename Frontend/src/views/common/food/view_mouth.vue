@@ -23,7 +23,7 @@
                 <span>*본 정보는 국방부공공데이터 에서 가지고 오는 것입니다.</span><br>
                 <span>*실제 식단과 다를수 있습니다.</span>
             </div>
-        </v-col>
+            </v-col>
     </div>
 </template>
 <script>
@@ -55,6 +55,6 @@ export default {
         rnd(a, b) {
             return Math.floor((b - a + 1) * Math.random()) + a
         },
-    },
+    }
 }
 </script>

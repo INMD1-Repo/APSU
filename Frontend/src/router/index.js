@@ -5,7 +5,7 @@ import main_page  from '../views/common/mainView.vue'
 import gps from '../views/common/mobile_force.vue'
 import a_gps from '../views/common/battalion_gps.vue'
 import food_main from '../views/common/food_main.vue'
-import view_mouth from '../views/common/food/view_mouth.vue'
+import view_moth from '../views/common/food/view_mouth.vue'
 
 Vue.use(VueRouter)
 
