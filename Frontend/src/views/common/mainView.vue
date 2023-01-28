@@ -32,7 +32,7 @@
                                 </v-list-item>
                                 <v-list-item>
                                     <v-list-item-content>
-                                        <v-list-item-title >test</v-list-item-title>
+                                        <v-list-item-title>test</v-list-item-title>
                                     </v-list-item-content>
                                 </v-list-item>
                             </v-list-item-group>
@@ -49,7 +49,7 @@
                                 </v-list-item>
                                 <v-list-item>
                                     <v-list-item-content>
-                                        <v-list-item-title >test</v-list-item-title>
+                                        <v-list-item-title>test</v-list-item-title>
                                     </v-list-item-content>
                                 </v-list-item>
                                 <v-list-item>
@@ -69,9 +69,11 @@
                 <v-card elevation="2" style="margin-right: 10px;">
                     <v-list-item>
                         <v-list-item-content>
-                            <div class="text-overline mb-1">{{this.data_t}}</div>
+                            <div class="text-overline mb-1">{{ this.data_t }}</div>
                             <v-list-item-title class="text-h5 mb-1">아침</v-list-item-title>
-                            <v-list-item-subtitle v-for=" item in this.food.meal[0].menu" v-bind:key="item"> {{ item }}</v-list-item-subtitle>
+                            <v-list-item-subtitle v-for=" item in this.food.meal[0].menu" v-bind:key="item"> {{
+                                item
+                            }}</v-list-item-subtitle>
                             <v-list-item-subtitle>ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</v-list-item-subtitle>
                             <v-list-item-subtitle>Kcal: {{ this.food.meal[0].cal }}</v-list-item-subtitle>
                         </v-list-item-content>
@@ -80,9 +82,11 @@
                 <v-card elevation="2" style="margin-right: 10px;">
                     <v-list-item>
                         <v-list-item-content>
-                            <div class="text-overline mb-1">{{this.data_t}}</div>
+                            <div class="text-overline mb-1">{{ this.data_t }}</div>
                             <v-list-item-title class="text-h5 mb-1">점심</v-list-item-title>
-                            <v-list-item-subtitle v-for=" item in this.food.meal[1].menu" v-bind:key="item"> {{ item }}</v-list-item-subtitle>
+                            <v-list-item-subtitle v-for=" item in this.food.meal[1].menu" v-bind:key="item"> {{
+                                item
+                            }}</v-list-item-subtitle>
                             <v-list-item-subtitle>ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</v-list-item-subtitle>
                             <v-list-item-subtitle>Kcal: {{ this.food.meal[1].cal }}</v-list-item-subtitle>
                         </v-list-item-content>
@@ -91,9 +95,11 @@
                 <v-card elevation="2" style="margin-right: 10px;">
                     <v-list-item>
                         <v-list-item-content>
-                            <div class="text-overline mb-1">{{this.data_t}}</div>
+                            <div class="text-overline mb-1">{{ this.data_t }}</div>
                             <v-list-item-title class="text-h5 mb-1">저녁</v-list-item-title>
-                            <v-list-item-subtitle v-for=" item in this.food.meal[2].menu" v-bind:key="item"> {{ item }}</v-list-item-subtitle>
+                            <v-list-item-subtitle v-for=" item in this.food.meal[2].menu" v-bind:key="item"> {{
+                                item
+                            }}</v-list-item-subtitle>
                             <v-list-item-subtitle>ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</v-list-item-subtitle>
                             <v-list-item-subtitle>Kcal: {{ this.food.meal[2].cal }}</v-list-item-subtitle>
                         </v-list-item-content>
@@ -163,17 +169,17 @@ import 'date-utils'
 export default {
     data: () => {
         return {
-            data_t : 0,
-            food :{  }
+            data_t: 0,
+            food: {}
         }
-    },
+    }, methods: {},
     mounted() {
         let newDate = new Date();
         this.data_t = newDate.toFormat('YYYY-MM-DD')
         for (let index = 0; index < data.length; index++) {
-            if(data[index].dates.indexOf(newDate.toFormat('YYYY-MM-DD')) == 0){
-             this.food = data[index]
-            }        
+            if (data[index].dates.indexOf(newDate.toFormat('YYYY-MM-DD')) == 0) {
+                this.food = data[index]
+            }
         }
     }
 }

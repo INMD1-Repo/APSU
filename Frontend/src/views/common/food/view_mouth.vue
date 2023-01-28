@@ -2,12 +2,13 @@
     <div style="display: table">
         <v-col></v-col>
         <v-col class="force_frame">
-<h2> ᄋ월웗월벼별 </h2>
-            <v-sheet height="600">
+            <h1>title</h1>
+            <v-sheet style="margin-top: 1vh;" height="500">
                 <v-calendar ref="calendar" v-model="value" :weekdays="weekday" :type="type" :events="events"
                     :event-overlap-mode="mode" :event-overlap-threshold="30" :event-color="getEventColor"
                     @change="getEvents"></v-calendar>
             </v-sheet>
+            <p>subtitle</p>
         </v-col>
     </div>
 </template>

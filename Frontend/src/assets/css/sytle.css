@@ -52,6 +52,13 @@ a:link  {
     padding-top: 24px;
 }
 
+.food_force {
+    display: table;
+    width: 100vw;
+    height: 83.5vh;
+    overflow: auto;
+    padding-top: 24px;
+}
 /*login page css*/
 
 .height-100 {
