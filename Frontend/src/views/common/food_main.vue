@@ -11,7 +11,7 @@
             <div style="display: flex; margin-top: 2vh; margin-bottom: 2vh;">
                 <h2>오늘(+2) 식단</h2>
                 <v-spacer></v-spacer>
-                <v-btn :href="'/user/food_moth'">월별식단 보기</v-btn>
+                <v-btn :href="'/user/view_mouth'">월별식단 보기</v-btn>
             </div>
             <v-col class="mian_item">
                 <v-card elevation="2" style="margin-right: 10px;">

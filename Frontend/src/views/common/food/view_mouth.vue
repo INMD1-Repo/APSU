@@ -8,53 +8,178 @@
                 <v-sheet height="65vh">
                     <v-calendar
                         ref="calendar"
-                        v-model="value"
-                        :weekdays="weekday"
-                        :type="type"
+                        v-model="focus"
+                        color="primary"
                         :events="events"
-                        :event-overlap-mode="mode"
-                        :event-overlap-threshold="30"
                         :event-color="getEventColor"
-                        @change="getEvents"
+                        :type="type"
+                        @click:event="showEvent"
+                        @click:more="viewDay"
+                        @change="updateRange"
                     ></v-calendar>
+                    <v-menu
+                        v-model="selectedOpen"
+                        :close-on-content-click="false"
+                        :activator="selectedElement"
+                        offset-x
+                    >
+                        <v-card color="grey lighten-4" min-width="350px" flat>
+                            <v-toolbar :color="selectedEvent.color" dark>
+                                <v-select
+                                    :items="items"
+                                    v-model="select_data"   
+                                    item-text="title"
+                                    item-value="value"                  
+                                    label="시간?"
+                                    style="margin-top: 3vh; margin-right: 8vw;"
+                                ></v-select>
+                            </v-toolbar>
+                            <div v-if="this.select_data == 'breakfast'"> 
+                            <v-list-item>
+                                <v-list-item-content>
+                                    <v-list-item-title class="text-h5 mb-1">
+                                    아침식사
+                                    </v-list-item-title>
+                                    <v-list-item-subtitle v-for=" item in this.selectedEvent.data[0].menu" v-bind:key="item">
+                                     {{item}}
+                                    </v-list-item-subtitle>
+                                    <v-list-item-subtitle>칼로리: {{this.selectedEvent.data[0].cal}}</v-list-item-subtitle>
+                                </v-list-item-content>
+                            </v-list-item>
+                            </div>
+                            <div v-if="this.select_data == 'Lunch'"> 
+                            <v-list-item  two-line>
+                                <v-list-item-content>
+                                    <v-list-item-title class="text-h5 mb-1" style="margin-bottom: 2vh;">
+                                    점심식사
+                                    </v-list-item-title>
+                                    <v-list-item-subtitle v-for=" item in this.selectedEvent.data[1].menu" v-bind:key="item">
+                                     {{item}}
+                                    </v-list-item-subtitle>
+                                    <v-list-item-subtitle>칼로리: {{this.selectedEvent.data[1].cal}}</v-list-item-subtitle>
+                                </v-list-item-content>
+                            </v-list-item>
+                            </div>
+                             <div v-if="this.select_data == 'Dinner'"> 
+                            <v-list-item  two-line>
+                                <v-list-item-content>
+                                    <v-list-item-title class="text-h5 mb-1">
+                                    저녁식사
+                                    </v-list-item-title>
+                                    <v-list-item-subtitle v-for=" item in this.selectedEvent.data[2].menu" v-bind:key="item">
+                                     {{item}}
+                                    </v-list-item-subtitle>
+                                    <v-list-item-subtitle>칼로리: {{this.selectedEvent.data[2].cal}}</v-list-item-subtitle>
+                                </v-list-item-content>
+                            </v-list-item>
+                            </div>
+                            <v-card-text>
+                                <div>*총 하루 칼로리: <span v-html="selectedEvent.sumcal"></span></div>
+                            </v-card-text>
+                            <v-card-actions>
+                                <v-btn text color="secondary" @click="selectedOpen = false">Cancel</v-btn>
+                            </v-card-actions>
+                        </v-card>
+                    </v-menu>
                 </v-sheet>
             </div>
             <div style="font-size: 13px; margin-top: 3vh;">
-                <span>*본 정보는 국방부공공데이터 에서 가지고 오는 것입니다.</span><br>
+                <span>*본 정보는 국방부공공데이터 에서 가지고 오는 것입니다.</span>
+                <br />
                 <span>*실제 식단과 다를수 있습니다.</span>
             </div>
-            </v-col>
+        </v-col>
     </div>
 </template>
 <script>
 export default {
     data: () => ({
+        focus: '',
         type: 'month',
-        types: ['month', 'week', 'day', '4day'],
-        mode: 'stack',
-        modes: ['stack', 'column'],
-        weekday: [0, 1, 2, 3, 4, 5, 6],
-        weekdays: [
-            { text: 'Sun - Sat', value: [0, 1, 2, 3, 4, 5, 6] },
-            { text: 'Mon - Sun', value: [1, 2, 3, 4, 5, 6, 0] },
-            { text: 'Mon - Fri', value: [1, 2, 3, 4, 5] },
-            { text: 'Mon, Wed, Fri', value: [1, 3, 5] },
-        ],
-        value: '',
+        typeToLabel: {
+            month: 'Month',
+            week: 'Week',
+            day: 'Day',
+            '4day': '4 Days',
+        },
+        selectedEvent: {},
+        selectedElement: null,
+        selectedOpen: false,
+        select_data: "",
         events: [],
-        colors: ['blue', 'indigo', 'deep-purple', 'cyan', 'green', 'orange', 'grey darken-1'],
-        names: ['Meeting', 'Holiday', 'PTO', 'Travel', 'Event', 'Birthday', 'Conference', 'Party'],
+        items: [
+            {
+                title: "조식",
+                value: "breakfast"
+            },
+            {
+                title: "중식",
+                value: "Lunch"
+            },
+                        {
+                title: "석식",
+                value: "Dinner"
+            }
+        ],
+        times: ""
     }),
+    mounted() {
+        this.$refs.calendar.checkChange()
+    },
     methods: {
-        getEvents({ start, end }) {// eslint-disable-line no-unused-vars
 
+        viewDay({ date }) {
+            this.focus = date
+            this.type = 'day'
         },
         getEventColor(event) {
             return event.color
         },
-        rnd(a, b) {
-            return Math.floor((b - a + 1) * Math.random()) + a
+        setToday() {
+            this.focus = ''
         },
+        prev() {
+            this.$refs.calendar.prev()
+        },
+        next() {
+            this.$refs.calendar.next()
+        },
+        showEvent({ nativeEvent, event }) {
+            const open = () => {
+                this.selectedEvent = event
+                this.selectedElement = nativeEvent.target
+                requestAnimationFrame(() => requestAnimationFrame(() => this.selectedOpen = true))
+            }
+
+            if (this.selectedOpen) {
+                this.selectedOpen = false
+                requestAnimationFrame(() => requestAnimationFrame(() => open()))
+            } else {
+                open()
+            }
+
+            nativeEvent.stopPropagation()
+        },
+        updateRange() {
+            const events = []
+            //생각을 해보자 친구여
+            const sample = require("../../../assets/example.json")
+
+            for (let index = 0; index < sample.length; index++) {
+                    const time = sample[index].dates.replace(/([가-힣()])+/g,'')
+                    events.push( {
+                        name: "식단정보",
+                        start: time + "T00:00:00",
+                        end: time + "T23:59:59",
+                        sumcal: sample[index].sumcal,
+                        data: sample[index].meal,
+                        color: "blue darken-1",
+                        "timed":true
+                    })    
+            }
+
+            this.events = events
+        }
     }
 }
 </script>
