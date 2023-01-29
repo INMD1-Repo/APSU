@@ -1,11 +1,7 @@
 <template>
     <div style="display: table">
         <v-col></v-col>
-<<<<<<< HEAD
         <v-col class="food_frame">
-=======
-        <v-col class="food_force">
->>>>>>> 9ec4d1d42858b2aa8674a41f70d8758691b4b9dd
             <v-list-item>
                 <v-list-item-content>
                     <h2>즐거운 식사 하세요 ! XXX님!</h2>
@@ -15,11 +11,7 @@
             <div style="display: flex; margin-top: 2vh; margin-bottom: 2vh;">
                 <h2>오늘(+2) 식단</h2>
                 <v-spacer></v-spacer>
-<<<<<<< HEAD
-                <v-btn :href="'/user/view_mouth'">월별식단 보기</v-btn>
-=======
                 <v-btn :href="'/user/food_moth'">월별식단 보기</v-btn>
->>>>>>> 9ec4d1d42858b2aa8674a41f70d8758691b4b9dd
             </div>
             <v-col class="mian_item">
                 <v-card elevation="2" style="margin-right: 10px;">
@@ -60,11 +52,7 @@
                             <v-list-item-subtitle>Kcal: {{ this.food[0].meal[2].cal }}</v-list-item-subtitle>
                         </v-list-item-content>
                     </v-list-item>
-<<<<<<< HEAD
                 </v-card><!--eslint-disable-line-->
-=======
-                </v-card>
->>>>>>> 9ec4d1d42858b2aa8674a41f70d8758691b4b9dd
                 <v-card elevation="2" style="margin-right: 10px;">
                     <v-list-item>
                         <v-list-item-content>
@@ -145,7 +133,6 @@
                 </v-card>
             </v-col>
             <!--용사전용-->
-<<<<<<< HEAD
             <h2 style="margin-bottom: 2vh;">식당 태그 인식하기</h2>
             <v-card>
                 <v-card-title class="blue-grey white--text">
@@ -177,46 +164,10 @@
                     <v-card-actions>
                         <v-btn color="#f5f5f5"  @click="overlay = false">
                             <div class="black--text ">중지하기</div>
-=======
-            <h2 style="margin-bottom: 1vh;">식당 태그 인식하기</h2>
-            <v-card class="mx-auto" max-width="344" outlined>
-                <v-list-item two-line>
-                    <v-list-item-content>
-                        <v-list-item-title class="text-h5 mb-1">
-                            Headline 5
-                        </v-list-item-title>
-                        <v-list-item-subtitle>Greyhound divisely hello coldly fonwderfully</v-list-item-subtitle>
-                    </v-list-item-content>
-                </v-list-item>
-                <v-card-actions>
-                    <v-btn outlined rounded text @click="[overlay = !overlay, loading = !loading]">
-                        Button
-                    </v-btn>
-                </v-card-actions>
-            </v-card>
-            <v-overlay :z-index="zIndex" :value="overlay">
-
-                <v-card class="mx-auto" max-width="344" outlined :loading="loading" >
-                    <template slot="progress">
-                        <v-progress-linear color="deep-purple" height="10" indeterminate></v-progress-linear>
-                    </template>
-                    <v-list-item two-line>
-                        <v-list-item-content>
-                            <v-list-item-title class="text-h5 mb-1">
-                                Headline 5
-                            </v-list-item-title>
-                            <v-list-item-subtitle>Greyhound divisely hello coldly fonwderfully</v-list-item-subtitle>
-                        </v-list-item-content>
-                    </v-list-item>
-                    <v-card-actions>
-                        <v-btn class="white--text" color="teal" @click="overlay = false">
-                            Hide Overlay
->>>>>>> 9ec4d1d42858b2aa8674a41f70d8758691b4b9dd
                         </v-btn>
                     </v-card-actions>
                 </v-card>
             </v-overlay>
-<<<<<<< HEAD
                 <v-snackbar v-model="nfr_error" :timeout="timeout" color="error" outlined right style="margin-right: 1.4vw;" >
                     <v-alert text prominent type="error" icon="mdi-cloud-alert" >
                         <div style="font-size: 0.8em;">
@@ -242,9 +193,6 @@
                     </v-alert>
                  </v-snackbar>-->
             <!--간부전용-->            
-=======
-            <!--간부전용-->
->>>>>>> 9ec4d1d42858b2aa8674a41f70d8758691b4b9dd
         </v-col>
     </div>
 </template>
@@ -254,7 +202,6 @@ import 'date-utils'
 export default {
     data: () => {
         return {
-<<<<<<< HEAD
             data_t : [],
             food :[],
             //태그 관련 함수들
@@ -288,20 +235,9 @@ export default {
                     console.log("on");
                 }
             }, 1000);
-            
-=======
-            data_t: [],
-            food: [],
-            overlay: false,
-            zIndex: 0,
-            loading: false
-
->>>>>>> 9ec4d1d42858b2aa8674a41f70d8758691b4b9dd
         }
     },
-    methods: {
-
-    },
+    
     mounted() {
         let newDate = new Date();
         //날짜 데이터 추가
