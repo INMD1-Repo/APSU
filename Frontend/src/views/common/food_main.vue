@@ -244,9 +244,9 @@ export default {
         this.data_t.push(new Date(newDate.setDate(newDate.getDate())).toFormat('YYYY-MM-DD'));
         this.data_t.push(new Date(newDate.setDate(newDate.getDate() + 1)).toFormat('YYYY-MM-DD'));
         this.data_t.push(new Date(newDate.setDate(newDate.getDate() + 1)).toFormat('YYYY-MM-DD'));
-
+console.log(this.data_t)
         //식단데이터 추가
-        for (let index = 0; index < data.length; index++) {
+       for (let index = 0; index < data.length; index++) {
             if (data[index].dates.indexOf(this.data_t[0]) == 0) {
                 this.food.push(data[index])
             }
@@ -256,7 +256,8 @@ export default {
             if (data[index].dates.indexOf(this.data_t[2]) == 0) {
                 this.food.push(data[index])
             }
-        }
+        } 
+        console.log(this.food)
     }
 }
 
