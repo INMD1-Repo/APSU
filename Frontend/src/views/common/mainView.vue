@@ -11,58 +11,59 @@
         </v-col>
         <v-col class="main_frame">
             <!--간부 전용부분-->
-            <h2>우리 포대 유동병력 사항</h2>
-            <v-card style="margin-top: 1vh; margin-bottom: 2vh;">
-                <v-list-item two-line>
-                    <v-list-item-content>
-                        <v-list-item-title class="text-h5">2포대</v-list-item-title>
-                        <v-list-item-subtitle>default: 생활관 구분(X)</v-list-item-subtitle>
-                    </v-list-item-content>
-                </v-list-item>
-                <!--현재 인원 숫자로 표시-->
-                <v-row no-gutters>
-                    <v-col>
-                        <v-card class="main_man pa-2" outlined tile>
-                            <!--색이나 크기는 나중에 정하-->
-                            <v-list-item-group>
-                                <v-list-item>
-                                    <v-list-item-content>
-                                        <v-list-item-title>test</v-list-item-title>
-                                    </v-list-item-content>
-                                </v-list-item>
-                                <v-list-item>
-                                    <v-list-item-content>
-                                        <v-list-item-title>test</v-list-item-title>
-                                    </v-list-item-content>
-                                </v-list-item>
-                            </v-list-item-group>
-                        </v-card>
-                    </v-col>
-                    <v-col>
-                        <!--고정형 이기 때문에 추가 하지 않은 이상 수정하지 -->
-                        <v-card class="pa-2" outlined tile>
-                            <v-list-item-group>
-                                <v-list-item>
-                                    <v-list-item-content>
-                                        <v-list-item-title>test</v-list-item-title>
-                                    </v-list-item-content>
-                                </v-list-item>
-                                <v-list-item>
-                                    <v-list-item-content>
-                                        <v-list-item-title>test</v-list-item-title>
-                                    </v-list-item-content>
-                                </v-list-item>
-                                <v-list-item>
-                                    <v-list-item-content>
-                                        <v-list-item-title>test</v-list-item-title>
-                                    </v-list-item-content>
-                                </v-list-item>
-                            </v-list-item-group>
-                        </v-card>
-                    </v-col>
-                </v-row>
-            </v-card>
-
+            <div v-if="this.$store.state.showcode == 'navebar'">
+                <h2>우리 포대 유동병력 사항</h2>
+                <v-card style="margin-top: 1vh; margin-bottom: 2vh;">
+                    <v-list-item two-line>
+                        <v-list-item-content>
+                            <v-list-item-title class="text-h5">2포대</v-list-item-title>
+                            <v-list-item-subtitle>default: 생활관 구분(X)</v-list-item-subtitle>
+                        </v-list-item-content>
+                    </v-list-item>
+                    <!--현재 인원 숫자로 표시-->
+                    <v-row no-gutters>
+                        <v-col>
+                            <v-card class="main_man pa-2" outlined tile>
+                                <!--색이나 크기는 나중에 정하-->
+                                <v-list-item-group>
+                                    <v-list-item>
+                                        <v-list-item-content>
+                                            <v-list-item-title>test</v-list-item-title>
+                                        </v-list-item-content>
+                                    </v-list-item>
+                                    <v-list-item>
+                                        <v-list-item-content>
+                                            <v-list-item-title>test</v-list-item-title>
+                                        </v-list-item-content>
+                                    </v-list-item>
+                                </v-list-item-group>
+                            </v-card>
+                        </v-col>
+                        <v-col>
+                            <!--고정형 이기 때문에 추가 하지 않은 이상 수정하지 -->
+                            <v-card class="pa-2" outlined tile>
+                                <v-list-item-group>
+                                    <v-list-item>
+                                        <v-list-item-content>
+                                            <v-list-item-title>test</v-list-item-title>
+                                        </v-list-item-content>
+                                    </v-list-item>
+                                    <v-list-item>
+                                        <v-list-item-content>
+                                            <v-list-item-title>test</v-list-item-title>
+                                        </v-list-item-content>
+                                    </v-list-item>
+                                    <v-list-item>
+                                        <v-list-item-content>
+                                            <v-list-item-title>test</v-list-item-title>
+                                        </v-list-item-content>
+                                    </v-list-item>
+                                </v-list-item-group>
+                            </v-card>
+                        </v-col>
+                    </v-row>
+                </v-card>
+            </div>
             <h2>오늘 부대 식단표</h2>
             <!--식단표 for false-->
             <v-col class="mian_item">
