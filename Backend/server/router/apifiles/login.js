@@ -43,37 +43,37 @@ router.post("/", (req, res, next) => {
                                     code: 10, message: "Accpted",
                                     Accesstoken: access,
                                     Refreshtoken: refresh,
-                                    data: user
+                                    data: result[0]
                                 });
                             next();
                         });
                     } 
-                    // else if(result[0].of_ip != req.body.of_ip){
-                    //     res.status(200)
-                    //     .json({
-                    //         code: 574, message: "Denined",
-                    //         error: "user"
-                    //     });
-                    //     next();
-                    // }else if(result[0].of_ip == req.body.of_ip){
-                    //     //ip는 같으나 다른 브라우저에서도 로그인을 할수 있기 때문에 예외 사항을 추가함
-                    //     let access = '', refresh = '';
-                    //     access = token().access(req.body.of_id);
-                    //     refresh = token().refresh(req.body.of_id);
+                    else if(rows[0].of_ip != req.body.of_ip){
+                        res.status(200)
+                        .json({
+                            code: 574, message: "Denined",
+                            error: "user"
+                        });
+                        next();
+                    }else if(rows[0].of_ip == req.body.of_ip){
+                        //ip는 같으나 다른 브라우저에서도 로그인을 할수 있기 때문에 예외 사항을 추가함
+                        let access = '', refresh = '';
+                        access = token().access(req.body.of_id);
+                        refresh = token().refresh(req.body.of_id);
 
-                    //     jwt.verify(access, process.env.ACCESS_TOKEN_SECRET, (error, user) => {
-                    //         if (error) return res.sendStatus(403);
-                    //         // responce 응답
-                    //         res.status(200)
-                    //             .json({
-                    //                 code: 10, message: "Accpted",
-                    //                 Accesstoken: access,
-                    //                 Refreshtoken: refresh,
-                    //                 data: user
-                    //             });
-                    //         next();
-                    //     });
-                    // }
+                        jwt.verify(access, process.env.ACCESS_TOKEN_SECRET, (error, user) => {
+                            if (error) return res.sendStatus(403);
+                            // responce 응답
+                            res.status(200)
+                                .json({
+                                    code: 10, message: "Accpted",
+                                    Accesstoken: access,
+                                    Refreshtoken: refresh,
+                                    data: result[0]
+                                });
+                            next();
+                        });
+                    }
                 });
             } else  {
                 res.status(400).json({ code: 323, message: "Denined", error: err });
@@ -86,9 +86,4 @@ router.post("/", (req, res, next) => {
     }
 });
 
-
-router.get('/token', (req, res, next) => {
-    let token = req.headers["authorization"];
-
-})
 module.exports = router

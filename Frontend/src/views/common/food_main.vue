@@ -241,7 +241,7 @@ export default {
     mounted() {
         let newDate = new Date();
         //날짜 데이터 추가
-        this.data_t.push(new Date(newDate.setDate(newDate.getDate())).toFormat('YYYY-MM-DD'));
+        this.data_t.push(new Date(newDate.setDate(newDate.getDate() )).toFormat('YYYY-MM-DD'));
         this.data_t.push(new Date(newDate.setDate(newDate.getDate() + 1)).toFormat('YYYY-MM-DD'));
         this.data_t.push(new Date(newDate.setDate(newDate.getDate() + 1)).toFormat('YYYY-MM-DD'));
 

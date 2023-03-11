@@ -10,7 +10,7 @@ const token = () =>{
         },
         refresh(id){
             return jwt.sign({id}, process.env.REFRESH_TOKEN_SECRET , {
-                expiresIn: "10 days",
+                expiresIn: "2 days",
             });
         },
         issuance(token, res) {

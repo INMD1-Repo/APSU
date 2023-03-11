@@ -22,34 +22,34 @@ async function food_get() {
         let data = [];
         console.log()
         //스크립트 시작parseFloat
-        for (let index = 0; index < testcase["DATA"].length; index++) {
-                if (data.find(function(data) { return data.dates === testcase["DATA"][index].dates }) === undefined) {
+        for (let index = 0; index < indata["DATA"].length; index++) {
+                if (data.find(function(data) { return data.dates === indata["DATA"][index].dates }) === undefined) {
                   data.push({
-                    dates: testcase["DATA"][index].dates, sumcal: testcase["DATA"][index].sum_cal, meal: [{
-                      info: "조식", menu: [testcase["DATA"][index].brst], cal:parseFloat(testcase["DATA"][index].brst_cal.replace('kcal', ''),)
+                    dates: indata["DATA"][index].dates, sumcal: indata["DATA"][index].sum_cal, meal: [{
+                      info: "조식", menu: [indata["DATA"][index].brst], cal:parseFloat(indata["DATA"][index].brst_cal.replace('kcal', ''),)
                     }, {
-                      info: "중식", menu: [testcase["DATA"][index].lunc],cal: parseFloat(testcase["DATA"][index].lunc_cal.replace('kcal', ''))
+                      info: "중식", menu: [indata["DATA"][index].lunc],cal: parseFloat(indata["DATA"][index].lunc_cal.replace('kcal', ''))
                     }, { 
-                      info: "석식", menu: [testcase["DATA"][index].dinr], cal: parseFloat(testcase["DATA"][index].dinr_cal.replace('kcal', '')) 
+                      info: "석식", menu: [indata["DATA"][index].dinr], cal: parseFloat(indata["DATA"][index].dinr_cal.replace('kcal', '')) 
                     }]
                   })
                 } else {
                   const indexnum = data.findIndex(function(data) {
-                    return data.dates === testcase["DATA"][index].dates
+                    return data.dates === indata["DATA"][index].dates
                   });
-                  if (testcase["DATA"][index].brst != '') {
-                    data[indexnum].meal[0].cal += parseInt(testcase["DATA"][index].brst_cal.replace('kcal', ''))
-                    data[indexnum].meal[0].menu.push(testcase["DATA"][index].brst);
+                  if (indata["DATA"][index].brst != '') {
+                    data[indexnum].meal[0].cal += parseInt(indata["DATA"][index].brst_cal.replace('kcal', ''))
+                    data[indexnum].meal[0].menu.push(indata["DATA"][index].brst);
                   }
               
-                  if (testcase["DATA"][index].lunc != '') {
-                    data[indexnum].meal[1].cal += parseInt(testcase["DATA"][index].lunc_cal.replace('kcal', ''))
-                    data[indexnum].meal[1].menu.push(testcase["DATA"][index].lunc);
+                  if (indata["DATA"][index].lunc != '') {
+                    data[indexnum].meal[1].cal += parseInt(indata["DATA"][index].lunc_cal.replace('kcal', ''))
+                    data[indexnum].meal[1].menu.push(indata["DATA"][index].lunc);
                   }
               
-                  if (testcase["DATA"][index].dinr != '') {
-                    data[indexnum].meal[2].cal += parseInt(testcase["DATA"][index].dinr_cal.replace('kcal', ''))
-                    data[indexnum].meal[2].menu.push(testcase["DATA"][index].dinr);
+                  if (indata["DATA"][index].dinr != '') {
+                    data[indexnum].meal[2].cal += parseInt(indata["DATA"][index].dinr_cal.replace('kcal', ''))
+                    data[indexnum].meal[2].menu.push(indata["DATA"][index].dinr);
                   }
               
                 }
@@ -71,7 +71,7 @@ app.use('/api', apiRouter);
 // session
 app.use(
         expressSession({
-                secret: "my key",
+                secret: "akdl@(ASKLdas5!@#$AS", //유출되면 *되는거
                 resave: true,
                 saveUninitialized: true,
         })
