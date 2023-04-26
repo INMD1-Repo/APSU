@@ -10,7 +10,7 @@
             </v-list-item>
             <!--간부전용-->
             <!-- <div v-if="this.$store.state.showcode == 'navebar'"> -->
-            <div v-if="this.test == 1">
+            <div v-if="this.$store.state.showcode == 'executive'">
                 <div style="display: flex; margin-top: 2vh; margin-bottom: 3vh;">
                     <h3>현재 식수 인원 근황</h3>
                     <v-spacer></v-spacer>
@@ -159,8 +159,7 @@
                 </v-card>
             </v-col>
             <!--용사전용-->
-            <!-- <div v-if="this.$store.state.showcode == 'Veterans'"> -->
-            <div v-if="this.test == 0">
+            <div v-if="this.$store.state.showcode == 'Veterans'">
                 <h2 style="margin-bottom: 2vh;">식당 태그 인식하기</h2>
                 <v-card>
                     <v-card-title class="blue-grey white--text">
@@ -241,7 +240,6 @@ export default {
             time: 0,
             data_t: [],
             food: [],
-            test: 1,
             //태그 관련 함수들
 
             //용사용
@@ -252,7 +250,7 @@ export default {
             nfc_type: null, //성공여부 판단
             nfc_error: false,
             nfc_success: false,
-            timeout: 3000,
+            timeout: 30000,
 
             //간부용
 
