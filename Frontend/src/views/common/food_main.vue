@@ -8,6 +8,32 @@
                     <p>잔반 줄이기 운동 모두가 참여합시다!</p>
                 </v-list-item-content>
             </v-list-item>
+            <!--간부전용-->
+            <!-- <div v-if="this.$store.state.showcode == 'navebar'"> -->
+            <div v-if="this.$store.state.showcode == 'executive'">
+                <div style="display: flex; margin-top: 2vh; margin-bottom: 3vh;">
+                    <h3>현재 식수 인원 근황</h3>
+                    <v-spacer></v-spacer>
+                    <v-btn :href="''">자세히</v-btn>
+                </div>
+                <v-card style="height: 13vh; text-align: center;">
+                    <v-row>
+                        <v-col >
+                            <h4 style="margin-top: 1vh;">식수인원</h4>
+                            <p style="font-size: 1.7em;">50</p>
+                        </v-col>
+                        <v-col style="border-right-style: groove; border-left-style: groove;">
+                            <h4 style="margin-top: 1vh;">식사 인원</h4>
+                            <p style="font-size: 1.7em; color: green;">40</p>
+                        </v-col>
+                        <v-col>
+                            <h4 style="margin-top: 1vh;">결식자</h4>
+                            <p style="font-size: 1.7em; color: red;">9</p>
+                        </v-col>
+                    </v-row>
+                </v-card>
+            </div>
+            <!--공통 사항-->
             <div style="display: flex; margin-top: 2vh; margin-bottom: 2vh;">
                 <h2>오늘(+2) 식단</h2>
                 <v-spacer></v-spacer>
@@ -133,43 +159,47 @@
                 </v-card>
             </v-col>
             <!--용사전용-->
-            <h2 style="margin-bottom: 2vh;">식당 태그 인식하기</h2>
-            <v-card>
-                <v-card-title class="blue-grey white--text">
-                    <span class="text-h6">태그하기</span>
-                </v-card-title>
+            <div v-if="this.$store.state.showcode == 'Veterans'">
+                <h2 style="margin-bottom: 2vh;">식당 태그 인식하기</h2>
+                <v-card>
+                    <v-card-title class="blue-grey white--text">
+                        <span class="text-h6">태그하기</span>
+                    </v-card-title>
                     <v-list-item one-line>
                         <v-list-item-content>
                             <v-list-item-title class="text-h5 mb-1"></v-list-item-title>
                             <v-list-item-subtitle>⚠ 오류가 있는 경우 간부에게 문의 하십시오</v-list-item-subtitle>
                         </v-list-item-content>
                     </v-list-item>
-                <v-card-actions>
-                    <v-btn outlined rounded text  @click="[overlay = !overlay, nfc_scan(), nfc_error = false, nfc_success = false ]">태그 시작</v-btn>
-                </v-card-actions>
-            </v-card>
-            <v-overlay :z-index="zIndex" :value="overlay">
-                <v-card class="black--text" :loading="loading" color="white">
-                    <template slot="progress">
-                        <v-progress-linear color="deep-purple" height="10" indeterminate >     
-                        </v-progress-linear>
-                    </template>
-                    <v-card-title class="text-h4" style="font-weight: bold;">태그 인식 대기중</v-card-title>
-                    <v-card-text class="black--text ">
-                        <div class="text--primary">
-                            태그를 인식중입니다.<br>
-                            인식이 잘되기 위해 중앙으로 위치해 주십시오
-                        </div>
-                    </v-card-text>
                     <v-card-actions>
-                        <v-btn color="#f5f5f5"  @click="overlay = false">
-                            <div class="black--text ">중지하기</div>
-                        </v-btn>
+                        <v-btn outlined rounded text
+                            @click="[overlay = !overlay, nfc_scan(), nfc_error = false, nfc_success = false]">태그
+                            시작</v-btn>
                     </v-card-actions>
                 </v-card>
-            </v-overlay>
-                <v-snackbar v-model="nfr_error" :timeout="timeout" color="error" outlined right style="margin-right: 1.4vw;" >
-                    <v-alert text prominent type="error" icon="mdi-cloud-alert" >
+                <v-overlay :z-index="zIndex" :value="overlay">
+                    <v-card class="black--text" :loading="loading" color="white">
+                        <template slot="progress">
+                            <v-progress-linear color="deep-purple" height="10" indeterminate>
+                            </v-progress-linear>
+                        </template>
+                        <v-card-title class="text-h4" style="font-weight: bold;">태그 인식 대기중</v-card-title>
+                        <v-card-text class="black--text ">
+                            <div class="text--primary">
+                                태그를 인식중입니다.<br>
+                                인식이 잘되기 위해 중앙으로 위치해 주십시오
+                            </div>
+                        </v-card-text>
+                        <v-card-actions>
+                            <v-btn color="#f5f5f5" @click="overlay = false">
+                                <div class="black--text ">중지하기</div>
+                            </v-btn>
+                        </v-card-actions>
+                    </v-card>
+                </v-overlay>
+                <v-snackbar v-model="nfr_error" :timeout="timeout" color="error" outlined right
+                    style="margin-right: 1.4vw;">
+                    <v-alert text prominent type="error" icon="mdi-cloud-alert">
                         <div style="font-size: 0.8em;">
                             문제가 발생했습니다. <br>
                             1. nfc 태그가 제대로 인식이 안됬습니다.<br>
@@ -180,19 +210,24 @@
                         </div>
                     </v-alert>
                 </v-snackbar>
-                 <!--<v-snackbar v-model="nfc_error" :timeout="timeout" color="error" outlined right style="margin-right: 1.4vw;" >
-                    <v-alert text prominent type="error" icon="mdi-cloud-alert" >
+                <v-snackbar v-model="nfc_success" :timeout="timeout" color="success" outlined right
+                    style="margin-right: 1.4vw;">
+                    <v-alert text prominent type="success" icon="mdi-checkbox-marked-circle-outline">
                         <div style="font-size: 0.8em;">
-                            문제가 발생했습니다. <br>
-                            1. nfc 태그가 제대로 인식이 안됬습니다.<br>
-                            2. 다른 태그를 인식 했습니다<br>
-                            3. 서버에 문제가 발생 했을수 있습니다<br>
-                            <br>
-                            *간부에게 문의을 해서 해결하십시오
+                            성공적으로 태그를 했습니다!<br>
+                            성공 시각: {{ this.time }}
                         </div>
                     </v-alert>
-                 </v-snackbar>-->
-            <!--간부전용-->            
+                </v-snackbar>
+            </div>
+            <!--간부전용-->
+            <!-- <div v-if="this.$store.state.showcode == 'navebar'"> -->
+            <div v-if="this.test == 1">
+                <h2 style="margin-bottom: 2vh;">식당 임의 코드 생성 하기</h2>
+                <v-card>
+                    여기다가는 코드 생성하는 UI가 표시됨
+                </v-card>
+            </div>
         </v-col>
     </div>
 </template>
@@ -202,17 +237,23 @@ import 'date-utils'
 export default {
     data: () => {
         return {
-            data_t : [],
-            food :[],
+            time: 0,
+            data_t: [],
+            food: [],
             //태그 관련 함수들
+
+            //용사용
             zIndex: 0,
             overlay: false,
             loading: true,
-            nfc_timer: 0, 
-            nfc_type: false, //성공여부 판단
+            nfc_timer: 0,
+            nfc_type: null, //성공여부 판단
             nfc_error: false,
             nfc_success: false,
-            timeout: 2000,
+            timeout: 30000,
+
+            //간부용
+
         }
     },
     methods: {
@@ -220,31 +261,36 @@ export default {
             //일정 주기로 계속 테스트를 함
             let re = setInterval(() => {
                 //일정 시간이 되도 안될경우(기본 타이머 1분)
-                if(this.nfc_timer == 2000){
+                if (this.nfc_timer == 2000) {
                     console.log("timeout!")
                     this.overlay = false;
-                    this.zIndex = 0; 
-                    this.nfr_error = true;
+                    this.zIndex = 0;
+                    this.nfc_error = true;
                     clearInterval(re)
-                }else if(this.nfc_type == true){
+                } else if (this.nfc_type == true) {
                     //만약에 성공을 한다면
-                    console.log("sucess");
-                }else{
+                    this.nfc_success = true;
+                    this.overlay = false;
+                    this.zIndex = 0;
+                    this.time = new Date().toLocaleString();
+                    clearInterval(re)
+                } else {
                     //두조건이 불일치 할경우 그냥 카운터를 추가한다.
                     this.nfc_timer += 1000;
                     console.log("on");
                 }
+
             }, 1000);
-        }
+        },
     },
-    
+
     mounted() {
         let newDate = new Date();
         //날짜 데이터 추가
         this.data_t.push(new Date(newDate.setDate(newDate.getDate() )).toFormat('YYYY-MM-DD'));
         this.data_t.push(new Date(newDate.setDate(newDate.getDate() + 1)).toFormat('YYYY-MM-DD'));
         this.data_t.push(new Date(newDate.setDate(newDate.getDate() + 1)).toFormat('YYYY-MM-DD'));
-
+        console.log(this.data_t)
         //식단데이터 추가
         for (let index = 0; index < data.length; index++) {
             if (data[index].dates.indexOf(this.data_t[0]) == 0) {
@@ -257,6 +303,7 @@ export default {
                 this.food.push(data[index])
             }
         }
+        console.log(this.food)
     }
 }
 
