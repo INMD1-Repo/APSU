@@ -5,11 +5,10 @@
             <v-list-item>
                 <v-list-item-content>
                     <h2>즐거운 식사 하세요 ! XXX님!</h2>
-                    <p>잔반 줄이기 운동 모두가 참여합시다!</p>
+                    <p>잔반 줄이기 운동 모두가 참여합시다!33</p>
                 </v-list-item-content>
             </v-list-item>
             <!--간부전용-->
-            <!-- <div v-if="this.$store.state.showcode == 'navebar'"> -->
             <div v-if="this.$store.state.showcode == 'executive'">
                 <div style="display: flex; margin-top: 2vh; margin-bottom: 3vh;">
                     <h3>현재 식수 인원 근황</h3>
@@ -34,6 +33,7 @@
                 </v-card>
             </div>
             <!--공통 사항-->
+            
             <div style="display: flex; margin-top: 2vh; margin-bottom: 2vh;">
                 <h2>오늘(+2) 식단</h2>
                 <v-spacer></v-spacer>
@@ -250,21 +250,27 @@ export default {
             nfc_type: null, //성공여부 판단
             nfc_error: false,
             nfc_success: false,
-            timeout: 30000,
+            timeout: 300000,
 
             //간부용
 
         }
     },
-    methods: {
-        nfc_scan() {
+    methods: {    
+        //nfc 같은 경우는 https 포트에서만 지원이 된다.    
+        async nfc_scan() {
+            
+            
+            
+     
             //일정 주기로 계속 테스트를 함
-            let re = setInterval(() => {
-                //일정 시간이 되도 안될경우(기본 타이머 1분)
-                if (this.nfc_timer == 2000) {
+            let re =  setInterval(async () => {
+            //일정 시간이 되도 안될경우(기본 타이머 1분)
+                if (this.nfc_timer == this.timeout) {
                     console.log("timeout!")
                     this.overlay = false;
                     this.zIndex = 0;
+                    this.nfc_timer = 0;
                     this.nfc_error = true;
                     clearInterval(re)
                 } else if (this.nfc_type == true) {
@@ -272,10 +278,12 @@ export default {
                     this.nfc_success = true;
                     this.overlay = false;
                     this.zIndex = 0;
+                    this.nfc_timer = 0;
                     this.time = new Date().toLocaleString();
                     clearInterval(re)
                 } else {
                     //두조건이 불일치 할경우 그냥 카운터를 추가한다.
+                    console.log("okay go");
                     this.nfc_timer += 1000;
                     console.log("on");
                 }
@@ -284,8 +292,11 @@ export default {
         },
     },
 
-    mounted() {
+  async mounted() {
+
+
         let newDate = new Date();
+
         //날짜 데이터 추가
         this.data_t.push(new Date(newDate.setDate(newDate.getDate() )).toFormat('YYYY-MM-DD'));
         this.data_t.push(new Date(newDate.setDate(newDate.getDate() + 1)).toFormat('YYYY-MM-DD'));
