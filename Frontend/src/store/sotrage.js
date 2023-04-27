@@ -11,7 +11,7 @@ export default new vuex.Store({
     name: '',
     usertoken: '',
     //간부 용사 분리
-    showcode: 'Veterans',
+    showcode: 'executive',
   },
   mutations: {
     login_set : function (state, value) {

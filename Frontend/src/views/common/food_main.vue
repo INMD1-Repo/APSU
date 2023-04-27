@@ -5,7 +5,7 @@
             <v-list-item>
                 <v-list-item-content>
                     <h2>즐거운 식사 하세요 ! XXX님!</h2>
-                    <p>잔반 줄이기 운동 모두가 참여합시다!33</p>
+                    <p>잔반 줄이기 운동 모두가 참여합시다!</p>
                 </v-list-item-content>
             </v-list-item>
             <!--간부전용-->
@@ -197,7 +197,7 @@
                         </v-card-actions>
                     </v-card>
                 </v-overlay>
-                <v-snackbar v-model="nfr_error" :timeout="timeout" color="error" outlined right
+                <v-snackbar v-model="nfc_error" :timeout="timeout" color="error" outlined right
                     style="margin-right: 1.4vw;">
                     <v-alert text prominent type="error" icon="mdi-cloud-alert">
                         <div style="font-size: 0.8em;">
@@ -205,6 +205,7 @@
                             1. nfc 태그가 제대로 인식이 안됬습니다.<br>
                             2. 다른 태그를 인식 했습니다<br>
                             3. 서버에 문제가 발생 했을수 있습니다<br>
+                            4. https로 접속하지 않았습니다<br>
                             <br>
                             *간부에게 문의을 해서 해결하십시오
                         </div>
@@ -250,7 +251,7 @@ export default {
             nfc_type: null, //성공여부 판단
             nfc_error: false,
             nfc_success: false,
-            timeout: 300000,
+            timeout: 4000,
 
             //간부용
 
@@ -260,10 +261,22 @@ export default {
         //nfc 같은 경우는 https 포트에서만 지원이 된다.    
         async nfc_scan() {
             
+            const ndef = new window.NDEFReader();
+            await ndef.scan();
             
-            
-     
-            //일정 주기로 계속 테스트를 함
+            ndef.addEventListener("reading", ({ message, serialNumber }) => {
+                console.log(`> Serial Number: ${serialNumber}`);
+                console.log(message);
+
+                this.nfc_success = true;
+                this.overlay = false;
+                this.zIndex = 0;
+                this.nfc_timer = 0;
+                this.time = new Date().toLocaleString();
+                clearInterval(re)
+            });
+
+
             let re =  setInterval(async () => {
             //일정 시간이 되도 안될경우(기본 타이머 1분)
                 if (this.nfc_timer == this.timeout) {
@@ -273,19 +286,9 @@ export default {
                     this.nfc_timer = 0;
                     this.nfc_error = true;
                     clearInterval(re)
-                } else if (this.nfc_type == true) {
-                    //만약에 성공을 한다면
-                    this.nfc_success = true;
-                    this.overlay = false;
-                    this.zIndex = 0;
-                    this.nfc_timer = 0;
-                    this.time = new Date().toLocaleString();
-                    clearInterval(re)
-                } else {
+                }  else {
                     //두조건이 불일치 할경우 그냥 카운터를 추가한다.
-                    console.log("okay go");
                     this.nfc_timer += 1000;
-                    console.log("on");
                 }
 
             }, 1000);
