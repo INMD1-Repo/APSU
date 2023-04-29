@@ -59,6 +59,7 @@ a:link  {
     height: 83.5vh;
     overflow: auto;
     padding-top: 24px;
+    margin-bottom: 8vh;
 }
 
 .food_force {

@@ -226,15 +226,14 @@
       <!--용사전용-->
       <div v-if="this.$store.state.showcode == 'Veterans'">
         <h2 style="margin-bottom: 2vh">식당 태그 인식하기</h2>
-        <v-alert
-       v-if="this.nfc_check == false"
-          density="compact"
-          type="error"
-        >
-        <h2>NFC오류!</h2>
-          <p style="font-size: 0.8rem" >
-          아이폰이나 일부 기기는 웹nfc 기능을 지원하지 않습니다. 만약
-          안드로이드면 NFC를 켜보고 다시 시도해주십시오.
+        <v-alert v-if="this.nfc_check == false" density="compact" type="error">
+          <h2>NFC오류!</h2>
+          <p style="font-size: 0.8rem">
+            아이폰이나 일부 기기는 웹nfc 기능을 지원하지 않습니다. 만약
+            안드로이드면 NFC를 켜보고 다시 시도해주십시오.
+          </p>
+          <p style="font-size: 0.2rem">
+            ERROR: Device NFC not supported and not enabled
           </p>
         </v-alert>
         <v-card v-if="this.nfc_check == true">

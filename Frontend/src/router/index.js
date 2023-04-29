@@ -7,7 +7,7 @@ import a_gps from '../views/common/battalion_gps.vue'
 import food_main from '../views/common/food_main.vue'
 import view_mouth from '../views/common/food/view_mouth.vue'
 import application_status from '../views/common/force/Application_Status.vue'
-
+import application_record from '../views/common/force/Application_record.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -41,6 +41,10 @@ const routes = [
   {
     path: '/user/app_status',
     component: application_status
+  },
+  {
+    path: '/user/app_record',
+    component: application_record
   }
 ]
 

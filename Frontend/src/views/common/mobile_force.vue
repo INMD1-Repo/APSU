@@ -112,9 +112,9 @@
       <!--'간부용에만 표시됨'-->
       <div v-if="this.temp == 0">
         <div style="display: flex; margin-top: 2vh; margin-bottom: 2vh;">
-          <h2>유동병력 승인/거절 기록</h2>
+          <h2>유동병력 승인/거절</h2>
           <v-spacer></v-spacer>
-          <v-btn >더보기</v-btn>
+          <v-btn href="/user/app_record">더보기</v-btn>
         </div>
         <v-card style="height: 18vh; width: 94vw; overflow: auto">
           <v-list>
