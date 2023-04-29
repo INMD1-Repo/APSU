@@ -19,7 +19,7 @@
         <div style="display: flex; margin-bottom: 1vh;">
           <h2>유동병력 신청 현황</h2>
           <v-spacer></v-spacer>
-          <v-btn>더보기</v-btn>
+          <v-btn href="/user/app_status">더보기</v-btn>
         </div>
         <v-card style="height: 20vh; width: 94vw; overflow: auto">
           <v-list>
@@ -114,7 +114,7 @@
         <div style="display: flex; margin-top: 2vh; margin-bottom: 2vh;">
           <h2>유동병력 승인/거절 기록</h2>
           <v-spacer></v-spacer>
-          <v-btn>더보기</v-btn>
+          <v-btn >더보기</v-btn>
         </div>
         <v-card style="height: 18vh; width: 94vw; overflow: auto">
           <v-list>
