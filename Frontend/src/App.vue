@@ -19,7 +19,7 @@
           <v-toolbar-title></v-toolbar-title>
 
           <v-spacer></v-spacer>
-          <v-menu>
+          <v-menu style="margin-right: 10vw;">
             <template v-slot:activator="{ on, attrs }">
               <v-btn icon v-bind="attrs" v-on="on">
                 <v-icon>mdi-dots-vertical</v-icon>
