@@ -329,12 +329,41 @@
         </v-snackbar>
       </div>
       <!--간부전용-->
-      <!-- <div v-if="this.$store.state.showcode == 'navebar'"> -->
-      <div v-if="this.test == 1">
-        <h2 style="margin-bottom: 2vh">식당 임의 코드 생성 하기</h2>
-        <v-card> 여기다가는 코드 생성하는 UI가 표시됨 </v-card>
+      <div v-if="this.$store.state.showcode == 'executive'">
+        <v-card style="width: 94vw">
+          <v-card-title class="blue-grey white--text">
+            <span class="text-h6">임시코드 생성</span>
+          </v-card-title>
+          <v-list-item one-line>
+            <v-list-item-content>
+              <v-list-item-title class="text-h5 mb-1"></v-list-item-title>
+              <v-list-item-subtitle
+                >WebNFC가 지원이 안되거나 NFC기기가 오류가 있는 경우 임시코드를
+                생성해서 인증합니다</v-list-item-subtitle
+              >
+            </v-list-item-content>
+          </v-list-item>
+          <v-card-actions>
+            <v-btn
+              outlined
+              rounded
+              text
+              @click="
+                [
+                  (overlay = !overlay),
+                  nfc_scan(),
+                  (nfc_error = false),
+                  (nfc_success = false),
+                ]
+              "
+              >페이지 이동</v-btn
+            >
+          </v-card-actions>
+        </v-card>
       </div>
     </v-col>
+    <!--아도 몰라 이거 있어야 될거 같해-->
+    <div style="height: 7vh"></div>
   </div>
 </template>
 <script>

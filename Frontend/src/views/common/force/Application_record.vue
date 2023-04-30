@@ -1,13 +1,13 @@
 <template>
-    <div style="display: table">
-      <!--이건 더미다-->
-      <v-col></v-col>
-      <v-col class="force_frame">
-        <h1>유동병력 승인 거절</h1>
-        <p style="font-size: 0.9rem">
-          자신의 포대(중대)에 용사들의 이동 승인을 결정해주는 부분입니다.
-        </p>
-        <v-card>
+  <div style="display: table">
+    <!--이건 더미다-->
+    <v-col></v-col>
+    <v-col class="force_frame">
+      <h1>유동병력 승인 거절</h1>
+      <p style="font-size: 0.9rem">
+        자신의 포대(중대)에 용사들의 이동 승인을 결정해주는 부분입니다.
+      </p>
+      <v-card>
         <!--검색바-->
         <v-toolbar flat>
           <v-text-field
@@ -46,7 +46,14 @@
           <!--이 밑에 div 묶어 있는건 간부만 볼수 있습-->
           <div style="display: flex">
             <v-card-actions>
-              <v-btn outlined rounded text> 저장 </v-btn>
+              <v-btn
+                @click="(selcet_data = item), application(), (overlay = true)"
+                outlined
+                rounded
+                text
+              >
+                저장
+              </v-btn>
               <v-select
                 v-model="variant"
                 :items="items"
@@ -60,6 +67,28 @@
         <div style="height: 5vh"></div>
       </v-card>
     </v-col>
+    <v-overlay :value="overlay">
+      <v-alert type="info">
+        <h3>정말로 저장하시겟습니까?</h3>
+        <p style="font-size: 0.9rem">
+          한번 저장하면 다시 변경을 할수 없습니다.
+        </p>
+        <v-responsive class="border pa-1">
+          <h4>[저장목록]</h4>
+          <p style="font-size: 0.9rem">
+            계급: {{ this.selcet_data.Classes }}<br />
+            이름: {{ this.selcet_data.name }}<br />
+            장소: {{ this.selcet_data.local }}<br />
+            시간: {{ this.selcet_data.time }}<br />
+            심의결과: {{ this.selcet_data.verdict }}
+          </p>
+        </v-responsive>
+        <v-card-actions>
+          <v-btn color="orange"> 저장 </v-btn>
+          <v-btn color="orange" @click="overlay=false"> 취소 </v-btn>
+        </v-card-actions>
+      </v-alert>
+    </v-overlay>
   </div>
 </template>
 <script>
@@ -68,6 +97,8 @@ export default {
     return {
       search_temp: "",
       items: ["찬성", "반대", "보류"],
+      selcet_data: "",
+      overlay: false,
       //임시로 데이터이다.
       sample: [
         {
@@ -111,6 +142,9 @@ export default {
           this.temp.push(item);
         }
       });
+    },
+    application() {
+      console.log(this.selcet_data);
     },
   },
   mounted() {
