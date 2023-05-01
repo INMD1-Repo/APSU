@@ -228,13 +228,17 @@
         <h2 style="margin-bottom: 2vh">식당 태그 인식하기</h2>
         <v-alert v-if="this.nfc_check == false" density="compact" type="error">
           <h2>NFC오류!</h2>
-          <p style="font-size: 0.8rem">
-            아이폰이나 일부 기기는 웹nfc 기능을 지원하지 않습니다. 만약
-            안드로이드면 NFC를 켜보고 다시 시도해주십시오.
+          <p style="font-size: 0.7rem">
+            아이폰이나 일부 기기는 웹nfc 기능을 지원하지 않습니다. <br />지원
+            안하는 경우 아래에 코드로 인증하기 버튼을 눌려 인증 하십시오. <br />
+            만약안드로이드면 NFC를 켜보고 다시 시도해주십시오.
           </p>
           <p style="font-size: 0.2rem">
             ERROR: Device NFC not supported and not enabled
           </p>
+          <v-btn @click="(code_type = !code_type), (overlay = !overlay)"
+            >코드로 인증하기</v-btn
+          >
         </v-alert>
         <v-card v-if="this.nfc_check == true">
           <v-card-title class="blue-grey white--text">
@@ -257,7 +261,7 @@
                 [
                   (overlay = !overlay),
                   nfc_scan(),
-                  (nfc_error = false),
+                  (nfc_type = !nfc_type)((nfc_error = false)),
                   (nfc_success = false),
                 ]
               "
@@ -266,7 +270,13 @@
           </v-card-actions>
         </v-card>
         <v-overlay :z-index="zIndex" :value="overlay">
-          <v-card class="black--text" :loading="loading" color="white">
+          <!--nfc가 지원 할때-->
+          <v-card
+            v-if="nfc_type == true"
+            class="black--text"
+            :loading="loading"
+            color="white"
+          >
             <template slot="progress">
               <v-progress-linear color="deep-purple" height="10" indeterminate>
               </v-progress-linear>
@@ -285,6 +295,69 @@
                 <div class="black--text">중지하기</div>
               </v-btn>
             </v-card-actions>
+          </v-card>
+          <!--nfc가 미지원 할때-->
+          <v-card>
+            <v-alert
+            v-if="Auth_error == true"
+              type="error"
+              style="width: 70vw; height: 10vh; transform: translate(1.3vh, 4vw);"
+              elevation="1"
+            >
+              <h4>오류!</h4>
+              <p style="font-size: 0.6rem">
+                코드가 일치하지 않습니다. 코드를 생성한 간부한데 문의 하십시오
+              </p>
+            </v-alert>
+            <v-card-title> NFC 대신 코드로 인증합니다. </v-card-title>
+            <v-card-subtitle>
+              아래 정보를 확인하고 저장해주세요
+            </v-card-subtitle>
+            <v-card-text>
+              <v-row>
+                <v-col>
+                  <v-list-item two-line>
+                    <v-list-item-content>
+                      <v-list-item-title>계급</v-list-item-title>
+                      <v-list-item-subtitle>병장</v-list-item-subtitle>
+                    </v-list-item-content>
+                  </v-list-item>
+                  <v-list-item two-line>
+                    <v-list-item-content>
+                      <v-list-item-title>이름</v-list-item-title>
+                      <v-list-item-subtitle>아무개</v-list-item-subtitle>
+                    </v-list-item-content>
+                  </v-list-item>
+                  <v-list-item two-line>
+                    <v-list-item-content>
+                      <v-list-item-title>식사</v-list-item-title>
+                      <v-list-item-subtitle>브라보</v-list-item-subtitle>
+                    </v-list-item-content>
+                  </v-list-item>
+                </v-col>
+                <v-col>
+                  <v-list-item two-line>
+                    <v-list-item-content>
+                      <v-list-item-title>시간</v-list-item-title>
+                      <v-list-item-subtitle>병장</v-list-item-subtitle>
+                    </v-list-item-content>
+                  </v-list-item>
+                  <v-list-item two-line>
+                    <v-list-item-content>
+                      <v-list-item-title>이름</v-list-item-title>
+                      <v-list-item-subtitle>아무개</v-list-item-subtitle>
+                    </v-list-item-content>
+                  </v-list-item>
+                </v-col>
+              </v-row>
+              <v-text-field v-model="Auth_body" label="코드 입력" required></v-text-field>
+              <v-card-action>
+                <v-btn @click="Auth_check()" style="margin-right: 4vw"
+                  >저장</v-btn
+                >
+                <v-btn @click="overlay = false">취소</v-btn>
+              </v-card-action>
+            </v-card-text>
           </v-card>
         </v-overlay>
         <v-snackbar
@@ -322,8 +395,8 @@
             icon="mdi-checkbox-marked-circle-outline"
           >
             <div style="font-size: 0.8em">
-              성공적으로 태그를 했습니다!<br />
-              성공 시각: {{ this.time }}
+              성공적으로 태그&저장를 했습니다!<br />
+              성공 시각: 0000-00-00 00:00:00
             </div>
           </v-alert>
         </v-snackbar>
@@ -382,8 +455,9 @@ export default {
       overlay: false,
       loading: true,
 
-      nfc_timer: 0,
-      nfc_type: null,
+      nfc_timer: 0, //팝업 타이머 설정
+      nfc_type: false,
+      code_type: false,
 
       //성공여부 판단
       nfc_error: false,
@@ -393,6 +467,9 @@ export default {
       //nfc 지원 여부
       nfc_check: true,
 
+      //인증코드 관한 것들
+      Auth_body: "",
+      Auth_error: false,
       //간부용
     };
   },
@@ -408,6 +485,7 @@ export default {
           console.log(message);
           this.nfc_success = true;
           this.overlay = false;
+          this.nfc_type = false;
           this.zIndex = 0;
           this.nfc_timer = 0;
           this.time = new Date().toLocaleString();
@@ -421,6 +499,7 @@ export default {
             this.overlay = false;
             this.zIndex = 0;
             this.nfc_timer = 0;
+            this.nfc_type = false;
             this.nfc_error = true;
             clearInterval(re);
           } else {
@@ -434,6 +513,15 @@ export default {
         this.nfc_check = false;
       }
     },
+    Auth_check(){
+      if(this.Auth_body == "test"){
+        this.overlay = false;
+        this.Auth_error = false;
+        this.nfc_success = true
+      }else{
+        this.Auth_error = true
+      }
+    }
   },
 
   async mounted() {

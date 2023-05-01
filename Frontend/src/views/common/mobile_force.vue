@@ -195,7 +195,7 @@
             icon="mdi-checkbox-marked-circle-outline"
           >
             <div style="font-size: 0.8em">
-              성공적으로 서버에 저장을 했습니다.ㄴ<br />
+              성공적으로 서버에 저장을 했습니다.<br />
             </div>
           </v-alert>
         </v-snackbar>
