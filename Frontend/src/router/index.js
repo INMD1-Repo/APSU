@@ -9,7 +9,7 @@ import view_mouth from '../views/common/food/view_mouth.vue'
 import application_status from '../views/common/force/Application_Status.vue'
 import application_record from '../views/common/force/Application_record.vue'
 import Random_generation from '../views/common/food/Random_generation.vue'
-
+import ramdom_code from '../views/common/food/ramdom_code.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -51,6 +51,10 @@ const routes = [
   {
     path: '/user/Rfon',
     component: Random_generation
+  },
+  {
+    path: '/user/rm_code',
+    component: ramdom_code
   }
 ]
 
