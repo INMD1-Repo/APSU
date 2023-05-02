@@ -429,6 +429,7 @@
                   (nfc_success = false),
                 ]
               "
+              :href="'/user/rm_code'"
               >페이지 이동</v-btn
             >
           </v-card-actions>
