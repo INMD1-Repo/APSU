@@ -10,12 +10,21 @@
           max-width="94vw"
           src="../../../assets/image/ram_code.jpg"
         >
-          <v-card-title>임의코드 생성</v-card-title>
-          <v-card-subtitle
-            >아이폰이나 NFC미지원 기기를 위해 임시코드를
-            생성합니다.</v-card-subtitle
-          >
         </v-img>
+
+        <v-card-title>임의코드</v-card-title>
+        <!--코드가 어떻게 보일지 생각할것-->
+        <v-card style="margin: 5%">
+          <div style="display: table; margin-left: auto; margin-right: auto">
+            <v-icon x-large style="padding-top: 2vh; padding-bottom: 2vh"
+              >fa-fingerprint</v-icon
+            >
+          </div>
+          <div style="text-align: center; padding-bottom: 5vh;" >
+            <h4>임시 인증코드 생성</h4>
+            <p style="font-size: 0.7rem;">아래에 버튼을 누루면 자동으로 코드를 만들어서 보여줌니다.</p>
+          </div>
+        </v-card>
         <v-card-subtitle>
           ⚠️ 주의사항 안내<br />
           <div style="font-size: 0.6rem">
@@ -25,14 +34,8 @@
             해야됩니다.<br />
           </div>
         </v-card-subtitle>
-        <v-card-title>임의코드</v-card-title>
-        <!--코드가 어떻게 보일지 생각할것-->
-        <v-btn
-          color="primary"
-          dark
-          v-on="on"
-          style="margin: 2%; width: 90vw"
-          >Open Dialog
+        <v-btn color="primary" dark v-on="on" style="margin: 2%; width: 90vw"
+          >코드 생성하기
         </v-btn>
       </v-card>
     </v-col>
