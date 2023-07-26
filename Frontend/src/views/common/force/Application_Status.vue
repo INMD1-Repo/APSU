@@ -4,7 +4,7 @@
     <v-col></v-col>
     <v-col class="force_frame">
       <h1>유동병력 신청 진행</h1>
-      <p style="font-size: 1rem">
+      <p style="font-size: 1rem; padding-top: 1rem;">
         여기선 대대 전체 신청 진행 사항을 볼수있습니다.<br />
         다른 포대(중대) 용사들이 해당 포대 간부님게 문의 바람니다.
       </p>
