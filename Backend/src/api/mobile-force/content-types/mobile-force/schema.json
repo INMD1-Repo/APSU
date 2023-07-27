@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "mobile_forces",
+  "info": {
+    "singularName": "mobile-force",
+    "pluralName": "mobile-forces",
+    "displayName": "mobile force"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Classes": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "local": {
+      "type": "string"
+    },
+    "time": {
+      "type": "string"
+    },
+    "Approval": {
+      "type": "boolean"
+    }
+  }
+}
