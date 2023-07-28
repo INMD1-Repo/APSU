@@ -176,16 +176,18 @@ export default {
       sing_id: "",
       sing_pw: "",
       si_email: "",
-      sing_pw_double : 0,
+      
+      sing_pw_double: 0,
       rules: {
         passss: (value) => {
-          const pattern =/^(?=.*[a-zA-Z])(?=.*[0-9]).{8,25}$/;
+          const pattern = /^(?=.*[a-zA-Z])(?=.*[0-9]).{8,25}$/;
           return pattern.test(value) || "조건부에 해당되지 않습니다.";
         },
-        email: value => {
-            const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-            return pattern.test(value) || 'Invalid e-mail.'
-          },
+        email: (value) => {
+          const pattern =
+            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+          return pattern.test(value) || "Invalid e-mail.";
+        },
       },
     };
   },
@@ -200,7 +202,7 @@ export default {
         //로그인 요청
         try {
           //유저확인
-          await axios.post(
+          const user_info = await axios.post(
             "http://localhost:1337/api/auth/local",
             {
               identifier: this.id,
@@ -212,22 +214,47 @@ export default {
               },
             }
           );
-          // //기본 환경 설정
-          // this.$store.commit("login_set", 1);
-          // window.localStorage.setItem("login", "1");
+          console.log(user_info);
+          this.$store.commit("info", user_info.data.user)
+          this.$store.commit("usertoken", user_info.data.user.jwt)
+          this.$store.commit("showcode", user_info.data.user.showcode)
+          
+          //기본 환경 설정
+          this.$store.commit("login_set", 1);
+          window.localStorage.setItem("login", "1");
 
           //앱로그
-          await axios.post("http://localhost:1337/api/app-logers", {
-            body: "로그인에 성공함",
-            ip: this.nowip.data.ipAddress,
-          });
+          await axios.post(
+            "http://localhost:1337/api/app-logers",
+            {
+              data: {
+                body: "로그인에 성공함",
+                ip: this.nowip.data.ipAddress,
+              },
+            },
+            {
+              headers: {
+                "Content-Type": "application/json",
+              },
+            }
+          );
           this.$router.push({ path: "/user/main" });
         } catch (error) {
-          await axios.post("http://localhost:1337/api/app-logers", {
-            body: "로그인에 실패함",
-            error_massage: error,
-            ip: this.nowip.data.ipAddress,
-          });
+          await axios.post(
+            "http://localhost:1337/api/app-logers",
+            {
+              data: {
+                body: "로그인에 실패함",
+                error_massage: error,
+                ip: this.nowip.data.ipAddress,
+              },
+            },
+            {
+              headers: {
+                "Content-Type": "application/json",
+              },
+            }
+          );
         }
       } catch (error) {
         console.log(error);
@@ -243,31 +270,57 @@ export default {
         birthday: this.birthday,
         korea_name: this.si_name,
         password: this.sing_pw,
-        email: this.si_email
-
+        email: this.si_email,
+        showcode: "Veterans"
       };
       try {
         //비밀번호 중복검사
         try {
           //회원가입 데이터 서버로 전송
-          await axios.post("http://localhost:1337/api/auth/local/register",sing_up_data,{
-            headers: {
-              "Content-Type": "application/json",
+          await axios.post(
+            "http://localhost:1337/api/auth/local/register",
+            sing_up_data,
+            {
+              headers: {
+                "Content-Type": "application/json",
+              },
+            }
+          );
+          await axios.post(
+            "http://localhost:1337/api/app-logers",
+            {
+              data: {
+                body: "회원가입에 성공함",
+                ip: this.nowip.data.ipAddress,
+              },
             },
-          });
-          await axios.post("http://localhost:1337/api/app-logers", {
-            body: "회원가입에 성공함",
-            ip: this.nowip.data.ipAddress,
-          });
+            {
+              headers: {
+                "Content-Type": "application/json",
+              },
+            }
+          );
+          this.dialog = false;
         } catch (error) {
+          //여긴 이메일이나 비밀번호가 중복이 되면 나타난다.
           console.log(error);
         }
       } catch (error) {
-        await axios.post("http://localhost:1337/api/app-logers", {
-          body: "회원가입에 실패함",
-          error_massage: error,
-          ip: this.nowip.data.ipAddress,
-        });
+        await axios.post(
+          "http://localhost:1337/api/app-logers",
+          {
+            data: {
+              body: "회원가입에 실패함",
+              error_massage: error,
+              ip: this.nowip.data.ipAddress,
+            },
+          },
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
       }
 
       console.log(sing_up_data);

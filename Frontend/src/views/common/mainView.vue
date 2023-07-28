@@ -3,7 +3,7 @@
     <v-col style="margin-top: 3vh">
       <v-list-item>
         <v-list-item-content>
-          <h2>환영합니다 XXX님!</h2>
+          <h2>환영합니다 {{this.$store.state.info.korea_name}}님!</h2>
           <p>오늘도 활기찬 하루 보내세요!</p>
         </v-list-item-content>
         <v-list-item-avatar tile size="80" color="grey"></v-list-item-avatar>

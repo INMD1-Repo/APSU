@@ -19,7 +19,7 @@
           <v-toolbar-title></v-toolbar-title>
 
           <v-spacer></v-spacer>
-          <v-menu style="margin-right: 10vw;">
+          <v-menu style="margin-right: 10vw">
             <template v-slot:activator="{ on, attrs }">
               <v-btn icon v-bind="attrs" v-on="on">
                 <v-icon>mdi-dots-vertical</v-icon>
@@ -89,7 +89,11 @@
             </v-col>
             <v-col>
               <!--현재 로그인된 사람의 관등성명-->
-              <p>X포대 전포대장 중위 XXX</p>
+              <p>
+                {{ this.$store.state.info.belong }} 
+                {{ this.$store.state.info.class }} 
+                {{ this.$store.state.info.korea_name }}
+              </p>
               <!--버튼 같은걸 생성 해볼까?-->
             </v-col>
             <v-col class="font-left">
@@ -141,7 +145,7 @@
               <h3>식단관리</h3>
             </v-col>
             <v-list-item
-              v-for="item in setup_data[this.$store.state.showcode].navebar
+              v-for="item in setup_data[this.$store.state.info.showcode].navebar
                 .food"
               :key="item.name"
               link
@@ -177,7 +181,7 @@
             <span>홈</span>
             <v-icon>fa-home</v-icon>
           </v-btn>
- 
+
           <v-btn :href="'/user/mobile_force'">
             <span>유동병력</span>
             <v-icon>fa-clipboard</v-icon>
@@ -212,7 +216,7 @@ export default {
     group: null,
     setup_data: setup,
     dialog: false,
-    scroll: 0
+    scroll: 0,
   }),
   mounted() {
     if (window.localStorage.getItem("login") == null) {
@@ -223,9 +227,6 @@ export default {
     } else if (window.location.href.indexOf("/user") === -1) {
       this.$router.push({ path: "/user/main" });
     }
-
-   
-
   },
   watch: {
     group() {
@@ -234,8 +235,8 @@ export default {
   },
   methods: {
     handleScroll() {
-        this.scroll = window.pageYOffset;
-     },
+      this.scroll = window.pageYOffset;
+    },
     logout() {
       this.$store.commit("login_set", 0);
       window.localStorage.setItem("login", "0");
