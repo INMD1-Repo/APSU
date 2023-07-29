@@ -13,6 +13,7 @@ export default new vuex.Store({
     usertoken: '',
     //간부 용사 분리
     showcode: '',
+    now_ip: ''
   },
   mutations: {
     login_set : function (state, value) {
@@ -26,6 +27,8 @@ export default new vuex.Store({
     },
     showcode : function (state, value) {
       state.showcode = value
-    },
+    },now_ip : function(state, value) {
+      state.now_ip = value
+    }
   }
 })

@@ -194,7 +194,7 @@ export default {
   async created() {
     //사용자 기본 ip수집
     this.nowip = await axios.get("https://api.db-ip.com/v2/free/self");
-    console.log(this.nowip);
+    this.$store.state.nowip = this.nowip
   },
   methods: {
     async login() {

@@ -321,20 +321,64 @@ export default {
             "http://localhost:1337/api/mobile-forces",
             {
               data: {
-                
+                Classes: this.$store.state.info.class,
+                name: this.$store.state.info.korea_name,
+                local: this.local_text,
+                significant_text: this.significant_text,
+                Approval: "pending",
               },
             },
             {
               headers: {
-                "Authorization" : "Bearer " + this.$store.state.usertoken
+                Authorization: "Bearer " + this.$store.state.usertoken,
               },
             }
           );
           this.success_notifications = true;
-          console.log("더미");
+          this.dialog = false;
+          await axios.post(
+            "http://localhost:1337/api/app-logers",
+            {
+              data: {
+                body: "유동병력신청 완료" + {
+                  Classes: this.$store.state.info.class,
+                  name: this.$store.state.info.korea_name,
+                  local: this.local_text,
+                  significant_text: this.significant_text,
+                  Approval: "pending",
+                },
+                error_massage: "",
+              },
+            },
+            {
+              headers: {
+                "Content-Type": "application/json",
+              },
+            }
+          );
         } catch (error) {
           this.fail_notifications = true;
-          console.log(error);
+          this.dialog = false;
+          await axios.post(
+            "http://localhost:1337/api/app-logers",
+            {
+              data: {
+                body: "유동병력신청 실패함",
+                error_massage: error + {
+                  Classes: this.$store.state.info.class,
+                  name: this.$store.state.info.korea_name,
+                  local: this.local_text,
+                  significant_text: this.significant_text,
+                  Approval: "pending",
+                },
+              }
+            },
+            {
+              headers: {
+                "Content-Type": "application/json",
+              },
+            }
+          );
         }
       }
     },
