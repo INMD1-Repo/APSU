@@ -79,7 +79,7 @@
                         :items="['이등병', '일병', '상병', '병장']"
                         label="계급*"
                         required
-                        v-model="Classes"
+                        v-model="Class"
                       ></v-select>
                     </v-col>
                     <v-col cols="12" sm="6" md="4">
@@ -216,7 +216,7 @@ export default {
           );
           console.log(user_info);
           this.$store.commit("info", user_info.data.user)
-          this.$store.commit("usertoken", user_info.data.user.jwt)
+          this.$store.commit("usertoken", user_info.data.jwt)
           this.$store.commit("showcode", user_info.data.user.showcode)
           
           //기본 환경 설정

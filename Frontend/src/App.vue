@@ -89,7 +89,7 @@
             </v-col>
             <v-col>
               <!--현재 로그인된 사람의 관등성명-->
-              <p>
+              <p style="font-weight: bold; font-size: 1.1  rem;">
                 {{ this.$store.state.info.belong }} 
                 {{ this.$store.state.info.class }} 
                 {{ this.$store.state.info.korea_name }}
@@ -219,6 +219,7 @@ export default {
     scroll: 0,
   }),
   mounted() {
+    console.log(this.$store.state);
     if (window.localStorage.getItem("login") == null) {
       window.localStorage.setItem("login", "0");
     }
@@ -240,6 +241,11 @@ export default {
     logout() {
       this.$store.commit("login_set", 0);
       window.localStorage.setItem("login", "0");
+
+      //내부데이터 초기화
+      this.$store.commit("info", "")
+          this.$store.commit("usertoken", "")
+          this.$store.commit("showcode", "")
     },
   },
 };

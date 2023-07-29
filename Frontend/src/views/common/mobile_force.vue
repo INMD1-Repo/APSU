@@ -40,7 +40,7 @@
       <!--용사용-->
       <div v-if="this.$store.state.showcode == 'Veterans'">
         <h2 style="margin-bottom: 2vh">유동병력 신청 진행</h2>
-        <v-card style="height: 45vh; width: 94vw; overflow: auto">
+        <v-card style="height: 20vh; width: 94vw; overflow: auto">
           <v-list>
             <v-list-item v-for="item in 10" :key="item">
               <v-list-item-content>
@@ -68,7 +68,7 @@
               v-bind="attrs"
               v-on="on"
               style="margin-top: 1vh; width: 94vw"
-              >Open Dialog</v-btn
+              >장소 이동 신청하기</v-btn
             >
           </template>
           <v-card>
@@ -77,13 +77,13 @@
               <v-btn icon dark @click="dialog = false">
                 <v-icon>mdi-close</v-icon>
               </v-btn>
-              <v-toolbar-title>Settings</v-toolbar-title>
+              <v-toolbar-title>보고서 제출</v-toolbar-title>
               <v-spacer></v-spacer>
             </v-toolbar>
             <!--body-->
-            <v-alert style="margin: 2vh" type="error" v-show="notifications"
-              >이건 오류나면 표시가 됨니다.</v-alert
-            >
+            <v-alert style="margin: 2vh" type="error" v-show="notifications">{{
+              this.Error_text
+            }}</v-alert>
             <!--찐 body-->
             <v-stepper v-model="e6" vertical>
               <v-stepper-step :complete="e6 > 1" step="1">
@@ -91,13 +91,17 @@
               </v-stepper-step>
 
               <v-stepper-content step="1">
-                <v-card class="mb-12" height="200px" outlined></v-card>
+                <v-card class="mb-5" height="200px" outlined></v-card>
+                <span style="font-size: 0.6rem"
+                  >*본 사항을 충실히 읽고 책임을 본인에게 있음을 확인
+                  했습니다.</span
+                >
                 <v-btn color="primary" @click="e6 = 2"> 다음 </v-btn>
                 <v-btn @click="dialog = false" text> 취소 </v-btn>
               </v-stepper-content>
 
               <v-stepper-step :complete="e6 > 2" step="2">
-                인적사항 확인
+                신청자 확인
               </v-stepper-step>
 
               <v-stepper-content step="2">
@@ -105,19 +109,25 @@
                   <v-list-item two-line>
                     <v-list-item-content>
                       <v-list-item-title>계급</v-list-item-title>
-                      <v-list-item-subtitle>병장</v-list-item-subtitle>
+                      <v-list-item-subtitle>{{
+                        this.$store.state.info.class
+                      }}</v-list-item-subtitle>
                     </v-list-item-content>
                   </v-list-item>
                   <v-list-item two-line>
                     <v-list-item-content>
                       <v-list-item-title>이름</v-list-item-title>
-                      <v-list-item-subtitle>아무개</v-list-item-subtitle>
+                      <v-list-item-subtitle>{{
+                        this.$store.state.info.korea_name
+                      }}</v-list-item-subtitle>
                     </v-list-item-content>
                   </v-list-item>
                   <v-list-item two-line>
                     <v-list-item-content>
                       <v-list-item-title>소속</v-list-item-title>
-                      <v-list-item-subtitle>브라보</v-list-item-subtitle>
+                      <v-list-item-subtitle>{{
+                        this.$store.state.info.belong
+                      }}</v-list-item-subtitle>
                     </v-list-item-content>
                   </v-list-item>
                 </v-card>
@@ -129,13 +139,18 @@
                 이동 장소 선택
               </v-stepper-step>
               <v-stepper-content step="3">
-                <v-card outlined>
-                  <h5>이동장소를 선택해주세요.</h5>
-                  <v-select
-                    :items="items"
-                    filled
-                    label="Filled style"
-                  ></v-select>
+                <v-card outlined style="border: 1rem">
+                  <h5>장소를 입력해주세요.</h5>
+                  <v-text-field
+                    label="장소*"
+                    hint="EX: PX,취사장"
+                    v-model="local_text"
+                  ></v-text-field>
+                  <v-text-field
+                    label="특이사항(동행자)"
+                    hint="동행자 또는 기타 사항이 있으면 적으시기 바함니다."
+                    v-model="significant_text"
+                  ></v-text-field>
                 </v-card>
                 <v-btn color="primary" @click="e6 = 4"> 다음 </v-btn>
                 <v-btn @click="e6 = 2" text> 뒤로 </v-btn>
@@ -147,32 +162,49 @@
                   <v-list-item two-line>
                     <v-list-item-content>
                       <v-list-item-title>계급</v-list-item-title>
-                      <v-list-item-subtitle>병장</v-list-item-subtitle>
+                      <v-list-item-subtitle>{{
+                        this.$store.state.info.class
+                      }}</v-list-item-subtitle>
                     </v-list-item-content>
                   </v-list-item>
                   <v-list-item two-line>
                     <v-list-item-content>
                       <v-list-item-title>이름</v-list-item-title>
-                      <v-list-item-subtitle>아무개</v-list-item-subtitle>
+                      <v-list-item-subtitle>{{
+                        this.$store.state.info.korea_name
+                      }}</v-list-item-subtitle>
                     </v-list-item-content>
                   </v-list-item>
                   <v-list-item two-line>
                     <v-list-item-content>
                       <v-list-item-title>소속</v-list-item-title>
-                      <v-list-item-subtitle>브라보</v-list-item-subtitle>
+                      <v-list-item-subtitle>{{
+                        this.$store.state.info.belong
+                      }}</v-list-item-subtitle>
                     </v-list-item-content>
                   </v-list-item>
                   <v-list-item two-line>
                     <v-list-item-content>
                       <v-list-item-title>이동 장소</v-list-item-title>
-                      <v-list-item-subtitle>PX(방패마트)</v-list-item-subtitle>
+                      <v-list-item-subtitle>{{
+                        this.local_text
+                      }}</v-list-item-subtitle>
+                    </v-list-item-content>
+                  </v-list-item>
+                  <v-list-item two-line>
+                    <v-list-item-content>
+                      <v-list-item-title>특이사항(동행자)</v-list-item-title>
+                      <v-list-item-subtitle>{{
+                        this.significant_text
+                      }}</v-list-item-subtitle>
                     </v-list-item-content>
                   </v-list-item>
                 </v-card>
                 <v-checkbox
+                  style="margin-left: 0.5rem"
                   v-model="checkbox"
                   @click="checkbox = true"
-                  :label="`모든 사항을 이행했고 저장시 수정할수 없음을 숙지 했습니다.`"
+                  :label="`문제가 없음을 확인하고 제출합니다.`"
                 ></v-checkbox>
                 <v-btn color="primary" @click="check()"> 저장 </v-btn>
                 <v-btn @click="e6 = 3" text> 뒤로 </v-btn>
@@ -186,7 +218,11 @@
           color="success"
           outlined
           right
-          style="margin-right: 1.4vw"
+          style="
+            margin-right: 1.4vw;
+            margin-bottom: 2rem;
+            padding-bottom: -3rem;
+          "
         >
           <v-alert
             text
@@ -196,6 +232,30 @@
           >
             <div style="font-size: 0.8em">
               성공적으로 서버에 저장을 했습니다.<br />
+            </div>
+          </v-alert>
+        </v-snackbar>
+        <v-snackbar
+          v-model="fail_notifications"
+          :timeout="timeout"
+          color="error"
+          outlined
+          right
+          style="
+            margin-right: 1.4vw;
+            margin-bottom: 2rem;
+            padding-bottom: -3rem;
+          "
+        >
+          <v-alert
+            text
+            prominent
+            type="error"
+            icon="mdi-checkbox-marked-circle-outline"
+          >
+            <div style="font-size: 0.8em">
+              서버에 올리는 중 문제가 발생했습니다.<br />
+              간부한데 문의해주십시오.
             </div>
           </v-alert>
         </v-snackbar>
@@ -229,6 +289,8 @@
   </div>
 </template>
 <script>
+// eslint-disable-next-line
+import axios from "axios";
 export default {
   data: () => {
     return {
@@ -241,16 +303,39 @@ export default {
       checkbox: false,
       timeout: 30000,
       success_notifications: false,
+      fail_notifications: false,
+      Error_text: "",
+      //데이터 보내기 위한 함수
+      local_text: "",
+      significant_text: "",
     };
   },
   methods: {
-    check() {
+    async check() {
       if (this.checkbox == false) {
+        this.Error_text = "체크를 해주십시오";
         this.notifications = true;
-        this.error_body = "아래 보이는 체크박스를 눌려주세요.";
       } else {
-        this.dialog = false;
-        this.success_notifications = true;
+        try {
+          await axios.post(
+            "http://localhost:1337/api/mobile-forces",
+            {
+              data: {
+                
+              },
+            },
+            {
+              headers: {
+                "Authorization" : "Bearer " + this.$store.state.usertoken
+              },
+            }
+          );
+          this.success_notifications = true;
+          console.log("더미");
+        } catch (error) {
+          this.fail_notifications = true;
+          console.log(error);
+        }
       }
     },
   },
