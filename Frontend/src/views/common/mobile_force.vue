@@ -348,7 +348,7 @@ export default {
             "http://localhost:1337/api/mobile-forces",
             {
               data: {
-                Classes: this.$store.state.info.class,
+                Classes: this.$store.state.info.Classes,
                 name: this.$store.state.info.korea_name,
                 local: this.local_text,
                 significant_text: this.significant_text,
@@ -370,7 +370,7 @@ export default {
                 body:
                   "유동병력신청 완료" +
                   {
-                    Classes: this.$store.state.info.class,
+                    Classes: this.$store.state.info.Classes,
                     name: this.$store.state.info.korea_name,
                     local: this.local_text,
                     significant_text: this.significant_text,
@@ -397,7 +397,7 @@ export default {
                 error_massage:
                   error +
                   {
-                    Classes: this.$store.state.info.class,
+                    Classes: this.$store.state.info.Classes,
                     name: this.$store.state.info.korea_name,
                     local: this.local_text,
                     significant_text: this.significant_text,
