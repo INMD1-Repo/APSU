@@ -39,19 +39,30 @@
       </div>
       <!--용사용-->
       <div v-if="this.$store.state.showcode == 'Veterans'">
-        <h2 style="margin-bottom: 2vh">유동병력 신청 진행</h2>
-        <v-card style="height: 20vh; width: 94vw; overflow: auto">
+        <div style="display: flex; margin-bottom: 1vh">
+          <h2>유동병력 신청 현황</h2>
+          <v-spacer></v-spacer>
+          <v-btn href="/user/app_status">더보기</v-btn>
+        </div>
+        <v-card style="height: 40vh; width: 94vw; overflow: auto">
           <v-list>
-            <v-list-item v-for="item in 10" :key="item">
+            <v-list-item v-for="item in this.force_status" :key="item">
               <v-list-item-content>
-                <v-list-item-title>병사 XXX</v-list-item-title>
+                <v-list-item-title
+                  >{{ item.attributes.Classes + item.attributes.name }}
+                </v-list-item-title>
                 <v-list-item-subtitle
-                  >분과: XXX 특기 : XXX</v-list-item-subtitle
+                  >이동할 장소:
+                  {{ item.attributes.local }}</v-list-item-subtitle
                 >
-                <v-list-item-subtitle>이동할 장소: XXX</v-list-item-subtitle>
+                <v-list-item-subtitle
+                  >신청시간:
+                  {{ item.attributes.createdAt }}</v-list-item-subtitle
+                >
               </v-list-item-content>
-
-              <v-list-item-icon>진행중</v-list-item-icon>
+              <v-list-item-icon>
+                {{ item.attributes.Approval }}</v-list-item-icon
+              >
             </v-list-item>
           </v-list>
         </v-card>
@@ -261,7 +272,7 @@
         </v-snackbar>
       </div>
       <!--'간부용에만 표시됨'-->
-      <div v-if="this.temp == 0">
+      <div v-if="this.$store.state.showcode == 'executive'">
         <div style="display: flex; margin-top: 2vh; margin-bottom: 2vh">
           <h2>유동병력 승인/거절</h2>
           <v-spacer></v-spacer>
@@ -290,6 +301,7 @@
 </template>
 <script>
 // eslint-disable-next-line
+import router from "@/router";
 import axios from "axios";
 export default {
   data: () => {
@@ -301,14 +313,29 @@ export default {
       widgets: false,
       error_body: "",
       checkbox: false,
-      timeout: 30000,
+      timeout: 3000,
       success_notifications: false,
       fail_notifications: false,
       Error_text: "",
       //데이터 보내기 위한 함수
       local_text: "",
       significant_text: "",
+      //여러 기록물
+      force_status: [],
+      appted_status: [],
     };
+  },
+  async created() {
+    this.force_status = await axios.get(
+      "http://localhost:1337/api/mobile-forces?filters[name][$eq]=" +
+        this.$store.state.info.korea_name,
+      {
+        headers: {
+          Authorization: "Bearer " + this.$store.state.usertoken,
+        },
+      }
+    );
+    this.force_status = this.force_status.data.data;
   },
   methods: {
     async check() {
@@ -340,13 +367,15 @@ export default {
             "http://localhost:1337/api/app-logers",
             {
               data: {
-                body: "유동병력신청 완료" + {
-                  Classes: this.$store.state.info.class,
-                  name: this.$store.state.info.korea_name,
-                  local: this.local_text,
-                  significant_text: this.significant_text,
-                  Approval: "pending",
-                },
+                body:
+                  "유동병력신청 완료" +
+                  {
+                    Classes: this.$store.state.info.class,
+                    name: this.$store.state.info.korea_name,
+                    local: this.local_text,
+                    significant_text: this.significant_text,
+                    Approval: "대기",
+                  },
                 error_massage: "",
               },
             },
@@ -356,6 +385,7 @@ export default {
               },
             }
           );
+          router.go();
         } catch (error) {
           this.fail_notifications = true;
           this.dialog = false;
@@ -364,14 +394,16 @@ export default {
             {
               data: {
                 body: "유동병력신청 실패함",
-                error_massage: error + {
-                  Classes: this.$store.state.info.class,
-                  name: this.$store.state.info.korea_name,
-                  local: this.local_text,
-                  significant_text: this.significant_text,
-                  Approval: "pending",
-                },
-              }
+                error_massage:
+                  error +
+                  {
+                    Classes: this.$store.state.info.class,
+                    name: this.$store.state.info.korea_name,
+                    local: this.local_text,
+                    significant_text: this.significant_text,
+                    Approval: "pending",
+                  },
+              },
             },
             {
               headers: {

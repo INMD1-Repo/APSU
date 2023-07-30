@@ -3,7 +3,7 @@
     <v-col style="margin-top: 3vh">
       <v-list-item>
         <v-list-item-content>
-          <h2>환영합니다 {{this.$store.state.info.korea_name}}님!</h2>
+          <h2>환영합니다 {{ this.$store.state.info.korea_name }}님!</h2>
           <p>오늘도 활기찬 하루 보내세요!</p>
         </v-list-item-content>
         <v-list-item-avatar tile size="80" color="grey"></v-list-item-avatar>
@@ -131,85 +131,28 @@
         </v-card>
       </v-col>
       <!--승인 현황-->
-      <div style="display: flex;">
+      <div style="display: flex">
         <h2 style="margin-bottom: 1vh">승인 현황</h2>
         <v-spacer></v-spacer>
         <v-btn href="/user/app_status">더보기</v-btn>
       </div>
       <v-card style="overflow: auto; height: 25vh" class="mx-auto" tile>
-        <v-list-item>
-          <v-list-item-content>
-            <v-list-item-title>Single-line item</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-
-        <v-list-item>
-          <v-list-item-content>
-            <v-list-item-title>Two-line item</v-list-item-title>
-            <v-list-item-subtitle>Secondary text</v-list-item-subtitle>
-          </v-list-item-content>
-        </v-list-item>
-
-        <v-list-item>
-          <v-list-item-content>
-            <v-list-item-title>Three-line item</v-list-item-title>
-            <v-list-item-subtitle
-              >Secondary line text Lorem ipsum dolor sit
-              amet,</v-list-item-subtitle
-            >
-            <v-list-item-subtitle
-              >consectetur adipiscing elit.</v-list-item-subtitle
-            >
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item>
-          <v-list-item-content>
-            <v-list-item-title>Three-line item</v-list-item-title>
-            <v-list-item-subtitle
-              >Secondary line text Lorem ipsum dolor sit
-              amet,</v-list-item-subtitle
-            >
-            <v-list-item-subtitle
-              >consectetur adipiscing elit.</v-list-item-subtitle
-            >
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item three-line>
-          <v-list-item-content>
-            <v-list-item-title>Three-line item</v-list-item-title>
-            <v-list-item-subtitle
-              >Secondary line text Lorem ipsum dolor sit
-              amet,</v-list-item-subtitle
-            >
-            <v-list-item-subtitle
-              >consectetur adipiscing elit.</v-list-item-subtitle
-            >
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item three-line>
-          <v-list-item-content>
-            <v-list-item-title>Three-line item</v-list-item-title>
-            <v-list-item-subtitle
-              >Secondary line text Lorem ipsum dolor sit
-              amet,</v-list-item-subtitle
-            >
-            <v-list-item-subtitle
-              >consectetur adipiscing elit.</v-list-item-subtitle
-            >
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item three-line>
-          <v-list-item-content>
-            <v-list-item-title>Three-line item</v-list-item-title>
-            <v-list-item-subtitle
-              >Secondary line text Lorem ipsum dolor sit
-              amet,</v-list-item-subtitle
-            >
-            <v-list-item-subtitle
-              >consectetur adipiscing elit.</v-list-item-subtitle
-            >
-          </v-list-item-content>
-        </v-list-item>
+        <v-list>
+          <v-list-item v-for="item in this.force_status" :key="item">
+            <v-list-item-content>
+              <v-list-item-title
+                >{{ item.attributes.Classes + item.attributes.name }}
+              </v-list-item-title>
+              <v-list-item-subtitle
+                >이동할 장소: {{ item.attributes.local }}</v-list-item-subtitle
+              >
+              <v-list-item-subtitle
+                >신청시간: {{ item.attributes.createdAt }}</v-list-item-subtitle
+              >
+            </v-list-item-content>
+            <v-list-item-icon> {{ item.attributes.Approval }}</v-list-item-icon>
+          </v-list-item>
+        </v-list>
       </v-card>
     </v-col>
     <!--아도 몰라 이거 있어야 될거 같해-->
@@ -217,6 +160,8 @@
   </div>
 </template>
 <script>
+// eslint-disable-next-line
+import axios from "axios";
 import data from "../../assets/example.json";
 import "date-utils";
 export default {
@@ -224,7 +169,19 @@ export default {
     return {
       data_t: 0,
       food: {},
+      force_status: "",
     };
+  },
+  async created() {
+    this.force_status = await axios.get(
+      "http://localhost:1337/api/mobile-forces",
+      {
+        headers: {
+          Authorization: "Bearer " + this.$store.state.usertoken,
+        },
+      }
+    );
+    this.force_status = this.force_status.data.data;
   },
   methods: {},
   mounted() {

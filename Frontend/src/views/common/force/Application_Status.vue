@@ -4,18 +4,16 @@
     <v-col></v-col>
     <v-col class="force_frame">
       <h1>유동병력 신청 진행</h1>
-      <p style="font-size: 1rem; padding-top: 1rem;">
+      <p style="font-size: 1rem; padding-top: 1rem">
         여기선 대대 전체 신청 진행 사항을 볼수있습니다.<br />
         다른 포대(중대) 용사들이 해당 포대 간부님게 문의 바람니다.
       </p>
       <v-data-table
         :headers="headers"
-        :items="sample"
+        :items="getinfo"
         item-key="name"
-        class="elevation-1"
         :search="search"
-        :custom-filter="filterOnlyCapsText"
-      >
+        :custom-filter="filterOnlyCapsText">
         <template v-slot:top>
           <v-text-field
             v-model="search"
@@ -29,42 +27,23 @@
 </template>
 
 <script>
+// eslint-disable-next-line
+import axios from "axios";
 export default {
   data() {
     return {
       search: "",
       calories: "",
-      sample: [
-        {
-          Classes: "일병",
-          name: "아무개",
-          local: "어딘가가",
-          time: "0000-00-00 00:00:00",
-          verdict: "거절",
-        },
-        {
-          Classes: "일병",
-          name: "왜무개",
-          local: "어딘가가",
-          time: "0000-00-00 00:00:00",
-          verdict: "거절",
-        },
-        {
-          Classes: "일병",
-          name: "삼성갤력",
-          local: "어딘가가",
-          time: "0000-00-00 00:00:00",
-          verdict: "거절",
-        },
-        {
-          Classes: "일병",
-          name: "삼그맘삼금",
-          local: "어딘가가",
-          time: "0000-00-00 00:00:00",
-          verdict: "승인",
-        },
-      ],
+      getinfo: [],
     };
+  },
+  async created() {
+    this.getinfo = await axios.get("http://localhost:1337/api/mobile-forces", {
+      headers : {
+        "Authorization": "Bearer " + this.$store.state.usertoken,
+      }
+    })
+    this.getinfo = this.getinfo.data.data
   },
   computed: {
     headers() {
@@ -73,15 +52,15 @@ export default {
           text: "계급",
           align: "start",
           sortable: false,
-          value: "Classes",
+          value: "attributes.Classes",
         },
         {
           text: "이름",
-          value: "name",
+          value: "attributes.name",
         },
-        { text: "장소", value: "local" },
-        { text: "시간", value: "time" },
-        { text: "승인여부", value: "verdict" },
+        { text: "장소", value: "attributes.local" },
+        { text: "시간", value: "attributes.createdAt" },
+        { text: "승인여부", value: "attributes.verdict" },
       ];
     },
   },

@@ -240,6 +240,7 @@ export default {
           );
           this.$router.push({ path: "/user/main" });
         } catch (error) {
+
           await axios.post(
             "http://localhost:1337/api/app-logers",
             {
@@ -306,6 +307,7 @@ export default {
           console.log(error);
         }
       } catch (error) {
+        this.error = 1;
         await axios.post(
           "http://localhost:1337/api/app-logers",
           {

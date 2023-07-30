@@ -1,0 +1,93 @@
+{
+    "executive": {
+        "navebar": {
+            "most": [
+                {
+                    "name": "유동병력 승인/거절",
+                    "link": "app_status",
+                    "icon": "fa-list-check"
+
+                },
+                {
+                    "name": "결식자 관리(E)",
+                    "link": "Absentees_unit",
+                    "icon": "fa-utensils"
+                },
+                {
+                    "name": "식단테그 생성",
+                    "link": "/user/Rfon",
+                    "icon": "fa-tag"
+                }
+            ],
+            "history": [
+                {
+                    "name": "유동병력 신청 현황",
+                    "link": "app_status",
+                    "icon": "fa-list"
+
+                },
+                {
+                    "name": "유동병력 승인/거절",
+                    "link": "app_record",
+                    "icon": "fa-list-check"
+
+                },
+                {
+                    "name": "대대 유동병력 현황",
+                    "link": "a_gps",
+                    "icon": "fa-map"
+
+                }
+            ],
+            "food": [
+                {
+                    "name": "월별 식단표",
+                    "link": "view_mouth",
+
+                    "icon": "fa-calendar-days"
+                },
+                {
+                    "name": "결식자 확인(E)",
+                    "link": "",
+                    "icon": "fa-person-circle-question"
+                },
+                {
+                    "name": "식당 임의태그생성",
+                    "link": "rm_code",
+                    "icon": "fa-solid fa-nfc"
+                }
+            ]
+        }
+    },
+    "Veterans": {
+        "navebar": {
+            "most": [
+            ],
+            "history": [
+                {
+                    "name": "유동병력 신청 현황",
+                    "link": "app_status",
+                    "icon": "fa-list"
+
+                },
+                {
+                    "name": "유동병력 신청",
+                    "link": "mobile_force",
+                    "icon": ""
+                }
+            ],
+            "food": [
+                {
+                    "name": "월별 식단표",
+                    "link": "view_mouth",
+                    "icon": "fa-calendar-days"
+                },
+                {
+                    "name": "식당태그(E)",
+                    "link": "/user/food_main",
+                    "icon": "fa-person-circle-question"
+                }
+            ]
+        }
+    }
+}
