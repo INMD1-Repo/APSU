@@ -4,7 +4,11 @@
     <v-col class="food_frame">
       <v-list-item>
         <v-list-item-content>
-          <h2>즐거운 식사 하세요 ! XXX님!</h2>
+          <h2>
+            즐거운 식사 하세요 !<br />
+            {{ this.$store.state.info.class }}
+            {{ this.$store.state.info.korea_name }}님!
+          </h2>
           <p>잔반 줄이기 운동 모두가 참여합시다!</p>
         </v-list-item-content>
       </v-list-item>
@@ -13,23 +17,23 @@
         <div style="display: flex; margin-top: 2vh; margin-bottom: 3vh">
           <h3>현재 식수 인원 근황</h3>
           <v-spacer></v-spacer>
-          <v-btn :href="''">자세히</v-btn>
+          <v-btn :href="'/user/Absentees_unit'">자세히</v-btn>
         </div>
         <v-card style="height: 13vh; text-align: center">
           <v-row>
             <v-col>
               <h4 style="margin-top: 1vh">식수인원</h4>
-              <p style="font-size: 1.7em">50</p>
+              <p style="font-size: 1.7em">{{this.belong_count}}</p>
             </v-col>
             <v-col
               style="border-right-style: groove; border-left-style: groove"
             >
               <h4 style="margin-top: 1vh">식사 인원</h4>
-              <p style="font-size: 1.7em; color: green">40</p>
+              <p style="font-size: 1.7em; color: green">{{this.belong_count}}</p>
             </v-col>
             <v-col>
               <h4 style="margin-top: 1vh">결식자</h4>
-              <p style="font-size: 1.7em; color: red">9</p>
+              <p style="font-size: 1.7em; color: red">{{this.not_eat}}</p>
             </v-col>
           </v-row>
         </v-card>
@@ -299,9 +303,13 @@
           <!--nfc가 미지원 할때-->
           <v-card>
             <v-alert
-            v-if="Auth_error == true"
+              v-if="Auth_error == true"
               type="error"
-              style="width: 70vw; height: 10vh; transform: translate(1.3vh, 4vw);"
+              style="
+                width: 70vw;
+                height: 10vh;
+                transform: translate(1.3vh, 4vw);
+              "
               elevation="1"
             >
               <h4>오류!</h4>
@@ -350,7 +358,11 @@
                   </v-list-item>
                 </v-col>
               </v-row>
-              <v-text-field v-model="Auth_body" label="코드 입력" required></v-text-field>
+              <v-text-field
+                v-model="Auth_body"
+                label="코드 입력"
+                required
+              ></v-text-field>
               <v-card-action>
                 <v-btn @click="Auth_check()" style="margin-right: 4vw"
                   >저장</v-btn
@@ -441,6 +453,8 @@
   </div>
 </template>
 <script>
+// eslint-disable-next-line
+import axios from "axios";
 import data from "../../assets/example.json";
 import "date-utils";
 export default {
@@ -472,7 +486,33 @@ export default {
       Auth_body: "",
       Auth_error: false,
       //간부용
+      belong_count: "",
+      not_eat: ""
     };
+  },
+  async created() {
+    //포(중대)인원 가져오기
+    this.belong_count = await axios.get(
+      "http://localhost:1337/api/mobile-forces" +
+        "?filters[belong][$eq]=" +
+        this.$store.state.info.belong,
+      {
+        headers: {
+          Authorization: "Bearer " + this.$store.state.usertoken,
+        },
+      }
+    );
+    this.belong_count = this.belong_count.data.data.length;
+    this.not_eat = await axios.get(
+      "http://localhost:1337/api/absenteesses" +
+        "?filters[check_text][$eq]=식사완료" + "&filters[belong][$eq]=" +  this.$store.state.info.classes,
+      {
+        headers: {
+          Authorization: "Bearer " + this.$store.state.usertoken,
+        },
+      }
+    );
+    this.not_eat = this.not_eat.data.data.length;
   },
   methods: {
     //nfc 같은 경우는 https 포트에서만 지원이 된다.
@@ -514,15 +554,15 @@ export default {
         this.nfc_check = false;
       }
     },
-    Auth_check(){
-      if(this.Auth_body == "test"){
+    Auth_check() {
+      if (this.Auth_body == "test") {
         this.overlay = false;
         this.Auth_error = false;
-        this.nfc_success = true
-      }else{
-        this.Auth_error = true
+        this.nfc_success = true;
+      } else {
+        this.Auth_error = true;
       }
-    }
+    },
   },
 
   async mounted() {

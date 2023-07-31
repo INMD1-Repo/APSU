@@ -23,16 +23,23 @@
         </div>
         <v-card style="height: 20vh; width: 94vw; overflow: auto">
           <v-list>
-            <v-list-item v-for="item in 10" :key="item">
+            <v-list-item v-for="item in this.all_status" :key="item">
               <v-list-item-content>
-                <v-list-item-title>병사 XXX</v-list-item-title>
+                <v-list-item-title
+                  >{{ item.attributes.Classes + item.attributes.name }}
+                </v-list-item-title>
                 <v-list-item-subtitle
-                  >분과: XXX 특기 : XXX</v-list-item-subtitle
+                  >이동할 장소:
+                  {{ item.attributes.local }}</v-list-item-subtitle
                 >
-                <v-list-item-subtitle>이동할 장소: XXX</v-list-item-subtitle>
+                <v-list-item-subtitle
+                  >신청시간:
+                  {{ item.attributes.createdAt }}</v-list-item-subtitle
+                >
               </v-list-item-content>
-
-              <v-list-item-icon>대기</v-list-item-icon>
+              <v-list-item-icon>
+                {{ item.attributes.Approval }}</v-list-item-icon
+              >
             </v-list-item>
           </v-list>
         </v-card>
@@ -279,19 +286,28 @@
           <v-btn href="/user/app_record">더보기</v-btn>
         </div>
         <v-card style="height: 18vh; width: 94vw; overflow: auto">
+          <v-card style="height: 20vh; width: 94vw; overflow: auto">
           <v-list>
-            <v-list-item v-for="item in 10" :key="item">
+            <v-list-item v-for="item in this.result_status" :key="item">
               <v-list-item-content>
-                <v-list-item-title>병사 XXX</v-list-item-title>
+                <v-list-item-title
+                  >{{ item.attributes.Classes + item.attributes.name }}
+                </v-list-item-title>
                 <v-list-item-subtitle
-                  >분과: XXX 특기 : XXX</v-list-item-subtitle
+                  >이동할 장소:
+                  {{ item.attributes.local }}</v-list-item-subtitle
                 >
-                <v-list-item-subtitle>이동할 장소: XXX</v-list-item-subtitle>
+                <v-list-item-subtitle
+                  >신청시간:
+                  {{ item.attributes.createdAt }}</v-list-item-subtitle
+                >
               </v-list-item-content>
-
-              <v-list-item-icon>거절</v-list-item-icon>
+              <v-list-item-icon>
+                {{ item.attributes.Approval }}</v-list-item-icon
+              >
             </v-list-item>
           </v-list>
+        </v-card>
         </v-card>
       </div>
     </v-col>
@@ -323,9 +339,12 @@ export default {
       //여러 기록물
       force_status: [],
       appted_status: [],
+      all_status: [],
+      result_status: []
     };
   },
   async created() {
+    //필터 적용한 요청
     this.force_status = await axios.get(
       "http://localhost:1337/api/mobile-forces?filters[name][$eq]=" +
         this.$store.state.info.korea_name + "&filters[belong][$eq]=" + this.$store.state.info.belong,
@@ -336,6 +355,28 @@ export default {
       }
     );
     this.force_status = this.force_status.data.data;
+    //간부가 포(중)대 전체확인 가능한 전체 오청
+    this.all_status = await axios.get(
+      "http://localhost:1337/api/mobile-forces?filters[belong][$eq]=" + this.$store.state.info.belong,
+      {
+        headers: {
+          Authorization: "Bearer " + this.$store.state.usertoken,
+        },
+      }
+    );
+    this.all_status = this.all_status.data.data;
+    //간부 전체 요청인데 대기중인 아는 것들
+    this.result_status = await axios.get(
+      "http://localhost:1337/api/mobile-forces?filters[belong][$eq]=" + this.$store.state.info.belong + "&filters[Approval][$ne]=대기",
+      {
+        headers: {
+          Authorization: "Bearer " + this.$store.state.usertoken,
+        },
+      }
+    );
+    this.result_status = this.result_status.data.data;
+    console.log(this.result_status);
+
   },
   methods: {
     async check() {
@@ -353,7 +394,7 @@ export default {
                 local: this.local_text,
                 significant_text: this.significant_text,
                 belong: this.$store.state.info.belong,
-                Approval: "pending",
+                Approval: "대기",
               },
             },
             {

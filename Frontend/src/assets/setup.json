@@ -9,12 +9,12 @@
 
                 },
                 {
-                    "name": "결식자 관리(E)",
+                    "name": "결식자 관리",
                     "link": "Absentees_unit",
                     "icon": "fa-utensils"
                 },
                 {
-                    "name": "식단테그 생성",
+                    "name": "식단테그 생성(E)",
                     "link": "/user/Rfon",
                     "icon": "fa-tag"
                 }
@@ -47,8 +47,8 @@
                     "icon": "fa-calendar-days"
                 },
                 {
-                    "name": "결식자 확인(E)",
-                    "link": "",
+                    "name": "결식자 관리",
+                    "link": "Absentees_unit",
                     "icon": "fa-person-circle-question"
                 },
                 {

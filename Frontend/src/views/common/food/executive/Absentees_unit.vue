@@ -15,10 +15,10 @@
     <!-- eslint-disable-next-line-->
     <template v-slot:item.check_text="{ item }">
       <v-chip
-        :color="getColor(item.check_text)"
+        :color="getColor(item.attributes.check_text)"
         dark
       >
-        {{ item.check_text }}
+        {{ item.attributes.check_text }}
       </v-chip>
     </template>
   </v-data-table>
@@ -46,7 +46,7 @@ import axios from "axios";
       }
     },
     async created() {
-        this.Absentees_api = await axios.get("http://localhost:1337/api/absenteesses?filters[belong][$eq]=" + this.$store.status.instanceof.belong ,{
+        this.Absentees_api = await axios.get("http://localhost:1337/api/absenteesses?filters[belong][$eq]=" + this.$store.state.info.belong ,{
             headers: {
                 "Authorization" : "Bearer " + this.$store.state.usertoken
 
