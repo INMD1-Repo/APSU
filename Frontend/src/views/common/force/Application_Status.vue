@@ -6,7 +6,7 @@
       <h1>유동병력 신청 진행</h1>
       <p style="font-size: 1rem; padding-top: 1rem">
         여기선 대대 전체 신청 진행 사항을 볼수있습니다.<br />
-        다른 포대(중대) 용사들이 해당 포대 간부님게 문의 바람니다.
+        다른 포대(중대) 용사들은 해당 포대 간부님게 문의 바람니다.
       </p>
       <v-data-table
         :headers="headers"
@@ -38,11 +38,19 @@ export default {
     };
   },
   async created() {
-    this.getinfo = await axios.get("http://localhost:1337/api/mobile-forces", {
+    if(this.$store.state.showcode == "executive"){
+      this.getinfo = await axios.get("http://localhost:1337/api/mobile-forces", {
       headers : {
         "Authorization": "Bearer " + this.$store.state.usertoken,
       }
     })
+    }else{
+      this.getinfo = await axios.get("http://localhost:1337/api/mobile-forces" + "?filters[belong][$eq]=" + this.$store.state.info.belong, {
+      headers : {
+        "Authorization": "Bearer " + this.$store.state.usertoken,
+      }
+    })
+    }
     this.getinfo = this.getinfo.data.data
   },
   computed: {

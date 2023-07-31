@@ -9,6 +9,7 @@ import view_mouth from '../views/common/food/view_mouth.vue'
 import application_status from '../views/common/force/Application_Status.vue'
 import application_record from '../views/common/force/Application_record.vue'
 import ramdom_code from '../views/common/food/ramdom_code.vue'
+import Absentees_unit from '../views/common/food/executive/Absentees_unit.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -50,6 +51,9 @@ const routes = [
   {
     path: '/user/rm_code',
     component: ramdom_code
+  },{
+    path: '/user/Absentees_unit',
+    component: Absentees_unit
   }
 ]
 

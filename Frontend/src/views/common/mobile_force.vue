@@ -328,7 +328,7 @@ export default {
   async created() {
     this.force_status = await axios.get(
       "http://localhost:1337/api/mobile-forces?filters[name][$eq]=" +
-        this.$store.state.info.korea_name,
+        this.$store.state.info.korea_name + "&filters[belong][$eq]=" + this.$store.state.info.belong,
       {
         headers: {
           Authorization: "Bearer " + this.$store.state.usertoken,
@@ -352,6 +352,7 @@ export default {
                 name: this.$store.state.info.korea_name,
                 local: this.local_text,
                 significant_text: this.significant_text,
+                belong: this.$store.state.info.belong,
                 Approval: "pending",
               },
             },
