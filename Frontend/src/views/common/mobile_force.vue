@@ -26,7 +26,7 @@
             <v-list-item v-for="item in this.all_status" :key="item">
               <v-list-item-content>
                 <v-list-item-title
-                  >{{ item.attributes.Classes + item.attributes.name }}
+                >{{ item.attributes.Classes + " " + item.attributes.name }}
                 </v-list-item-title>
                 <v-list-item-subtitle
                   >이동할 장소:
@@ -56,7 +56,7 @@
             <v-list-item v-for="item in this.force_status" :key="item">
               <v-list-item-content>
                 <v-list-item-title
-                  >{{ item.attributes.Classes + item.attributes.name }}
+                  >{{ item.attributes.Classes + " " + item.attributes.name }}
                 </v-list-item-title>
                 <v-list-item-subtitle
                   >이동할 장소:
@@ -128,7 +128,7 @@
                     <v-list-item-content>
                       <v-list-item-title>계급</v-list-item-title>
                       <v-list-item-subtitle>{{
-                        this.$store.state.info.class
+                        this.$store.state.info.Classes
                       }}</v-list-item-subtitle>
                     </v-list-item-content>
                   </v-list-item>
@@ -181,7 +181,7 @@
                     <v-list-item-content>
                       <v-list-item-title>계급</v-list-item-title>
                       <v-list-item-subtitle>{{
-                        this.$store.state.info.class
+                        this.$store.state.info.Classes
                       }}</v-list-item-subtitle>
                     </v-list-item-content>
                   </v-list-item>
@@ -287,27 +287,27 @@
         </div>
         <v-card style="height: 18vh; width: 94vw; overflow: auto">
           <v-card style="height: 20vh; width: 94vw; overflow: auto">
-          <v-list>
-            <v-list-item v-for="item in this.result_status" :key="item">
-              <v-list-item-content>
-                <v-list-item-title
-                  >{{ item.attributes.Classes + item.attributes.name }}
-                </v-list-item-title>
-                <v-list-item-subtitle
-                  >이동할 장소:
-                  {{ item.attributes.local }}</v-list-item-subtitle
+            <v-list>
+              <v-list-item v-for="item in this.result_status" :key="item">
+                <v-list-item-content>
+                  <v-list-item-title
+                    >{{ item.attributes.Classes + " " + item.attributes.name }}
+                  </v-list-item-title>
+                  <v-list-item-subtitle
+                    >이동할 장소:
+                    {{ item.attributes.local }}</v-list-item-subtitle
+                  >
+                  <v-list-item-subtitle
+                    >신청시간:
+                    {{ item.attributes.createdAt }}</v-list-item-subtitle
+                  >
+                </v-list-item-content>
+                <v-list-item-icon>
+                  {{ item.attributes.Approval }}</v-list-item-icon
                 >
-                <v-list-item-subtitle
-                  >신청시간:
-                  {{ item.attributes.createdAt }}</v-list-item-subtitle
-                >
-              </v-list-item-content>
-              <v-list-item-icon>
-                {{ item.attributes.Approval }}</v-list-item-icon
-              >
-            </v-list-item>
-          </v-list>
-        </v-card>
+              </v-list-item>
+            </v-list>
+          </v-card>
         </v-card>
       </div>
     </v-col>
@@ -340,14 +340,17 @@ export default {
       force_status: [],
       appted_status: [],
       all_status: [],
-      result_status: []
+      result_status: [],
     };
   },
   async created() {
+    //용사들이 쓰는 요청문
     //필터 적용한 요청
     this.force_status = await axios.get(
       "http://localhost:1337/api/mobile-forces?filters[name][$eq]=" +
-        this.$store.state.info.korea_name + "&filters[belong][$eq]=" + this.$store.state.info.belong,
+        this.$store.state.info.korea_name +
+        "&filters[belong][$eq]=" +
+        this.$store.state.info.belong,
       {
         headers: {
           Authorization: "Bearer " + this.$store.state.usertoken,
@@ -357,7 +360,8 @@ export default {
     this.force_status = this.force_status.data.data;
     //간부가 포(중)대 전체확인 가능한 전체 오청
     this.all_status = await axios.get(
-      "http://localhost:1337/api/mobile-forces?filters[belong][$eq]=" + this.$store.state.info.belong,
+      "http://localhost:1337/api/mobile-forces?filters[belong][$eq]=" +
+        this.$store.state.info.belong + "&filters[Approval][$ne]=대기",
       {
         headers: {
           Authorization: "Bearer " + this.$store.state.usertoken,
@@ -367,7 +371,9 @@ export default {
     this.all_status = this.all_status.data.data;
     //간부 전체 요청인데 대기중인 아는 것들
     this.result_status = await axios.get(
-      "http://localhost:1337/api/mobile-forces?filters[belong][$eq]=" + this.$store.state.info.belong + "&filters[Approval][$ne]=대기",
+      "http://localhost:1337/api/mobile-forces?filters[belong][$eq]=" +
+        this.$store.state.info.belong +
+        "&filters[Approval][$eq]=대기",
       {
         headers: {
           Authorization: "Bearer " + this.$store.state.usertoken,
@@ -376,7 +382,6 @@ export default {
     );
     this.result_status = this.result_status.data.data;
     console.log(this.result_status);
-
   },
   methods: {
     async check() {
@@ -427,7 +432,7 @@ export default {
               },
             }
           );
-          router.go();
+          //router.go();
         } catch (error) {
           this.fail_notifications = true;
           this.dialog = false;

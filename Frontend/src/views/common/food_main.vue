@@ -23,17 +23,19 @@
           <v-row>
             <v-col>
               <h4 style="margin-top: 1vh">식수인원</h4>
-              <p style="font-size: 1.7em">{{this.belong_count}}</p>
+              <p style="font-size: 1.7em">{{ this.belong_count }}</p>
             </v-col>
             <v-col
               style="border-right-style: groove; border-left-style: groove"
             >
               <h4 style="margin-top: 1vh">식사 인원</h4>
-              <p style="font-size: 1.7em; color: green">{{this.belong_count}}</p>
+              <p style="font-size: 1.7em; color: red">
+                {{ this.belong_count - this.not_eat}}
+              </p>
             </v-col>
             <v-col>
-              <h4 style="margin-top: 1vh">결식자</h4>
-              <p style="font-size: 1.7em; color: red">{{this.not_eat}}</p>
+              <h4 style="margin-top: 1vh">식사완료</h4>
+              <p style="font-size: 1.7em; color: green">{{  this.not_eat }}</p>
             </v-col>
           </v-row>
         </v-card>
@@ -327,33 +329,27 @@
                   <v-list-item two-line>
                     <v-list-item-content>
                       <v-list-item-title>계급</v-list-item-title>
-                      <v-list-item-subtitle>병장</v-list-item-subtitle>
+                      <v-list-item-subtitle>{{
+                        this.$store.state.info.Classes
+                      }}</v-list-item-subtitle>
                     </v-list-item-content>
                   </v-list-item>
                   <v-list-item two-line>
                     <v-list-item-content>
                       <v-list-item-title>이름</v-list-item-title>
-                      <v-list-item-subtitle>아무개</v-list-item-subtitle>
-                    </v-list-item-content>
-                  </v-list-item>
-                  <v-list-item two-line>
-                    <v-list-item-content>
-                      <v-list-item-title>식사</v-list-item-title>
-                      <v-list-item-subtitle>브라보</v-list-item-subtitle>
+                      <v-list-item-subtitle>{{
+                        this.$store.state.info.korea_name
+                      }}</v-list-item-subtitle>
                     </v-list-item-content>
                   </v-list-item>
                 </v-col>
                 <v-col>
                   <v-list-item two-line>
                     <v-list-item-content>
-                      <v-list-item-title>시간</v-list-item-title>
-                      <v-list-item-subtitle>병장</v-list-item-subtitle>
-                    </v-list-item-content>
-                  </v-list-item>
-                  <v-list-item two-line>
-                    <v-list-item-content>
-                      <v-list-item-title>이름</v-list-item-title>
-                      <v-list-item-subtitle>아무개</v-list-item-subtitle>
+                      <v-list-item-title>식사</v-list-item-title>
+                      <v-list-item-subtitle>{{
+                        this.$store.state.info.belong
+                      }}</v-list-item-subtitle>
                     </v-list-item-content>
                   </v-list-item>
                 </v-col>
@@ -364,7 +360,9 @@
                 required
               ></v-text-field>
               <v-card-action>
-                <v-btn @click="Auth_check()" style="margin-right: 4vw"
+                <v-btn
+                  @click="Auth_check(), code_update()"
+                  style="margin-right: 4vw"
                   >저장</v-btn
                 >
                 <v-btn @click="overlay = false">취소</v-btn>
@@ -487,13 +485,13 @@ export default {
       Auth_error: false,
       //간부용
       belong_count: "",
-      not_eat: ""
+      not_eat: "",
     };
   },
   async created() {
     //포(중대)인원 가져오기
     this.belong_count = await axios.get(
-      "http://localhost:1337/api/mobile-forces" +
+      "http://localhost:1337/api/users" +
         "?filters[belong][$eq]=" +
         this.$store.state.info.belong,
       {
@@ -502,10 +500,12 @@ export default {
         },
       }
     );
-    this.belong_count = this.belong_count.data.data.length;
+    this.belong_count = this.belong_count.data.length;
     this.not_eat = await axios.get(
       "http://localhost:1337/api/absenteesses" +
-        "?filters[check_text][$eq]=식사완료" + "&filters[belong][$eq]=" +  this.$store.state.info.classes,
+        "?filters[check_text][$eq]=" + "식사완료" + 
+        "&filters[belong][$eq]=" +
+        this.$store.state.info.belong,
       {
         headers: {
           Authorization: "Bearer " + this.$store.state.usertoken,
@@ -554,13 +554,48 @@ export default {
         this.nfc_check = false;
       }
     },
-    Auth_check() {
-      if (this.Auth_body == "test") {
-        this.overlay = false;
-        this.Auth_error = false;
-        this.nfc_success = true;
-      } else {
-        this.Auth_error = true;
+    Auth_check() {},
+    async code_update() {
+      try {
+        // eslint-disable-next-line
+        const ttt = (this.result_status = await axios.get(
+          "http://localhost:1337/api/food-ramdoms?filters[code][$eq]=" +
+            this.Auth_body,
+          {
+            headers: {
+              Authorization: "Bearer " + this.$store.state.usertoken,
+            },
+          }
+        ));
+        if (ttt.data.data.length > 0) {
+          this.overlay = false;
+          this.nfc_success = true;
+          try {
+            await axios.post(
+            "http://localhost:1337/api/absenteess",
+            {
+              data: {
+                Classes: this.$store.state.info.Classes,
+                name: this.$store.state.info.korea_name,
+                check_text: "식사완료",
+                time: new Date().toFormat("YYYY-MM-DD HH:mm:ss"),
+                belong: this.$store.state.info.belong,
+              },
+            },
+            {
+              headers: {
+                Authorization: "Bearer " + this.$store.state.usertoken,
+              },
+            }
+          );
+          } catch (error) {
+            console.log(error);
+          }
+        } else {
+          console.log("?h");
+        }
+      } catch (error) {
+        console.log(error);
       }
     },
   },

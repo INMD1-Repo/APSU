@@ -89,9 +89,9 @@
             </v-col>
             <v-col>
               <!--현재 로그인된 사람의 관등성명-->
-              <p style="font-weight: bold; font-size: 1.1  rem;">
-                {{ this.$store.state.info.belong }} 
-                {{ this.$store.state.info.class }} 
+              <p style="font-weight: bold; font-size: 1.1 rem">
+                {{ this.$store.state.info.belong }}
+                {{ this.$store.state.info.class }}
                 {{ this.$store.state.info.korea_name }}
               </p>
               <!--버튼 같은걸 생성 해볼까?-->
@@ -218,6 +218,9 @@ export default {
     dialog: false,
     scroll: 0,
   }),
+  created() {
+
+  },
   mounted() {
     console.log(this.$store.state);
     if (window.localStorage.getItem("login") == null) {
@@ -243,9 +246,9 @@ export default {
       window.localStorage.setItem("login", "0");
 
       //내부데이터 초기화
-      this.$store.commit("info", "")
-          this.$store.commit("usertoken", "")
-          this.$store.commit("showcode", "")
+      this.$store.commit("info", "");
+      this.$store.commit("usertoken", "");
+      this.$store.commit("showcode", "");
     },
   },
 };

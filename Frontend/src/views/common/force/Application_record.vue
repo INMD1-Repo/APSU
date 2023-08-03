@@ -28,7 +28,7 @@
           max-width="344"
           outlined
         >
-          <div v-if="item.attributes.Approval == 'pending'">
+          <div v-if="item.attributes.Approval == '대기'">
             <v-list-item three-line>
               <v-list-item-content>
                 <div class="text-overline mb-4">ID: {{ item.id }}</div>
@@ -47,7 +47,7 @@
                 >
                 <v-list-item-subtitle
                   >승인여부:
-                  {{ item.attributes.Approval }}</v-list-item-subtitle
+                  {{ item.Approval }}</v-list-item-subtitle
                 >
               </v-list-item-content>
             </v-list-item>
@@ -122,14 +122,15 @@ export default {
   },
   async created() {
     this.force_find = await axios.get(
-      "http://localhost:1337/api/mobile-forces",
+      "http://localhost:1337/api/mobile-forces?filters[belong][$eq]=" + this.$store.state.info.belong,
       {
         headers: {
           Authorization: "Bearer " + this.$store.state.usertoken,
         },
       }
     );
-    this.force_find = this.force_find.data.data;
+    this.force_find = this.force_find.data.data
+    console.log(this.force_find);
   },
   methods: {
     search() {
