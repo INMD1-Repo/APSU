@@ -453,7 +453,6 @@
 <script>
 // eslint-disable-next-line
 import axios from "axios";
-import data from "../../assets/example.json";
 import "date-utils";
 export default {
   data: () => {
@@ -601,8 +600,12 @@ export default {
   },
 
   async mounted() {
-    let newDate = new Date();
+        //3일치 식단 정보 가지고옴
+    let foodmoth = await axios.get("http://localhost:1337/api/food-infos")
+    foodmoth = foodmoth.data.data[0].attributes.food_info;
 
+    let newDate = new Date();
+  
     try {
       const ndef = new window.NDEFReader();
       await ndef.scan();
@@ -613,6 +616,7 @@ export default {
     }
 
     //날짜 데이터 추가
+    
     this.data_t.push(
       new Date(newDate.setDate(newDate.getDate())).toFormat("YYYY-MM-DD")
     );
@@ -624,15 +628,15 @@ export default {
     );
     console.log(this.data_t);
     //식단데이터 추가
-    for (let index = 0; index < data.length; index++) {
-      if (data[index].dates.indexOf(this.data_t[0]) == 0) {
-        this.food.push(data[index]);
+    for (let index = 0; index < foodmoth.length; index++) {
+      if (foodmoth[index].dates.indexOf(this.data_t[0]) == 0) {
+        this.food.push(foodmoth[index]);
       }
-      if (data[index].dates.indexOf(this.data_t[1]) == 0) {
-        this.food.push(data[index]);
+      if (foodmoth[index].dates.indexOf(this.data_t[1]) == 0) {
+        this.food.push(foodmoth[index]);
       }
-      if (data[index].dates.indexOf(this.data_t[2]) == 0) {
-        this.food.push(data[index]);
+      if (foodmoth[index].dates.indexOf(this.data_t[2]) == 0) {
+        this.food.push(foodmoth[index]);
       }
     }
     console.log(this.food);

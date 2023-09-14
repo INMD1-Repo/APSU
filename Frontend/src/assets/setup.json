@@ -14,8 +14,8 @@
                     "icon": "fa-utensils"
                 },
                 {
-                    "name": "식단테그 생성(E)",
-                    "link": "/user/Rfon",
+                    "name": "식단테그 생성",
+                    "link": "/user/rm_code",
                     "icon": "fa-tag"
                 }
             ],
@@ -54,7 +54,7 @@
                 {
                     "name": "식당 임의태그생성",
                     "link": "rm_code",
-                    "icon": "fa-solid fa-nfc"
+                    "icon": "fa-tag"
                 }
             ]
         }
@@ -83,7 +83,7 @@
                     "icon": "fa-calendar-days"
                 },
                 {
-                    "name": "식당태그(E)",
+                    "name": "식당태그",
                     "link": "/user/food_main",
                     "icon": "fa-person-circle-question"
                 }

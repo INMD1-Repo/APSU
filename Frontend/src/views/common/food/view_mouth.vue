@@ -92,6 +92,7 @@
     </div>
 </template>
 <script>
+import axios from "axios";
 export default {
     data: () => ({
         focus: '',
@@ -160,19 +161,19 @@ export default {
 
             nativeEvent.stopPropagation()
         },
-        updateRange() {
+        async updateRange() {
             const events = []
             //생각을 해보자 친구여
-            const sample = require("../../../assets/example.json")
-
-            for (let index = 0; index < sample.length; index++) {
-                    const time = sample[index].dates.replace(/([가-힣()])+/g,'')
+            let foodmoth = await axios.get("http://localhost:1337/api/food-infos")
+            foodmoth = foodmoth.data.data[0].attributes.food_info;
+            for (let index = 0; index < foodmoth.length; index++) {
+                    const time = foodmoth[index].dates.replace(/([가-힣()])+/g,'')
                     events.push( {
                         name: "식단정보",
                         start: time + "T00:00:00",
                         end: time + "T23:59:59",
-                        sumcal: sample[index].sumcal,
-                        data: sample[index].meal,
+                        sumcal: foodmoth[index].sumcal,
+                        data: foodmoth[index].meal,
                         color: "blue darken-1",
                         "timed":true
                     })    

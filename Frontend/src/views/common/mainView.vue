@@ -162,7 +162,6 @@
 <script>
 // eslint-disable-next-line
 import axios from "axios";
-import data from "../../assets/example.json";
 import "date-utils";
 export default {
   data: () => {
@@ -184,12 +183,16 @@ export default {
     this.force_status = this.force_status.data.data;
   },
   methods: {},
-  mounted() {
+  async mounted() {
+    //3일치 식단 정보 가지고옴
+    let foodmoth = await axios.get("http://localhost:1337/api/food-infos")
+    foodmoth = foodmoth.data.data[0].attributes.food_info;
+
     let newDate = new Date();
     this.data_t = newDate.toFormat("YYYY-MM-DD");
-    for (let index = 0; index < data.length; index++) {
-      if (data[index].dates.indexOf(newDate.toFormat("YYYY-MM-DD")) == 0) {
-        this.food = data[index];
+    for (let index = 0; index < foodmoth.length; index++) {
+      if (foodmoth[index].dates.indexOf(newDate.toFormat("YYYY-MM-DD")) == 0) {
+        this.food = foodmoth[index];
       }
     }
   },
