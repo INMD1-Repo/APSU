@@ -3,7 +3,6 @@ import VueRouter from 'vue-router'
 import login_page from '../views/Login_page.vue'
 import main_page  from '../views/common/mainView.vue'
 import gps from '../views/common/mobile_force.vue'
-import a_gps from '../views/common/battalion_gps.vue'
 import food_main from '../views/common/food_main.vue'
 import view_mouth from '../views/common/food/view_mouth.vue'
 import application_status from '../views/common/force/Application_Status.vue'
@@ -28,10 +27,7 @@ const routes = [
     name: 'gps',
     component: gps
   },
-  {
-    path: '/user/a_gps',
-    component: a_gps
-  },
+
   {
     path: '/user/food_main',
     component: food_main

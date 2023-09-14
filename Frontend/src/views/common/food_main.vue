@@ -406,7 +406,7 @@
           >
             <div style="font-size: 0.8em">
               성공적으로 태그&저장를 했습니다!<br />
-              성공 시각: 0000-00-00 00:00:00
+              성공 시각: {{this.times}}
             </div>
           </v-alert>
         </v-snackbar>
@@ -485,6 +485,8 @@ export default {
       //간부용
       belong_count: "",
       not_eat: "",
+
+      times: ""
     };
   },
   async created() {
@@ -567,17 +569,19 @@ export default {
           }
         ));
         if (ttt.data.data.length > 0) {
+          this.times = new Date().toISOString().replace(/T/, ' '). replace(/\..+/, '')
           this.overlay = false;
           this.nfc_success = true;
           try {
             await axios.post(
-            "http://localhost:1337/api/absenteess",
+            "http://localhost:1337/api/absenteesses",
             {
               data: {
                 Classes: this.$store.state.info.Classes,
                 name: this.$store.state.info.korea_name,
+                eat_location: this.$store.state.info.belong + "식당",
                 check_text: "식사완료",
-                time: new Date().toFormat("YYYY-MM-DD HH:mm:ss"),
+                Time: new Date().toISOString().replace(/T/, ' '). replace(/\..+/, ''),
                 belong: this.$store.state.info.belong,
               },
             },

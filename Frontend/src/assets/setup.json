@@ -31,12 +31,6 @@
                     "link": "app_record",
                     "icon": "fa-list-check"
 
-                },
-                {
-                    "name": "대대 유동병력 현황",
-                    "link": "a_gps",
-                    "icon": "fa-map"
-
                 }
             ],
             "food": [

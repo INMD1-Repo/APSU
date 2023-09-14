@@ -1,24 +1,25 @@
-# web
+# APSU 자동 유동병력 유틸리티 Frontend
 
-## Project setup
-```
-npm install
-```
 
-### Compiles and hot-reloads for development
+## WHERE?
+여기는 저희 ASPU를 사용자에게 보여주는 프론트엔트 입니다.
+
+## DEMO TRY?
+> 먼저 Backend를 먼저 실행시켜 주심시오 
+
+먼저 npm 라이브러리를 설치합니다
+
+```
+npm i
+```
+Vue를 빌드 시킴니다
+
 ```
 npm run serve
 ```
+## 앞으로 개발해야 하는거
 
-### Compiles and minifies for production
-```
-npm run build
-```
+### 푸쉬알람 구축
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+용사가 병력이동 신청을 하면 해당요일 당직 간부에게 알림을 보내어 승인하게 하는기능
+-> 푸쉬알람은 웹에서 운용을 하는데 구축하는데 어려움이 있어서 좀더 공부
