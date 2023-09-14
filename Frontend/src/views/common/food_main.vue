@@ -365,7 +365,7 @@
                   style="margin-right: 4vw"
                   >저장</v-btn
                 >
-                <v-btn @click="overlay = false">취소</v-btn>
+                <v-btn @click="overlay = false, Auth_error = false">취소</v-btn>
               </v-card-action>
             </v-card-text>
           </v-card>
@@ -596,6 +596,7 @@ export default {
           }
         } else {
           console.log("?h");
+          this.Auth_error = true
         }
       } catch (error) {
         console.log(error);
