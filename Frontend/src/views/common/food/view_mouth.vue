@@ -164,7 +164,7 @@ export default {
         async updateRange() {
             const events = []
             //생각을 해보자 친구여
-            let foodmoth = await axios.get("http://localhost:1337/api/food-infos")
+            let foodmoth = await axios.get(process.env.drad + "/api/food-infos")
             foodmoth = foodmoth.data.data[0].attributes.food_info;
             for (let index = 0; index < foodmoth.length; index++) {
                     const time = foodmoth[index].dates.replace(/([가-힣()])+/g,'')

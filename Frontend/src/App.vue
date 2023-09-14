@@ -219,7 +219,7 @@ export default {
     scroll: 0,
   }),
   created() {
-
+    console.log(process.env.VUE_APP_ALL)
   },
   mounted() {
     console.log(this.$store.state);

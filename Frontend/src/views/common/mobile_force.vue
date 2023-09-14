@@ -347,7 +347,7 @@ export default {
     //용사들이 쓰는 요청문
     //필터 적용한 요청
     this.force_status = await axios.get(
-      "http://localhost:1337/api/mobile-forces?filters[name][$eq]=" +
+      process.env.VUE_APP_ALL + "/api/mobile-forces?filters[name][$eq]=" +
         this.$store.state.info.korea_name +
         "&filters[belong][$eq]=" +
         this.$store.state.info.belong,
@@ -360,7 +360,7 @@ export default {
     this.force_status = this.force_status.data.data;
     //간부가 포(중)대 전체확인 가능한 전체 오청
     this.all_status = await axios.get(
-      "http://localhost:1337/api/mobile-forces?filters[belong][$eq]=" +
+      process.env.VUE_APP_ALL + "/api/mobile-forces?filters[belong][$eq]=" +
         this.$store.state.info.belong + "&filters[Approval][$ne]=대기",
       {
         headers: {
@@ -371,7 +371,7 @@ export default {
     this.all_status = this.all_status.data.data;
     //간부 전체 요청인데 대기중인 아는 것들
     this.result_status = await axios.get(
-      "http://localhost:1337/api/mobile-forces?filters[belong][$eq]=" +
+      process.env.VUE_APP_ALL + "/api/mobile-forces?filters[belong][$eq]=" +
         this.$store.state.info.belong +
         "&filters[Approval][$eq]=대기",
       {
@@ -391,7 +391,7 @@ export default {
       } else {
         try {
           await axios.post(
-            "http://localhost:1337/api/mobile-forces",
+            process.env.VUE_APP_ALL + "/api/mobile-forces",
             {
               data: {
                 Classes: this.$store.state.info.Classes,
@@ -411,7 +411,7 @@ export default {
           this.success_notifications = true;
           this.dialog = false;
           await axios.post(
-            "http://localhost:1337/api/app-logers",
+            process.env.VUE_APP_ALL + "/api/app-logers",
             {
               data: {
                 body:
@@ -437,7 +437,7 @@ export default {
           this.fail_notifications = true;
           this.dialog = false;
           await axios.post(
-            "http://localhost:1337/api/app-logers",
+            process.env.VUE_APP_ALL + "/api/app-logers",
             {
               data: {
                 body: "유동병력신청 실패함",

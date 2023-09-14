@@ -12,11 +12,17 @@
 ```
 npm i
 ```
+
+만약 백엔드 주소가 다른거로 사용할시 env에 VUE_APP_ALL를 수정해주시기 바람니다
+```
+VUE_APP_ALL=http://localhost:1337
+```
 Vue를 빌드 시킴니다
 
 ```
 npm run serve
 ```
+
 ## 앞으로 개발해야 하는거
 
 ### 푸쉬알람 구축

@@ -38,13 +38,13 @@ export default {
   },
   async created() {
     if(this.$store.state.showcode == "executive"){
-      this.getinfo = await axios.get("http://localhost:1337/api/mobile-forces", {
+      this.getinfo = await axios.get(process.env.VUE_APP_ALL + "/api/mobile-forces", {
       headers : {
         "Authorization": "Bearer " + this.$store.state.usertoken,
       }
     })
     }else{
-      this.getinfo = await axios.get("http://localhost:1337/api/mobile-forces" + "?filters[belong][$eq]=" + this.$store.state.info.belong, {
+      this.getinfo = await axios.get(process.env.VUE_APP_ALL + "/api/mobile-forces" + "?filters[belong][$eq]=" + this.$store.state.info.belong, {
       headers : {
         "Authorization": "Bearer " + this.$store.state.usertoken,
       }

@@ -173,7 +173,7 @@ export default {
   },
   async created() {
     this.force_status = await axios.get(
-      "http://localhost:1337/api/mobile-forces",
+      process.env.VUE_APP_ALL + "/api/mobile-forces",
       {
         headers: {
           Authorization: "Bearer " + this.$store.state.usertoken,
@@ -185,7 +185,7 @@ export default {
   methods: {},
   async mounted() {
     //3일치 식단 정보 가지고옴
-    let foodmoth = await axios.get("http://localhost:1337/api/food-infos")
+    let foodmoth = await axios.get(process.env.VUE_APP_ALL + "/api/food-infos")
     foodmoth = foodmoth.data.data[0].attributes.food_info;
 
     let newDate = new Date();

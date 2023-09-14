@@ -203,7 +203,7 @@ export default {
         try {
           //유저확인
           const user_info = await axios.post(
-            "http://localhost:1337/api/auth/local",
+            process.env.VUE_APP_ALL + "/api/auth/local",
             {
               identifier: this.id,
               password: this.pw,
@@ -225,7 +225,7 @@ export default {
 
           //앱로그
           await axios.post(
-            "http://localhost:1337/api/app-logers",
+            process.env.VUE_APP_ALL + "/api/app-logers",
             {
               data: {
                 body: "로그인에 성공함",
@@ -242,7 +242,7 @@ export default {
         } catch (error) {
 
           await axios.post(
-            "http://localhost:1337/api/app-logers",
+            process.env.VUE_APP_ALL + "/api/app-logers",
             {
               data: {
                 body: "로그인에 실패함",
@@ -279,7 +279,7 @@ export default {
         try {
           //회원가입 데이터 서버로 전송
           await axios.post(
-            "http://localhost:1337/api/auth/local/register",
+            process.env.VUE_APP_ALL + "/api/auth/local/register",
             sing_up_data,
             {
               headers: {
@@ -288,7 +288,7 @@ export default {
             }
           );
           await axios.post(
-            "http://localhost:1337/api/app-logers",
+            process.env.VUE_APP_ALL + "/api/app-logers",
             {
               data: {
                 body: "회원가입에 성공함",
@@ -309,7 +309,7 @@ export default {
       } catch (error) {
         this.error = 1;
         await axios.post(
-          "http://localhost:1337/api/app-logers",
+          process.env.VUE_APP_ALL + "/api/app-logers",
           {
             data: {
               body: "회원가입에 실패함",

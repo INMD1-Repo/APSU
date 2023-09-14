@@ -492,7 +492,7 @@ export default {
   async created() {
     //포(중대)인원 가져오기
     this.belong_count = await axios.get(
-      "http://localhost:1337/api/users" +
+      process.env.VUE_APP_ALL + "/api/users" +
         "?filters[belong][$eq]=" +
         this.$store.state.info.belong,
       {
@@ -503,7 +503,7 @@ export default {
     );
     this.belong_count = this.belong_count.data.length;
     this.not_eat = await axios.get(
-      "http://localhost:1337/api/absenteesses" +
+      process.env.VUE_APP_ALL + "/api/absenteesses" +
         "?filters[check_text][$eq]=" + "식사완료" + 
         "&filters[belong][$eq]=" +
         this.$store.state.info.belong,
@@ -560,7 +560,7 @@ export default {
       try {
         // eslint-disable-next-line
         const ttt = (this.result_status = await axios.get(
-          "http://localhost:1337/api/food-ramdoms?filters[code][$eq]=" +
+          process.env.VUE_APP_ALL + "/api/food-ramdoms?filters[code][$eq]=" +
             this.Auth_body,
           {
             headers: {
@@ -574,7 +574,7 @@ export default {
           this.nfc_success = true;
           try {
             await axios.post(
-            "http://localhost:1337/api/absenteesses",
+              process.env.VUE_APP_ALL + "/api/absenteesses",
             {
               data: {
                 Classes: this.$store.state.info.Classes,
@@ -605,7 +605,7 @@ export default {
 
   async mounted() {
         //3일치 식단 정보 가지고옴
-    let foodmoth = await axios.get("http://localhost:1337/api/food-infos")
+    let foodmoth = await axios.get(process.env.VUE_APP_ALL + "/api/food-infos")
     foodmoth = foodmoth.data.data[0].attributes.food_info;
 
     let newDate = new Date();

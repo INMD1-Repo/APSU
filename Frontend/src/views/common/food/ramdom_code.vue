@@ -129,7 +129,7 @@ export default {
       this.startBuffer();
       //서버로 전송
       this.get_id = await axios.post(
-        "http://localhost:1337/api/food-ramdoms/",
+        process.env.VUE_APP_ALL + "/api/food-ramdoms/",
         {
           data: {
             code: this.ramdom_code,
@@ -161,7 +161,7 @@ export default {
     async data_delet() {
       //요청했던 데이터 삭제
       await axios.delete(
-        "http://localhost:1337/api/food-ramdoms/" + this.get_id,
+       process.env.VUE_APP_ALL + "/api/food-ramdoms/" + this.get_id,
         {
           headers: {
             Authorization: "Bearer " + this.$store.state.usertoken,

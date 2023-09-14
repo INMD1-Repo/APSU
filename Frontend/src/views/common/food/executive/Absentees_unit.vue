@@ -27,6 +27,7 @@
 </template>
 <script>
 // eslint-disable-next-line
+
 import axios from "axios"; 
   export default {
     data () {
@@ -46,7 +47,7 @@ import axios from "axios";
       }
     },
     async created() {
-        this.Absentees_api = await axios.get("http://localhost:1337/api/absenteesses?filters[belong][$eq]=" + this.$store.state.info.belong ,{
+        this.Absentees_api = await axios.get(process.env.VUE_APP_ALL + "/api/absenteesses?filters[belong][$eq]=" + this.$store.state.info.belong ,{
             headers: {
                 "Authorization" : "Bearer " + this.$store.state.usertoken
 

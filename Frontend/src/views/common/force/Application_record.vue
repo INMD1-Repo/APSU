@@ -122,7 +122,7 @@ export default {
   },
   async created() {
     this.force_find = await axios.get(
-      "http://localhost:1337/api/mobile-forces?filters[belong][$eq]=" + this.$store.state.info.belong,
+      process.env.VUE_APP_ALL + "/api/mobile-forces?filters[belong][$eq]=" + this.$store.state.info.belong,
       {
         headers: {
           Authorization: "Bearer " + this.$store.state.usertoken,
@@ -147,7 +147,7 @@ export default {
     async data_update() {
       try {
         await axios.put(
-          "http://localhost:1337/api/mobile-forces/" + this.selcet_data.id,
+          process.env.VUE_APP_ALL + "/api/mobile-forces/" + this.selcet_data.id,
           {
             data: {
               Classes: this.selcet_data.attributes.Classes,
@@ -170,7 +170,7 @@ export default {
           }
         );
         await axios.post(
-          "http://localhost:1337/api/app-logers",
+          process.env.VUE_APP_ALL + "/api/app-logers",
           {
             data: {
               body:
@@ -194,7 +194,7 @@ export default {
         router.go();
       } catch (error) {
         await axios.post(
-          "http://localhost:1337/api/app-logers",
+          process.env.VUE_APP_ALL + "/api/app-logers",
           {
             data: {
               body: "유동병력신청 결과 요청이 실패했습니다.",
