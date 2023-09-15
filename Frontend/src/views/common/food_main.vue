@@ -30,12 +30,12 @@
             >
               <h4 style="margin-top: 1vh">식사 인원</h4>
               <p style="font-size: 1.7em; color: red">
-                {{ this.belong_count - this.not_eat}}
+                {{ this.belong_count - this.not_eat }}
               </p>
             </v-col>
             <v-col>
               <h4 style="margin-top: 1vh">식사완료</h4>
-              <p style="font-size: 1.7em; color: green">{{  this.not_eat }}</p>
+              <p style="font-size: 1.7em; color: green">{{ this.not_eat }}</p>
             </v-col>
           </v-row>
         </v-card>
@@ -239,7 +239,7 @@
             안하는 경우 아래에 코드로 인증하기 버튼을 눌려 인증 하십시오. <br />
             만약안드로이드면 NFC를 켜보고 다시 시도해주십시오.
           </p>
-          <p style="font-size: 0.2rem">
+          <p style="font-size: 0.7rem">
             ERROR: Device NFC not supported and not enabled
           </p>
           <v-btn @click="(code_type = !code_type), (overlay = !overlay)"
@@ -303,7 +303,7 @@
             </v-card-actions>
           </v-card>
           <!--nfc가 미지원 할때-->
-          <v-card>
+          <v-card v-if="nfc_check == false">
             <v-alert
               v-if="Auth_error == true"
               type="error"
@@ -365,7 +365,9 @@
                   style="margin-right: 4vw"
                   >저장</v-btn
                 >
-                <v-btn @click="overlay = false, Auth_error = false">취소</v-btn>
+                <v-btn @click="(overlay = false), (Auth_error = false)"
+                  >취소</v-btn
+                >
               </v-card-action>
             </v-card-text>
           </v-card>
@@ -406,7 +408,7 @@
           >
             <div style="font-size: 0.8em">
               성공적으로 태그&저장를 했습니다!<br />
-              성공 시각: {{this.times}}
+              성공 시각: {{ this.times }}
             </div>
           </v-alert>
         </v-snackbar>
@@ -486,13 +488,14 @@ export default {
       belong_count: "",
       not_eat: "",
 
-      times: ""
+      times: "",
     };
   },
   async created() {
     //포(중대)인원 가져오기
     this.belong_count = await axios.get(
-      process.env.VUE_APP_ALL + "/api/users" +
+      process.env.VUE_APP_ALL +
+        "/api/users" +
         "?filters[belong][$eq]=" +
         this.$store.state.info.belong,
       {
@@ -503,8 +506,10 @@ export default {
     );
     this.belong_count = this.belong_count.data.length;
     this.not_eat = await axios.get(
-      process.env.VUE_APP_ALL + "/api/absenteesses" +
-        "?filters[check_text][$eq]=" + "식사완료" + 
+      process.env.VUE_APP_ALL +
+        "/api/absenteesses" +
+        "?filters[check_text][$eq]=" +
+        "식사완료" +
         "&filters[belong][$eq]=" +
         this.$store.state.info.belong,
       {
@@ -531,6 +536,7 @@ export default {
           this.zIndex = 0;
           this.nfc_timer = 0;
           this.time = new Date().toLocaleString();
+          start(serialNumber, this.$store.state.usertoken,this.$store.state.info);
           clearInterval(re);
         });
 
@@ -549,6 +555,42 @@ export default {
             this.nfc_timer += 1000;
           }
         }, 1000);
+        // eslint-disable-next-line
+        async function start(serialNumber, usertoken, datad) {
+          console.log("startttttt");
+          const serial_numd = await axios.get(
+            process.env.VUE_APP_ALL +
+              "/api/food-location-infos?filters[serial_number]=" +
+              serialNumber,
+            {
+              headers: {
+                Authorization: "Bearer " + usertoken,
+              },
+            }
+          );
+          console.log(serial_numd);
+          await axios.post(
+              process.env.VUE_APP_ALL + "/api/absenteesses",
+              {
+                data: {
+                  Classes: datad.Classes,
+                  name: datad.korea_name,
+                  eat_location: serial_numd.data.data[0].attributes.belong + "식당",
+                  check_text: "식사완료",
+                  Time: new Date()
+                    .toISOString()
+                    .replace(/T/, " ")
+                    .replace(/\..+/, ""),
+                  belong: datad.belong,
+                },
+              },
+              {
+                headers: {
+                  Authorization: "Bearer " + usertoken,
+                },
+              }
+            );
+        }
       } catch (error) {
         this.overlay = false;
         //오류 경고 표시
@@ -560,7 +602,8 @@ export default {
       try {
         // eslint-disable-next-line
         const ttt = (this.result_status = await axios.get(
-          process.env.VUE_APP_ALL + "/api/food-ramdoms?filters[code][$eq]=" +
+          process.env.VUE_APP_ALL +
+            "/api/food-ramdoms?filters[code][$eq]=" +
             this.Auth_body,
           {
             headers: {
@@ -569,34 +612,40 @@ export default {
           }
         ));
         if (ttt.data.data.length > 0) {
-          this.times = new Date().toISOString().replace(/T/, ' '). replace(/\..+/, '')
+          this.times = new Date()
+            .toISOString()
+            .replace(/T/, " ")
+            .replace(/\..+/, "");
           this.overlay = false;
           this.nfc_success = true;
           try {
             await axios.post(
               process.env.VUE_APP_ALL + "/api/absenteesses",
-            {
-              data: {
-                Classes: this.$store.state.info.Classes,
-                name: this.$store.state.info.korea_name,
-                eat_location: this.$store.state.info.belong + "식당",
-                check_text: "식사완료",
-                Time: new Date().toISOString().replace(/T/, ' '). replace(/\..+/, ''),
-                belong: this.$store.state.info.belong,
+              {
+                data: {
+                  Classes: this.$store.state.info.Classes,
+                  name: this.$store.state.info.korea_name,
+                  eat_location: this.$store.state.info.belong + "식당",
+                  check_text: "식사완료",
+                  Time: new Date()
+                    .toISOString()
+                    .replace(/T/, " ")
+                    .replace(/\..+/, ""),
+                  belong: this.$store.state.info.belong,
+                },
               },
-            },
-            {
-              headers: {
-                Authorization: "Bearer " + this.$store.state.usertoken,
-              },
-            }
-          );
+              {
+                headers: {
+                  Authorization: "Bearer " + this.$store.state.usertoken,
+                },
+              }
+            );
           } catch (error) {
             console.log(error);
           }
         } else {
           console.log("?h");
-          this.Auth_error = true
+          this.Auth_error = true;
         }
       } catch (error) {
         console.log(error);
@@ -605,23 +654,30 @@ export default {
   },
 
   async mounted() {
-        //3일치 식단 정보 가지고옴
-    let foodmoth = await axios.get(process.env.VUE_APP_ALL + "/api/food-infos")
+    //3일치 식단 정보 가지고옴
+    let foodmoth = await axios.get(process.env.VUE_APP_ALL + "/api/food-infos");
     foodmoth = foodmoth.data.data[0].attributes.food_info;
 
     let newDate = new Date();
-  
+
     try {
-      const ndef = new window.NDEFReader();
-      await ndef.scan();
+      const nfcPermissionStatus = await navigator.permissions.query({
+        name: "nfc",
+      });
+      if (nfcPermissionStatus.state === "Granted") {
+        this.overlay = false;
+        this.nfc_check = false;
+      } else {
+        const ndef = new window.NDEFReader();
+        await ndef.scan();
+      }
     } catch (error) {
       //오류 경고 표시
-      this.overlay = false;
-      this.nfc_check = false;
+      console.log(error);
     }
 
     //날짜 데이터 추가
-    
+
     this.data_t.push(
       new Date(newDate.setDate(newDate.getDate())).toFormat("YYYY-MM-DD")
     );

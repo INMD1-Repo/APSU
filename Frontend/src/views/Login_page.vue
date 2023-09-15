@@ -309,7 +309,7 @@ export default {
       } catch (error) {
         this.error = 1;
         await axios.post(
-          process.env.VUE_APP_ALL + "/api/app-logers",
+          "http://192.168.0.14:1337" + "/api/app-logers",
           {
             data: {
               body: "회원가입에 실패함",

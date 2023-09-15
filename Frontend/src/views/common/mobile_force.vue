@@ -12,10 +12,6 @@
       ></v-img>
       <!--'간부용에만 표시됨'-->
       <div v-if="this.$store.state.showcode == 'executive'">
-        <v-alert border="top" colored-border type="info" elevation="2">
-          간부는 대대 유동병력 페이지를 볼수 있습니다.
-          <a href="/user/a_gps">보러가기</a>
-        </v-alert>
         <div style="display: flex; margin-bottom: 1vh">
           <h2>유동병력 신청 현황</h2>
           <v-spacer></v-spacer>
