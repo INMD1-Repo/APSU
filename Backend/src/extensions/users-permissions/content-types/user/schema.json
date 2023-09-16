@@ -65,7 +65,22 @@
       "inversedBy": "users",
       "configurable": false
     },
-    "fix_ip": {
+    "belong": {
+      "type": "string"
+    },
+    "specialty": {
+      "type": "string"
+    },
+    "birthday": {
+      "type": "string"
+    },
+    "Classes": {
+      "type": "string"
+    },
+    "korea_name": {
+      "type": "string"
+    },
+    "showcode": {
       "type": "string"
     }
   }

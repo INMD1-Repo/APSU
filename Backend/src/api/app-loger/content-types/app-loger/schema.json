@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "app_logers",
+  "info": {
+    "singularName": "app-loger",
+    "pluralName": "app-logers",
+    "displayName": "app_loger",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "body": {
+      "type": "string"
+    },
+    "ip": {
+      "type": "text"
+    },
+    "error_massage": {
+      "type": "text"
+    }
+  }
+}

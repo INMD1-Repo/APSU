@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "food_location_infos",
+  "info": {
+    "singularName": "food-location-info",
+    "pluralName": "food-location-infos",
+    "displayName": "food_location_info",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "serial_number": {
+      "type": "string"
+    },
+    "belong": {
+      "type": "string"
+    }
+  }
+}

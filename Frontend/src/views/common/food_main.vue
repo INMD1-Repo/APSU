@@ -535,8 +535,15 @@ export default {
           this.nfc_type = false;
           this.zIndex = 0;
           this.nfc_timer = 0;
-          this.time = new Date().toLocaleString();
-          start(serialNumber, this.$store.state.usertoken,this.$store.state.info);
+          (this.time = new Date()
+            .toISOString()
+            .replace(/T/, " ")
+            .replace(/\..+/, "")),
+            start(
+              serialNumber,
+              this.$store.state.usertoken,
+              this.$store.state.info
+            );
           clearInterval(re);
         });
 
@@ -570,26 +577,27 @@ export default {
           );
           console.log(serial_numd);
           await axios.post(
-              process.env.VUE_APP_ALL + "/api/absenteesses",
-              {
-                data: {
-                  Classes: datad.Classes,
-                  name: datad.korea_name,
-                  eat_location: serial_numd.data.data[0].attributes.belong + "식당",
-                  check_text: "식사완료",
-                  Time: new Date()
-                    .toISOString()
-                    .replace(/T/, " ")
-                    .replace(/\..+/, ""),
-                  belong: datad.belong,
-                },
+            process.env.VUE_APP_ALL + "/api/absenteesses",
+            {
+              data: {
+                Classes: datad.Classes,
+                name: datad.korea_name,
+                eat_location:
+                  serial_numd.data.data[0].attributes.belong + "식당",
+                check_text: "식사완료",
+                Time: new Date()
+                  .toISOString()
+                  .replace(/T/, " ")
+                  .replace(/\..+/, ""),
+                belong: datad.belong,
               },
-              {
-                headers: {
-                  Authorization: "Bearer " + usertoken,
-                },
-              }
-            );
+            },
+            {
+              headers: {
+                Authorization: "Bearer " + usertoken,
+              },
+            }
+          );
         }
       } catch (error) {
         this.overlay = false;

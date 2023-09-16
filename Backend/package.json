@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "description": "A Strapi application",
   "scripts": {
-    "develop": "concurrently \"strapi develop\"  \"node ./diet_script/foodget.js\"",
+    "develop": "strapi develop",
     "start": "concurrently \"strapi start\" \"node ./diet_script/foodget.js\"",
     "build": "strapi build",
     "strapi": "strapi"
@@ -16,7 +16,8 @@
     "axios": "^1.4.0",
     "jsonwebtoken": "^9.0.1",
     "mysql": "2.18.1",
-    "puppeteer": "^20.9.0"
+    "puppeteer": "^20.9.0",
+    "web-push": "^3.6.4"
   },
   "author": {
     "name": "A Strapi developer"

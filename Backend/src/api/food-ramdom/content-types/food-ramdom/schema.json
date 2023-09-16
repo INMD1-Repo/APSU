@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "food_ramdoms",
+  "info": {
+    "singularName": "food-ramdom",
+    "pluralName": "food-ramdoms",
+    "displayName": "food-ramdom",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "code": {
+      "type": "string"
+    },
+    "Auther": {
+      "type": "string"
+    },
+    "belong": {
+      "type": "string"
+    }
+  }
+}

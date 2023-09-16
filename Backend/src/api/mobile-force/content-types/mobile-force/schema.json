@@ -4,7 +4,8 @@
   "info": {
     "singularName": "mobile-force",
     "pluralName": "mobile-forces",
-    "displayName": "mobile force"
+    "displayName": "mobile force",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -23,8 +24,28 @@
     "time": {
       "type": "string"
     },
+    "significant_text": {
+      "type": "text"
+    },
     "Approval": {
-      "type": "boolean"
+      "type": "string"
+    },
+    "Approver": {
+      "type": "string"
+    },
+    "Approval_time": {
+      "type": "string"
+    },
+    "belong": {
+      "type": "string"
+    },
+    "is_expired": {
+      "type": "boolean",
+      "default": false
+    },
+    "is_available": {
+      "type": "boolean",
+      "default": true
     }
   }
 }
