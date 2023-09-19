@@ -6,9 +6,20 @@
 또 부대에 결식을 하는 인원들이 있어 누가 결식을 했는지 정확이 알기위해서 결식자 찾는 기능도 추가 했습니다.<br>
 
 ## 구동화면
-|  로그인   | 메인화면   |   메뉴    | 식단       |
-|-----------|-----------|----------|-----------ㅣ
+
+
+|로그인|메인화면|메뉴|식단|
+|-----------|-----------|-----------|-----------|
+|![34](https://github.com/INMD1-Repo/APSU/assets/87979171/c90f70c8-65c2-443c-bd31-3ca5b57dc2a7)|![1](https://github.com/INMD1-Repo/APSU/assets/87979171/95f55138-0b02-4359-ba1d-b9fdfea884ac)|![2](https://github.com/INMD1-Repo/APSU/assets/87979171/01371e9f-8902-4614-bbeb-4cc81fef50d6)|![3](https://github.com/INMD1-Repo/APSU/assets/87979171/c93ca9d7-acf5-47c4-b356-e26ba6a98413)|
+
+|유동병력신청|월별메뉴|
+|-----------|-----------|
+|![image](https://github.com/INMD1-Repo/APSU/assets/87979171/8e1b8134-61a4-4690-84b0-a6bb91168069)|![image](https://github.com/INMD1-Repo/APSU/assets/87979171/40e1be80-9f5e-4c84-bda5-f05e9aaa814f)|
+
+나머지는 직접 빌드를 해서 보시기 바람니다!
+
 ## 주요기능
+
  1. 유동병력 보고<br>
  2. 유동병력 승인<br>
  3. 결식자 확인<br>
