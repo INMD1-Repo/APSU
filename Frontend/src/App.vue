@@ -194,7 +194,7 @@
             <v-icon>fa-utensils</v-icon>
           </v-btn>
 
-          <v-btn>
+          <v-btn :href="'/user/setting'">
             <span>설정</span>
             <v-icon>fa-cog</v-icon>
           </v-btn>

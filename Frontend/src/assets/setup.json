@@ -67,7 +67,7 @@
                 {
                     "name": "유동병력 신청",
                     "link": "mobile_force",
-                    "icon": ""
+                    "icon": "fa-list"
                 }
             ],
             "food": [
