@@ -12,9 +12,11 @@
 |-----------|-----------|-----------|-----------|
 |![34](https://github.com/INMD1-Repo/APSU/assets/87979171/c90f70c8-65c2-443c-bd31-3ca5b57dc2a7)|![1](https://github.com/INMD1-Repo/APSU/assets/87979171/95f55138-0b02-4359-ba1d-b9fdfea884ac)|![2](https://github.com/INMD1-Repo/APSU/assets/87979171/01371e9f-8902-4614-bbeb-4cc81fef50d6)|![3](https://github.com/INMD1-Repo/APSU/assets/87979171/c93ca9d7-acf5-47c4-b356-e26ba6a98413)|
 
-|유동병력신청|월별메뉴|
-|-----------|-----------|
-|![image](https://github.com/INMD1-Repo/APSU/assets/87979171/8e1b8134-61a4-4690-84b0-a6bb91168069)|![image](https://github.com/INMD1-Repo/APSU/assets/87979171/40e1be80-9f5e-4c84-bda5-f05e9aaa814f)|
+|유동병력신청|월별메뉴|(간부전용)임의코드 생성|(간부전용)유동병력 현황판|
+|-----------|-----------|-----------|-----------|
+|![image](https://github.com/INMD1-Repo/APSU/assets/87979171/8e1b8134-61a4-4690-84b0-a6bb91168069)|![image](https://github.com/INMD1-Repo/APSU/assets/87979171/40e1be80-9f5e-4c84-bda5-f05e9aaa814f)|![image](https://github.com/INMD1-Repo/APSU/assets/87979171/529c96ce-e4d3-424f-ba6a-6b9ffa834ec9)|![image](https://github.com/INMD1-Repo/APSU/assets/87979171/59d5e62d-eddb-48ec-b6ec-6a017e81e832)
+
+
 
 나머지는 직접 빌드를 해서 보시기 바람니다!
 
