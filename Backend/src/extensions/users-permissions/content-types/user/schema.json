@@ -82,6 +82,9 @@
     },
     "showcode": {
       "type": "string"
+    },
+    "face_image_url": {
+      "type": "string"
     }
   }
 }
