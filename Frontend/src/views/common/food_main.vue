@@ -11,6 +11,12 @@
           </h2>
           <p>잔반 줄이기 운동 모두가 참여합시다!</p>
         </v-list-item-content>
+        <v-list-item-avatar size="80">
+          <v-img
+            tile
+            :src="this.image_base_url + this.$store.state.face_url"
+          ></v-img
+        ></v-list-item-avatar>
       </v-list-item>
       <!--간부전용-->
       <div v-if="this.$store.state.showcode == 'executive'">
@@ -489,6 +495,8 @@ export default {
       not_eat: "",
 
       times: "",
+      image_base_url: process.env.VUE_APP_ALL,
+
     };
   },
   async created() {

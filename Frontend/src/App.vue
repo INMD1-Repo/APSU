@@ -217,6 +217,8 @@ export default {
     setup_data: setup,
     dialog: false,
     scroll: 0,
+    image_base_url: process.env.VUE_APP_ALL,
+
   }),
   created() {
     console.log(process.env.VUE_APP_ALL)

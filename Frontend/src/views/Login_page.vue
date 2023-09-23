@@ -21,7 +21,7 @@
               <v-form class="md-3">
                 <!--로그인이 안되면 표시를 한다,-->
                 <div v-if="this.error == 1">
-                  <v-alert dense outlined type="error">
+                  <v-alert dense outlined type="error" style="font-size: 1em">
                     <strong>아이디</strong> 또는
                     <strong>비밀번호가</strong> 잘못 입력 되었습니다.
                   </v-alert>
@@ -41,7 +41,10 @@
                   outlined
                   clearable
                 ></v-text-field>
-                <v-checkbox label="자동 로그인"></v-checkbox>
+                <v-checkbox
+                  @click="autologin()"
+                  label="1주일 자동 로그인"
+                ></v-checkbox>
               </v-form>
             </v-list-item>
             <div class="text-center">
@@ -176,8 +179,9 @@ export default {
       sing_id: "",
       sing_pw: "",
       si_email: "",
-      
+
       sing_pw_double: 0,
+
       rules: {
         passss: (value) => {
           const pattern = /^(?=.*[a-zA-Z])(?=.*[0-9]).{8,25}$/;
@@ -191,10 +195,67 @@ export default {
       },
     };
   },
+  //페이지 생성되자 말자 실시하는 코드
   async created() {
     //사용자 기본 ip수집
     this.nowip = await axios.get("https://api.db-ip.com/v2/free/self");
-    this.$store.state.nowip = this.nowip
+    this.$store.state.nowip = this.nowip;
+    if (window.localStorage.getItem("autologin") == undefined) {
+      window.localStorage.setItem("autologin", false);
+    }
+    //자동로그인 설정 한경우 바로 로그인 되게 설정
+    if (window.localStorage.getItem("autologin") == true) {
+      try {
+        const jwt = this.$cookies.get("loginck");
+        const info = await axios.get(
+          process.env.VUE_APP_ALL + "/api/users/me",
+          { Authorization: "Bearer " + jwt }
+        );
+        this.$store.commit("info", info.data.user);
+        this.$store.commit("usertoken", info.data.jwt);
+        this.$store.commit("showcode", info.data.user.showcode);
+        this.$store.commit("face_url", info.data.user.face_image_url);
+
+        //기본 환경 설정
+        this.$store.commit("login_set", 1);
+        window.localStorage.setItem("login", "1");
+
+        await axios.post(
+            process.env.VUE_APP_ALL + "/api/app-logers",
+            {
+              data: {
+                body: "자동로그인에 성공함",
+                ip: this.nowip.data.ipAddress,
+              },
+            },
+            {
+              headers: {
+                "Content-Type": "application/json",
+              },
+            }
+          );
+      } catch (error) {
+        console.log(error);
+        //쿠키 기간이 만료 되서 로그인 할수 없는 경우
+        await axios.post(
+            process.env.VUE_APP_ALL + "/api/app-logers",
+            {
+              data: {
+                body: "자동로그인에 실패함",
+                error_massage: error,
+                ip: this.nowip.data.ipAddress,
+              },
+            },
+            {
+              headers: {
+                "Content-Type": "application/json",
+              },
+            }
+          );
+          //메세지 출력
+          alert("토큰 기간이 만료 되었습니다. 다시 로그인해주세요.")
+      }
+    }
   },
   methods: {
     async login() {
@@ -214,11 +275,15 @@ export default {
               },
             }
           );
-          console.log(user_info);
-          this.$store.commit("info", user_info.data.user)
-          this.$store.commit("usertoken", user_info.data.jwt)
-          this.$store.commit("showcode", user_info.data.user.showcode)
-          
+          this.$store.commit("info", user_info.data.user);
+          this.$store.commit("usertoken", user_info.data.jwt);
+          this.$store.commit("showcode", user_info.data.user.showcode);
+          this.$store.commit("face_url", user_info.data.user.face_image_url);
+          //자동로그인 설정 한경우
+          if (window.localStorage.getItem("autologin")) {
+            this.$cookies.set("loginck", user_info.data.jwt);
+          }
+
           //기본 환경 설정
           this.$store.commit("login_set", 1);
           window.localStorage.setItem("login", "1");
@@ -240,7 +305,7 @@ export default {
           );
           this.$router.push({ path: "/user/main" });
         } catch (error) {
-
+          console.log(error);
           await axios.post(
             process.env.VUE_APP_ALL + "/api/app-logers",
             {
@@ -256,6 +321,7 @@ export default {
               },
             }
           );
+          this.error = 1;
         }
       } catch (error) {
         console.log(error);
@@ -272,7 +338,7 @@ export default {
         korea_name: this.si_name,
         password: this.sing_pw,
         email: this.si_email,
-        showcode: "Veterans"
+        showcode: "Veterans",
       };
       try {
         //비밀번호 중복검사
@@ -309,7 +375,7 @@ export default {
       } catch (error) {
         this.error = 1;
         await axios.post(
-          "http://192.168.0.14:1337" + "/api/app-logers",
+          process.env.VUE_APP_ALL + "/api/app-logers",
           {
             data: {
               body: "회원가입에 실패함",
@@ -324,8 +390,13 @@ export default {
           }
         );
       }
-
       console.log(sing_up_data);
+    },
+    autologin() {
+      window.localStorage.setItem(
+        "autologin",
+        !window.localStorage.getItem("autologin")
+      );
     },
   },
 };

@@ -6,7 +6,12 @@
           <h2>환영합니다 {{ this.$store.state.info.korea_name }}님!</h2>
           <p>오늘도 활기찬 하루 보내세요!</p>
         </v-list-item-content>
-        <v-list-item-avatar tile size="80" color="grey"></v-list-item-avatar>
+        <v-list-item-avatar size="80">
+          <v-img
+            tile
+            :src="this.image_base_url + this.$store.state.face_url"
+          ></v-img
+        ></v-list-item-avatar>
       </v-list-item>
     </v-col>
     <v-col class="main_frame">
@@ -166,6 +171,8 @@ import "date-utils";
 export default {
   data: () => {
     return {
+      image_base_url: process.env.VUE_APP_ALL,
+
       data_t: 0,
       food: {},
       force_status: "",
@@ -185,7 +192,7 @@ export default {
   methods: {},
   async mounted() {
     //3일치 식단 정보 가지고옴
-    let foodmoth = await axios.get(process.env.VUE_APP_ALL + "/api/food-infos")
+    let foodmoth = await axios.get(process.env.VUE_APP_ALL + "/api/food-infos");
     foodmoth = foodmoth.data.data[0].attributes.food_info;
 
     let newDate = new Date();

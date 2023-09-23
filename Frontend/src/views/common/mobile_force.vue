@@ -371,9 +371,7 @@ export default {
         this.$store.state.info.belong +
         "&filters[Approval][$eq]=대기",
       {
-        headers: {
-          Authorization: "Bearer " + this.$store.state.usertoken,
-        },
+
       }
     );
     this.result_status = this.result_status.data.data;
