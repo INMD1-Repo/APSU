@@ -39,7 +39,7 @@
                   this.$store.state.face_url != '' ||
                   this.$store.state.face_url != null
                 "
-                :src=" this.image_base_url + this.$store.state.face_url"
+                :src="this.image_base_url + this.$store.state.face_url"
                 alt="John"
               ></v-img>
 
@@ -47,18 +47,21 @@
               <!--사진이 등록이 되어 있으면 사진 뜨기-->
             </v-avatar>
             <!--자기이름-->
-            <h2 style="text-align: center">{{this.$store.state.info.korea_name}}</h2>
+            <h2 style="text-align: center">
+              {{ this.$store.state.info.korea_name }}
+            </h2>
             <!--자기소속-->
-            <p style="text-align: center">{{this.$store.state.info.belong}}</p>
+            <p style="text-align: center">
+              {{ this.$store.state.info.belong }}
+            </p>
           </div>
         </v-row>
       </div>
       <!--설정 가능한 카드 제공-->
       <v-expansion-panels>
-        <v-expansion-panel>
-          <!--타이틀-->
+        <!-- <v-expansion-panel>
+
           <v-expansion-panel-header> 비밀번호 변경 </v-expansion-panel-header>
-          <!--내부 내용-->
           <v-expansion-panel-content>
             <h6>기존 비밀번호</h6>
             <v-text-field label="기존비밀번호"></v-text-field>
@@ -68,11 +71,9 @@
             <v-text-field label="비밀번호 확인"></v-text-field>
             <v-btn elevation="2">Sumit</v-btn>
           </v-expansion-panel-content>
-        </v-expansion-panel>
+        </v-expansion-panel> -->
         <v-expansion-panel>
-          <!--타이틀-->
           <v-expansion-panel-header> 사진변경 </v-expansion-panel-header>
-          <!--내부 내용-->
           <v-expansion-panel-content>
             <v-file-input
               clearable="true"
@@ -80,8 +81,7 @@
               accept="image/*"
               label="이곳을 눌려 사진을 선택해주세요."
             ></v-file-input>
-            <!--업로드 버튼-->
-            <v-btn small @click="image_upload()" elevation="2">Sumit</v-btn>
+            <v-btn small @click="image_upload()" elevation="2">업로드</v-btn>
           </v-expansion-panel-content>
         </v-expansion-panel>
       </v-expansion-panels>
@@ -134,7 +134,7 @@ export default {
             },
           }
         );
-        local_info.data.face_image_url = image_update.data[0].url
+        local_info.data.face_image_url = image_update.data[0].url;
         //사진저장경로 변경
         await axios.put(
           process.env.VUE_APP_ALL + "/api/users/" + local_info.data.id,

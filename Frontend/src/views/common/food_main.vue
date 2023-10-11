@@ -485,7 +485,7 @@ export default {
       timeout: 4000,
 
       //nfc 지원 여부
-      nfc_check: true,
+      nfc_check: false,
 
       //인증코드 관한 것들
       Auth_body: "",
