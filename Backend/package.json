@@ -5,32 +5,26 @@
   "description": "A Strapi application",
   "scripts": {
     "develop": "strapi develop",
-    "start": "concurrently \"strapi start\" \"node ./diet_script/foodget.js\"",
+    "start": "strapi start",
     "build": "strapi build",
     "strapi": "strapi"
   },
   "dependencies": {
-    "@strapi/plugin-i18n": "4.11.7",
-    "@strapi/plugin-users-permissions": "4.11.7",
-    "@strapi/strapi": "4.11.7",
-    "axios": "^1.4.0",
-    "jsonwebtoken": "^9.0.1",
+    "@strapi/plugin-i18n": "4.14.4",
+    "@strapi/plugin-users-permissions": "4.14.4",
+    "@strapi/strapi": "4.14.4",
     "mysql": "2.18.1",
-    "puppeteer": "^20.9.0",
-    "web-push": "^3.6.4"
+    "puppeteer": "^21.3.8"
   },
   "author": {
     "name": "A Strapi developer"
   },
   "strapi": {
-    "uuid": "216a6971-112a-4df3-9877-d0d37ebc08b2"
+    "uuid": "27da5be1-887f-4785-b739-2ea629b5788f"
   },
   "engines": {
-    "node": ">=14.19.1 <=18.x.x",
+    "node": ">=16.0.0 <=20.x.x",
     "npm": ">=6.0.0"
   },
-  "license": "MIT",
-  "devDependencies": {
-    "concurrently": "^8.2.0"
-  }
+  "license": "MIT"
 }

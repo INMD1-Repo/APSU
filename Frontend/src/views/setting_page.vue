@@ -60,7 +60,6 @@
       <!--설정 가능한 카드 제공-->
       <v-expansion-panels>
         <!-- <v-expansion-panel>
-
           <v-expansion-panel-header> 비밀번호 변경 </v-expansion-panel-header>
           <v-expansion-panel-content>
             <h6>기존 비밀번호</h6>

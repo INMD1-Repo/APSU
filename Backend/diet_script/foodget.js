@@ -5,40 +5,40 @@ console.log("│                     1575부대 식단 정보 삽입 프로그�
 console.log("└──────────────────────────────────────────────────────────────────────┘");
 
 // 개발단계이기 때문에 이코드 실행 안함
-// const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer');
 const path = require("path");
 
-// const downloadPath = path.resolve('./');
-// (async () => {
-//     const browser = await puppeteer.launch({
-//         ignoreDefaultArgs: ['--disable-extensions'],
-//     });
+ const downloadPath = path.resolve('./');
+ (async () => {
+     const browser = await puppeteer.launch({
+         ignoreDefaultArgs: ['--disable-extensions'],
+     });
 
-//     try {
+     try {
 
-//         const page = await browser.newPage();
-//         const client = await page.target().createCDPSession();
+       const page = await browser.newPage();
+       const client = await page.target().createCDPSession();
 
-//         await page.goto("https://opendata.mnd.go.kr/openinf/sheetview2.jsp?infId=OA-9568");
-//         await client.send('Page.setDownloadBehavior', {
-//             behavior: 'allow',
-//             downloadPath: downloadPath,
-//         })
+         await page.goto("https://opendata.mnd.go.kr/openinf/sheetview2.jsp?infId=OA-9568");
+        await client.send('Page.setDownloadBehavior', {
+             behavior: 'allow',
+             downloadPath: downloadPath,
+})
 
-//         await page.click("#frm > strong > strong > div.fileSave > button:nth-child(4)");
-//         await page.waitForTimeout(4000);
-//         await browser.close();
-//         console.log("데이터를 가져오는데 성공 했습니다.");
+         await page.click("#frm > strong > strong > div.fileSave > button:nth-child(4)");
+         await page.waitForTimeout(4000);
+         await browser.close();
+         console.log("데이터를 가져오는데 성공 했습니다.");
 
-//     } catch (error) {
-//         console.log("국방부 데이터센터에서 데이터를 가져오는중 오류가 발생했습니다.");
-//         console.log("프로그램 개발자에게 문의해주십시오.");
+     } catch (error) {
+        console.log("국방부 데이터센터에서 데이터를 가져오는중 오류가 발생했습니다.");
+         console.log("프로그램 개발자에게 문의해주십시오.");
 
-//         console.log(" 오류 내용                                                            ");
-//         console.log(error);
-//     }
+       console.log(" 오류 내용                                                            ");
+        console.log(error);
+     }
 
-// })();
+ })();
 
 
 try {

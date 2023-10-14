@@ -71,9 +71,6 @@
     "specialty": {
       "type": "string"
     },
-    "birthday": {
-      "type": "string"
-    },
     "Classes": {
       "type": "string"
     },
@@ -84,6 +81,12 @@
       "type": "string"
     },
     "face_image_url": {
+      "type": "string"
+    },
+    "timestamps": {
+      "type": "string"
+    },
+    "birthday": {
       "type": "string"
     }
   }
